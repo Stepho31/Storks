@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authManager: AuthManager
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Group {
+            if let userSessionId = authManager.userSessionId {
+                MainTabView()
+            } else {
+                LoginView(authManager: authManager)
+            }
         }
-        .padding()
     }
 }
 

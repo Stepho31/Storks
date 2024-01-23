@@ -642,6 +642,13 @@
 			path = Discover;
 			sourceTree = "<group>";
 		};
+		2BA9A4A52B603176000C3AA4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		2BACD45E2A82BEC200452A2D = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +705,7 @@
 				2B6618592B60300000236B43 /* Discover */,
 				2BACD47C2A82C0FA00452A2D /* Matches */,
 				2B6618252B5DF86500236B43 /* Messaging */,
+				2BA9A4A52B603176000C3AA4 /* Onboarding */,
 				2BACD47B2A82BF0400452A2D /* Profile */,
 				2BACD4812A82C12700452A2D /* Root */,
 				2B4C7F442B50C54200765971 /* Search */,

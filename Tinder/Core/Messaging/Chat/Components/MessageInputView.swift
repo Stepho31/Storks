@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MessageInputView: View {
     @Binding var messageText: String
-
+    @ObservedObject var chatManager: ChatManager
+    
     var body: some View {
         ZStack(alignment: .trailing) {
             TextField("Type a message", text: $messageText, axis: .vertical)
@@ -21,16 +22,20 @@ struct MessageInputView: View {
             
             Spacer()
             
-            Button("Send") {
-                print("DEBUG: Send message")
+            Button("Send") { 
+                onSend()
             }
             .fontWeight(.semibold)
             .padding(.horizontal)
         }
         .font(.subheadline)
     }
+    
+    private func onSend() {
+        Task { await chatManager.sendMessage(messageText) }
+    }
 }
 
 #Preview {
-    MessageInputView(messageText: .constant(""))
+    MessageInputView(messageText: .constant(""), chatManager: ChatManager(service: MockChatService()))
 }

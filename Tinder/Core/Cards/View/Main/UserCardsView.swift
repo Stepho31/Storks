@@ -7,15 +7,22 @@
 
 import SwiftUI
 
-struct CardStackView: View {
+struct UserCardsView: View {
     @ObservedObject var userManager: UserManager
+    @ObservedObject var matchManager: MatchManager
     @StateObject var viewModel: CardsViewModel
-    @State private var currentCardXOffset: CGFloat = 0.0
+    
     @State private var showMatchView = false
     
-    init(userManager: UserManager) {
+    init(userManager: UserManager, matchManager: MatchManager) {
         self.userManager = userManager
-        self._viewModel = StateObject(wrappedValue: CardsViewModel(userManager: userManager))
+        self.matchManager = matchManager
+        
+        let viewModel = CardsViewModel(currentUser: userManager.currentUser,
+                                       cardService: MockCardService(),
+                                       matchManager: matchManager)
+        
+        self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -27,19 +34,11 @@ struct CardStackView: View {
                         CardsLoadingView()
                     case .empty:
                         CardStackEmptyStateView()
-                    case .hasData:
+                    case .hasData(let cardModels):
                         VStack {
-                            ZStack {
-                                ForEach(viewModel.cardModels) { cardModel in
-                                    CardView(viewModel: viewModel, cardModel: cardModel)
-                                }
-                            }
+                            CardStackView(cardModels: cardModels, viewModel: viewModel)
                             
-                            HStack(spacing: 32) {
-                                SwipeActionButton(viewModel: viewModel, config: .reject)
-
-                                SwipeActionButton(viewModel: viewModel, config: .like)
-                            }
+                            SwipeActionButtonsView(viewModel: viewModel)
                         }
                     }
 
@@ -49,20 +48,18 @@ struct CardStackView: View {
                 .blur(radius: showMatchView ? 20 : 0)
                 
                 if showMatchView {
-                    UserMatchView(show: $showMatchView, cardsViewModel: viewModel)
+                    UserMatchView(show: $showMatchView)
+                        .environmentObject(viewModel)
                 }
             }
-            .onReceive(viewModel.$matchedUser, perform: { user in
+            .onReceive(matchManager.$matchedUser, perform: { user in
                showMatchView = user != nil 
             })
             .toolbar(showMatchView ? .hidden : .visible, for: .navigationBar)
             .toolbar(showMatchView ? .hidden : .visible, for: .tabBar)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Image(.tinderLogo)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 88)
+                    ToolbarLogo()
                 }
             }
             .animation(.easeInOut, value: showMatchView)
@@ -71,5 +68,5 @@ struct CardStackView: View {
 }
 
 #Preview {
-    CardStackView(userManager: UserManager(service: MockUserService()))
+    UserCardsView(userManager: UserManager(service: MockUserService()), matchManager: MatchManager(service: MatchService()))
 }

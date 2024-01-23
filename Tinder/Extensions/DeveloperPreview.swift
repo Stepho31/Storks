@@ -9,7 +9,9 @@ import Foundation
 import Firebase
 
 struct DeveloperPreview {
-        
+    
+    // MARK: - Users
+    
     static let user = User(
         id: "123",
         fullname: "Charles Leclerc",
@@ -78,7 +80,17 @@ struct DeveloperPreview {
             sexualPreference: .men
         ),
     ]
-    
+}
+
+// MARK: - Cards
+
+extension DeveloperPreview {
+    static let cards: [CardModel] = users.map({ .init(user: $0) })
+}
+
+// MARK: - Chats
+
+extension DeveloperPreview {
     static let message = Message(
         id: NSUUID().uuidString,
         fromId: "123",
@@ -89,7 +101,7 @@ struct DeveloperPreview {
         user: user
     )
     
-    static let messages: [Message] = [
+    static var messages: [Message] = [
         .init(
             id: NSUUID().uuidString,
             fromId: "456",
@@ -144,5 +156,14 @@ struct DeveloperPreview {
             lastUpdated: Timestamp(),
             chatPartner: users[0]
         )
+    ]
+}
+
+// MARK: - Matches
+
+extension DeveloperPreview {
+    static let matches: [Match] = [
+        .init(id: NSUUID().uuidString, user: users[2], matchTimestamp: Timestamp()),
+        .init(id: NSUUID().uuidString, user: users[3], matchTimestamp: Timestamp()),
     ]
 }

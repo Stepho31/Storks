@@ -9,7 +9,8 @@ import SwiftUI
 
 struct UserMatchView: View {
     @Binding var show: Bool
-    @ObservedObject var cardsViewModel: CardsViewModel
+    @EnvironmentObject var matchManager: MatchManager
+    @EnvironmentObject var userManager: UserManager
         
     var body: some View {
         ZStack {
@@ -21,24 +22,24 @@ struct UserMatchView: View {
                 VStack {
                     Image(.itsamatch)
                     
-                    if let matchedUser = cardsViewModel.matchedUser {
+                    if let matchedUser = matchManager.matchedUser {
                         Text("You and \(matchedUser.firstName) have liked each other.")
                             .foregroundStyle(.white)
                     }
                 }
                                 
                 HStack(spacing: 16) {
-                    CircularProfileImageView(user: cardsViewModel.currentUser, size: .xxxLarge)
+                    CircularProfileImageView(user: userManager.currentUser, size: .xxxLarge)
                         .addBorder(.white.opacity(0.87))
 
-                    CircularProfileImageView(user: cardsViewModel.matchedUser, size: .xxxLarge)
+                    CircularProfileImageView(user: matchManager.matchedUser, size: .xxxLarge)
                         .addBorder(.white.opacity(0.87))
                 }
                                
                 VStack(spacing: 16) {
                     Button {
                         show.toggle()
-                        cardsViewModel.matchedUser = nil
+                        matchManager.matchedUser = nil
                     } label: {
                         Text("Send Message")
                             .modifier(TinderButtonModifier())
@@ -46,7 +47,7 @@ struct UserMatchView: View {
                     
                     Button {
                         show.toggle()
-                        cardsViewModel.matchedUser = nil
+                        matchManager.matchedUser = nil
                     } label: {
                         Text("Keep Swiping")
                             .modifier(TinderButtonModifier(backgroundColor: .clear))
@@ -62,8 +63,5 @@ struct UserMatchView: View {
 }
 
 #Preview {
-    UserMatchView(
-        show: .constant(false),
-        cardsViewModel: CardsViewModel(userManager: UserManager(service: MockUserService()))
-    )
+    UserMatchView(show: .constant(false))
 }

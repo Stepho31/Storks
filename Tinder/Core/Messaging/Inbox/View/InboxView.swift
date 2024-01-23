@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct InboxView: View {
+struct InboxView: View {    
+    @StateObject var inboxViewModel = InboxViewModel(service: InboxService())
+    
     var body: some View {
         NavigationStack {
             List {
@@ -36,8 +38,11 @@ struct InboxView: View {
             }
             .navigationDestination(for: Thread.self, destination: { thread in
                 if let user = thread.chatPartner {
-                    ChatView(user: user)
+                    ChatView(user: user, thread: thread)
                 }
+            })
+            .navigationDestination(for: Match.self, destination: { match in
+                ChatView(user: match.user, thread: nil)
             })
             .navigationTitle("Matches")
             .navigationBarTitleDisplayMode(.inline)

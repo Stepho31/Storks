@@ -11,7 +11,7 @@
 		2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */; };
 		2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */; };
 		2B4C7EC52B41EEE500765971 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC42B41EEE500765971 /* CardView.swift */; };
-		2B4C7EC72B41F6FA00765971 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC62B41F6FA00765971 /* CardStackView.swift */; };
+		2B4C7EC72B41F6FA00765971 /* UserCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC62B41F6FA00765971 /* UserCardsView.swift */; };
 		2B4C7ECB2B447A2500765971 /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ECA2B447A2500765971 /* DeveloperPreview.swift */; };
 		2B4C7ECD2B447CB400765971 /* ImageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ECC2B447CB400765971 /* ImageIndicatorView.swift */; };
 		2B4C7ECF2B447CEE00765971 /* SizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ECE2B447CEE00765971 /* SizeConstants.swift */; };
@@ -64,6 +64,19 @@
 		2B4C80502B59997300765971 /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C804F2B59997200765971 /* MockUserService.swift */; };
 		2B4C80532B59C5DD00765971 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C80522B59C5DD00765971 /* Match.swift */; };
 		2B4C80552B59E19800765971 /* CardsLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C80542B59E19800765971 /* CardsLoadingView.swift */; };
+		2B4C80572B59EC6900765971 /* CardStackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C80562B59EC6900765971 /* CardStackState.swift */; };
+		2B66180A2B5DDC4500236B43 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618092B5DDC4500236B43 /* CardService.swift */; };
+		2B66180C2B5DDCB100236B43 /* MockCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B66180B2B5DDCB100236B43 /* MockCardService.swift */; };
+		2B6618142B5DE66D00236B43 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618132B5DE66D00236B43 /* CardStackView.swift */; };
+		2B6618172B5DE6AC00236B43 /* SwipeActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618162B5DE6AC00236B43 /* SwipeActionButtonsView.swift */; };
+		2B66181A2B5DE8A500236B43 /* ToolbarLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618192B5DE8A500236B43 /* ToolbarLogo.swift */; };
+		2B66181E2B5DEA9800236B43 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B66181D2B5DEA9800236B43 /* MatchManager.swift */; };
+		2B6618212B5DEAC600236B43 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618202B5DEAC600236B43 /* MatchService.swift */; };
+		2B6618232B5DEACF00236B43 /* MockMatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618222B5DEACF00236B43 /* MockMatchService.swift */; };
+		2B6618302B5E20EF00236B43 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B66182F2B5E20EF00236B43 /* ChatManager.swift */; };
+		2B6618322B5E23C400236B43 /* MockChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618312B5E23C400236B43 /* MockChatService.swift */; };
+		2B6618342B5E2B3300236B43 /* NewMatchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618332B5E2B3300236B43 /* NewMatchItemView.swift */; };
+		2B6618362B5EB74D00236B43 /* AuthenticationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */; };
 		2BACD46B2A82BEC200452A2D /* TinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD46A2A82BEC200452A2D /* TinderApp.swift */; };
 		2BACD46D2A82BEC200452A2D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD46C2A82BEC200452A2D /* ContentView.swift */; };
 		2BACD46F2A82BEC400452A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BACD46E2A82BEC400452A2D /* Assets.xcassets */; };
@@ -91,7 +104,7 @@
 		2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
 		2B4C7EC42B41EEE500765971 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		2B4C7EC62B41F6FA00765971 /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
+		2B4C7EC62B41F6FA00765971 /* UserCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardsView.swift; sourceTree = "<group>"; };
 		2B4C7ECA2B447A2500765971 /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
 		2B4C7ECC2B447CB400765971 /* ImageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIndicatorView.swift; sourceTree = "<group>"; };
 		2B4C7ECE2B447CEE00765971 /* SizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstants.swift; sourceTree = "<group>"; };
@@ -143,6 +156,19 @@
 		2B4C804F2B59997200765971 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
 		2B4C80522B59C5DD00765971 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		2B4C80542B59E19800765971 /* CardsLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsLoadingView.swift; sourceTree = "<group>"; };
+		2B4C80562B59EC6900765971 /* CardStackState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackState.swift; sourceTree = "<group>"; };
+		2B6618092B5DDC4500236B43 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		2B66180B2B5DDCB100236B43 /* MockCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCardService.swift; sourceTree = "<group>"; };
+		2B6618132B5DE66D00236B43 /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
+		2B6618162B5DE6AC00236B43 /* SwipeActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionButtonsView.swift; sourceTree = "<group>"; };
+		2B6618192B5DE8A500236B43 /* ToolbarLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarLogo.swift; sourceTree = "<group>"; };
+		2B66181D2B5DEA9800236B43 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
+		2B6618202B5DEAC600236B43 /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
+		2B6618222B5DEACF00236B43 /* MockMatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMatchService.swift; sourceTree = "<group>"; };
+		2B66182F2B5E20EF00236B43 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		2B6618312B5E23C400236B43 /* MockChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChatService.swift; sourceTree = "<group>"; };
+		2B6618332B5E2B3300236B43 /* NewMatchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchItemView.swift; sourceTree = "<group>"; };
+		2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRootView.swift; sourceTree = "<group>"; };
 		2BACD4672A82BEC200452A2D /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BACD46A2A82BEC200452A2D /* TinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderApp.swift; sourceTree = "<group>"; };
 		2BACD46C2A82BEC200452A2D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,8 +223,8 @@
 		2B4C7EC32B41EEA500765971 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				2B6618082B5DDC3B00236B43 /* Service */,
 				2B4C80382B58DC6200765971 /* Model */,
-				2B4C7F5A2B50C77400765971 /* Components */,
 				2B4C7F5B2B50C77700765971 /* View */,
 				2B4C803D2B58E06700765971 /* ViewModel */,
 			);
@@ -236,20 +262,11 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		2B4C7F482B50C5C100765971 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2B4C7F782B51A38700765971 /* Thread.swift */,
-				2B4C7F492B50C5DD00765971 /* Message.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		2B4C7F4B2B50C60E00765971 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B4C7F6C2B51852A00765971 /* Chat */,
-				2B4C7F6B2B51851E00765971 /* Inbox */,
+				2B4C7F632B5182C400765971 /* InboxView.swift */,
+				2B4C7F672B5183B900765971 /* InboxRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4C7F5E2B50C87700765971 /* NewMatchesView.swift */,
-				2B4C7F612B5181A400765971 /* MessageInputView.swift */,
+				2B6618332B5E2B3300236B43 /* NewMatchItemView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -267,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4C7F552B50C6C500765971 /* Avatar */,
+				2B6618182B5DE89100236B43 /* NavigationBar */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -296,26 +314,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		2B4C7F5A2B50C77400765971 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				2B4C803B2B58DF6B00765971 /* UserInfoView.swift */,
-				2B4C7ECC2B447CB400765971 /* ImageIndicatorView.swift */,
-				2B4C7ED02B447DDB00765971 /* ImageScrollingOverlay.swift */,
-				2B4C80402B58E74000765971 /* SwipeActionButton.swift */,
-				2B4C804B2B598A4B00765971 /* SwipeActionIndicatorView.swift */,
-				2B4C804D2B598C0400765971 /* CardImageView.swift */,
-				2B4C80542B59E19800765971 /* CardsLoadingView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		2B4C7F5B2B50C77700765971 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B4C7EC42B41EEE500765971 /* CardView.swift */,
-				2B4C7EC62B41F6FA00765971 /* CardStackView.swift */,
-				2B4C80442B5902AC00765971 /* CardStackEmptyStateView.swift */,
+				2B6618152B5DE68C00236B43 /* ActionButtons */,
+				2B66180D2B5DE62D00236B43 /* Card */,
+				2B6618122B5DE66200236B43 /* CardStack */,
+				2B6618102B5DE65400236B43 /* EmptyState */,
+				2B6618112B5DE65B00236B43 /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,36 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				2B4C7F742B51A23F00765971 /* InboxService.swift */,
-				2B4C7F762B51A24400765971 /* ChatService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		2B4C7F5D2B50C7F200765971 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				2B4C7F4D2B50C62B00765971 /* ChatBubble.swift */,
-				2B4C7F722B5197E500765971 /* ChatBubbleModifier.swift */,
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
-		2B4C7F6B2B51851E00765971 /* Inbox */ = {
-			isa = PBXGroup;
-			children = (
-				2B4C7F632B5182C400765971 /* InboxView.swift */,
-				2B4C7F672B5183B900765971 /* InboxRowView.swift */,
-			);
-			path = Inbox;
-			sourceTree = "<group>";
-		};
-		2B4C7F6C2B51852A00765971 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				2B4C7F652B5182CA00765971 /* ChatView.swift */,
-				2B4C7F702B5197C000765971 /* ChatMessageCell.swift */,
-			);
-			path = Chat;
 			sourceTree = "<group>";
 		};
 		2B4C7F842B51BAA000765971 /* Selection */ = {
@@ -457,6 +435,7 @@
 			children = (
 				2B4C80392B58DC6B00765971 /* SwipeAction.swift */,
 				2B4C80422B58EE1500765971 /* CardModel.swift */,
+				2B4C80562B59EC6900765971 /* CardStackState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +462,177 @@
 				2B4C80522B59C5DD00765971 /* Match.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2B6618082B5DDC3B00236B43 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B6618092B5DDC4500236B43 /* CardService.swift */,
+				2B66180B2B5DDCB100236B43 /* MockCardService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2B66180D2B5DE62D00236B43 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				2B66180F2B5DE64100236B43 /* View */,
+				2B66180E2B5DE63000236B43 /* Subviews */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		2B66180E2B5DE63000236B43 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C803B2B58DF6B00765971 /* UserInfoView.swift */,
+				2B4C7ECC2B447CB400765971 /* ImageIndicatorView.swift */,
+				2B4C7ED02B447DDB00765971 /* ImageScrollingOverlay.swift */,
+				2B4C804B2B598A4B00765971 /* SwipeActionIndicatorView.swift */,
+				2B4C804D2B598C0400765971 /* CardImageView.swift */,
+				2B4C80542B59E19800765971 /* CardsLoadingView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		2B66180F2B5DE64100236B43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7EC42B41EEE500765971 /* CardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B6618102B5DE65400236B43 /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C80442B5902AC00765971 /* CardStackEmptyStateView.swift */,
+			);
+			path = EmptyState;
+			sourceTree = "<group>";
+		};
+		2B6618112B5DE65B00236B43 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7EC62B41F6FA00765971 /* UserCardsView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2B6618122B5DE66200236B43 /* CardStack */ = {
+			isa = PBXGroup;
+			children = (
+				2B6618132B5DE66D00236B43 /* CardStackView.swift */,
+			);
+			path = CardStack;
+			sourceTree = "<group>";
+		};
+		2B6618152B5DE68C00236B43 /* ActionButtons */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C80402B58E74000765971 /* SwipeActionButton.swift */,
+				2B6618162B5DE6AC00236B43 /* SwipeActionButtonsView.swift */,
+			);
+			path = ActionButtons;
+			sourceTree = "<group>";
+		};
+		2B6618182B5DE89100236B43 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				2B6618192B5DE8A500236B43 /* ToolbarLogo.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		2B66181C2B5DEA9000236B43 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2B66181D2B5DEA9800236B43 /* MatchManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2B66181F2B5DEABF00236B43 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B6618202B5DEAC600236B43 /* MatchService.swift */,
+				2B6618222B5DEACF00236B43 /* MockMatchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2B6618252B5DF86500236B43 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				2B6618292B5DF89500236B43 /* Model */,
+				2B6618262B5DF87100236B43 /* Chat */,
+				2BACD47D2A82C10000452A2D /* Inbox */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		2B6618262B5DF87100236B43 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				2B66182B2B5DF8BB00236B43 /* Components */,
+				2B66182E2B5E20E800236B43 /* Manager */,
+				2B66182A2B5DF8AA00236B43 /* Modifiers */,
+				2B6618282B5DF88700236B43 /* Service */,
+				2B6618272B5DF87600236B43 /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		2B6618272B5DF87600236B43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7F652B5182CA00765971 /* ChatView.swift */,
+				2B4C7F702B5197C000765971 /* ChatMessageCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B6618282B5DF88700236B43 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7F762B51A24400765971 /* ChatService.swift */,
+				2B6618312B5E23C400236B43 /* MockChatService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2B6618292B5DF89500236B43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7F782B51A38700765971 /* Thread.swift */,
+				2B4C7F492B50C5DD00765971 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B66182A2B5DF8AA00236B43 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7F4D2B50C62B00765971 /* ChatBubble.swift */,
+				2B4C7F722B5197E500765971 /* ChatBubbleModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		2B66182B2B5DF8BB00236B43 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7F612B5181A400765971 /* MessageInputView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2B66182E2B5E20E800236B43 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2B66182F2B5E20EF00236B43 /* ChatManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		2BACD45E2A82BEC200452A2D = {
@@ -538,9 +688,9 @@
 				2B4C7F4F2B50C66600765971 /* Components */,
 				2BACD47A2A82BEEC00452A2D /* Authentication */,
 				2B4C7EC32B41EEA500765971 /* Cards */,
-				2BACD47D2A82C10000452A2D /* Inbox */,
 				2BACD4852A82C16E00452A2D /* Discover */,
 				2BACD47C2A82C0FA00452A2D /* Matches */,
+				2B6618252B5DF86500236B43 /* Messaging */,
 				2BACD47B2A82BF0400452A2D /* Profile */,
 				2BACD4812A82C12700452A2D /* Root */,
 				2B4C7F442B50C54200765971 /* Search */,
@@ -575,6 +725,8 @@
 		2BACD47C2A82C0FA00452A2D /* Matches */ = {
 			isa = PBXGroup;
 			children = (
+				2B66181F2B5DEABF00236B43 /* Service */,
+				2B66181C2B5DEA9000236B43 /* Manager */,
 				2B4C80512B59C5D700765971 /* Model */,
 				2B4C80482B597BEB00765971 /* View */,
 			);
@@ -584,11 +736,9 @@
 		2BACD47D2A82C10000452A2D /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
-				2B4C7F8B2B522A1100765971 /* ViewModel */,
-				2B4C7F5D2B50C7F200765971 /* Modifiers */,
-				2B4C7F5C2B50C7A700765971 /* Service */,
 				2B4C7F4C2B50C61D00765971 /* Components */,
-				2B4C7F482B50C5C100765971 /* Model */,
+				2B4C7F5C2B50C7A700765971 /* Service */,
+				2B4C7F8B2B522A1100765971 /* ViewModel */,
 				2B4C7F4B2B50C60E00765971 /* View */,
 			);
 			path = Inbox;
@@ -637,6 +787,7 @@
 		2BACD4882A82FBD500452A2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */,
 				2BACD4862A82FB8400452A2D /* LoginView.swift */,
 				2BACD48D2A82FC1500452A2D /* ForgotPasswordView.swift */,
 			);
@@ -782,23 +933,27 @@
 				2BACD46D2A82BEC200452A2D /* ContentView.swift in Sources */,
 				2B4C7F7B2B51B51200765971 /* EditProfileSheetConfiguration.swift in Sources */,
 				2B4C7F622B5181A400765971 /* MessageInputView.swift in Sources */,
+				2B6618302B5E20EF00236B43 /* ChatManager.swift in Sources */,
 				2BACD46B2A82BEC200452A2D /* TinderApp.swift in Sources */,
 				2B4C7F8A2B52064300765971 /* ProfileInfoRowView.swift in Sources */,
 				2BACD4872A82FB8400452A2D /* LoginView.swift in Sources */,
 				2B4C80502B59997300765971 /* MockUserService.swift in Sources */,
 				2B4C7F462B50C55700765971 /* SearchView.swift in Sources */,
-				2B4C7EC72B41F6FA00765971 /* CardStackView.swift in Sources */,
+				2B6618172B5DE6AC00236B43 /* SwipeActionButtonsView.swift in Sources */,
+				2B4C7EC72B41F6FA00765971 /* UserCardsView.swift in Sources */,
 				2B4C7ED12B447DDB00765971 /* ImageScrollingOverlay.swift in Sources */,
 				2B4C7FBB2B53023500765971 /* UserError.swift in Sources */,
 				2B4C7F752B51A23F00765971 /* InboxService.swift in Sources */,
 				2BACD4A82A82FDBC00452A2D /* FirestoreConstants.swift in Sources */,
 				2B4C7ECB2B447A2500765971 /* DeveloperPreview.swift in Sources */,
 				2BACD4AA2A82FDEF00452A2D /* Color.swift in Sources */,
+				2B66180A2B5DDC4500236B43 /* CardService.swift in Sources */,
 				2B4C7EBD2B41EA3200765971 /* AuthManager.swift in Sources */,
 				2BACD48C2A82FBE700452A2D /* LoginViewModel.swift in Sources */,
 				2B4C7F812B51B69100765971 /* SexualOrientationSelectionView.swift in Sources */,
 				2B4C7F882B51EA3500765971 /* UserProfileView.swift in Sources */,
 				2B4C7FBD2B5302EC00765971 /* UserManager.swift in Sources */,
+				2B66180C2B5DDCB100236B43 /* MockCardService.swift in Sources */,
 				2BACD48E2A82FC1500452A2D /* ForgotPasswordView.swift in Sources */,
 				2B4C7ECD2B447CB400765971 /* ImageIndicatorView.swift in Sources */,
 				2B4C804A2B597C0500765971 /* UserMatchView.swift in Sources */,
@@ -811,29 +966,38 @@
 				2B4C7F662B5182CA00765971 /* ChatView.swift in Sources */,
 				2B4C7F592B50C6E000765971 /* ProfileImageSize.swift in Sources */,
 				2B4C804C2B598A4B00765971 /* SwipeActionIndicatorView.swift in Sources */,
+				2B6618212B5DEAC600236B43 /* MatchService.swift in Sources */,
 				2B4C7F4E2B50C62B00765971 /* ChatBubble.swift in Sources */,
 				2BACD4A12A82FD3100452A2D /* TinderButtonModifier.swift in Sources */,
+				2B6618342B5E2B3300236B43 /* NewMatchItemView.swift in Sources */,
+				2B6618142B5DE66D00236B43 /* CardStackView.swift in Sources */,
 				2B4C7F772B51A24400765971 /* ChatService.swift in Sources */,
 				2B4C80452B5902AC00765971 /* CardStackEmptyStateView.swift in Sources */,
+				2B4C80572B59EC6900765971 /* CardStackState.swift in Sources */,
 				2BACD4A32A82FD5600452A2D /* UserService.swift in Sources */,
 				2B4C7EDA2B44A7CA00765971 /* ProfileInputField.swift in Sources */,
+				2B6618362B5EB74D00236B43 /* AuthenticationRootView.swift in Sources */,
 				2B4C7F712B5197C000765971 /* ChatMessageCell.swift in Sources */,
 				2B4C7F5F2B50C87700765971 /* NewMatchesView.swift in Sources */,
 				2B4C7EDC2B44A9E500765971 /* RelationshipGoalsSelectionView.swift in Sources */,
 				2B4C803F2B58E07900765971 /* CardsViewModel.swift in Sources */,
 				2B4C804E2B598C0400765971 /* CardImageView.swift in Sources */,
+				2B6618232B5DEACF00236B43 /* MockMatchService.swift in Sources */,
 				2BACD4842A82C14600452A2D /* MainTabView.swift in Sources */,
+				2B66181E2B5DEA9800236B43 /* MatchManager.swift in Sources */,
 				2B4C7F7D2B51B61D00765971 /* GenderType.swift in Sources */,
 				2BACD49F2A82FD0000452A2D /* TinderTextFieldModifier.swift in Sources */,
 				2B4C7F832B51B98E00765971 /* SexualOrientationType.swift in Sources */,
 				2B4C7ED32B449D0C00765971 /* CurrentUserProfileView.swift in Sources */,
 				2B4C7F642B5182C400765971 /* InboxView.swift in Sources */,
 				2B4C803A2B58DC6B00765971 /* SwipeAction.swift in Sources */,
+				2B6618322B5E23C400236B43 /* MockChatService.swift in Sources */,
 				2B4C7EDF2B44AA0800765971 /* RelationshipGoalsType.swift in Sources */,
 				2B4C7ED52B44A0FB00765971 /* EditProfileView.swift in Sources */,
 				2B4C80432B58EE1500765971 /* CardModel.swift in Sources */,
 				2B4C7F7F2B51B68900765971 /* GenderSelectionView.swift in Sources */,
 				2BACD4902A82FC2700452A2D /* AuthService.swift in Sources */,
+				2B66181A2B5DE8A500236B43 /* ToolbarLogo.swift in Sources */,
 				2B4C80472B59776600765971 /* SocialUserProfileView.swift in Sources */,
 				2B4C7ED82B44A40500765971 /* ProfileImageGridView.swift in Sources */,
 				2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */,

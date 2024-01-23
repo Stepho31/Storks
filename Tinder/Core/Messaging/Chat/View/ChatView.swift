@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ChatView: View {
-    let user: User
     @State private var messageText = ""
+    @StateObject var chatManager: ChatManager
+    private let user: User
+    private let thread: Thread?
+    
+    init(user: User, thread: Thread?) {
+        self.user = user
+        self.thread = thread
+        
+        let chatService = MockChatService()
+        self._chatManager = StateObject(wrappedValue: ChatManager(service: chatService))
+    }
     
     var body: some View {
         VStack {
@@ -21,7 +31,7 @@ struct ChatView: View {
                 }
             }
                         
-            MessageInputView(messageText: $messageText)
+            MessageInputView(messageText: $messageText, chatManager: chatManager)
                 .padding()
         }
         .navigationTitle(user.firstName)
@@ -31,6 +41,6 @@ struct ChatView: View {
 
 #Preview {
     NavigationStack {
-        ChatView(user: DeveloperPreview.users[1])
+        ChatView(user: DeveloperPreview.users[1], thread: DeveloperPreview.thread)
     }
 }

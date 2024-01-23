@@ -12,4 +12,8 @@ struct FirestoreConstants {
     
     static let UserCollection = Root.collection("users")
     static let ThreadsCollection = Root.collection("threads")
+    
+    static func MatchesCollection(uid: String) -> CollectionReference {
+        return UserCollection.document(uid).collection("user-matches")
+    }
 }

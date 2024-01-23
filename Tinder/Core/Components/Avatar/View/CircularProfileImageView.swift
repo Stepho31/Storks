@@ -31,6 +31,7 @@ struct CircularProfileImageView: View {
                 .overlay {
                     Circle()
                         .stroke(borderColor, lineWidth: borderWidth)
+                        .shadow(radius: 4)
                 }
         } else {
             Image(systemName: "person.circle.fill")
@@ -41,13 +42,14 @@ struct CircularProfileImageView: View {
                 .overlay {
                     Circle()
                         .stroke(borderColor, lineWidth: borderWidth)
+                        .shadow(radius: 4)
                 }
         }
     }
 }
 
 extension CircularProfileImageView {
-    func addBorder(_ color: Color, borderWidth: CGFloat = 4.0) -> CircularProfileImageView {
+    func addBorder(_ color: Color, borderWidth: CGFloat = 2.0) -> CircularProfileImageView {
         var copy = self
         copy.borderColor = color
         copy.borderWidth = borderWidth

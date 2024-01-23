@@ -7,10 +7,14 @@
 
 import Firebase
 
-class InboxService {
+protocol InboxServiceProtocol {
+    func observeThreads() -> AsyncStream<Thread>
+}
+
+class InboxService: InboxServiceProtocol {
     private var firestoreListener: ListenerRegistration?
     
-    func getThreadStream() -> AsyncStream<Thread> {
+    func observeThreads() -> AsyncStream<Thread> {
         AsyncStream(Thread.self) { continuation in
             guard let uid = Auth.auth().currentUser?.uid else { return }
             
@@ -18,7 +22,6 @@ class InboxService {
                 .ThreadsCollection
                 .whereField("uids", arrayContains: uid)
                 .addSnapshotListener { snapshot, _ in
-                    
                     guard let changes = snapshot?.documentChanges.filter({
                         $0.type == .added || $0.type == .modified
                     }) else { return }
@@ -29,9 +32,13 @@ class InboxService {
         }
     }
     
+    
+    
     deinit {
         self.firestoreListener?.remove()
         self.firestoreListener = nil
+        
+        print("DEBUG: Deinitializing inbox service")
     }
 }
 

@@ -6,75 +6,36 @@
 //
 
 import Foundation
-import Combine
-
-enum CardStackState {
-    case loading
-    case empty
-    case hasData
-}
 
 @MainActor
 class CardsViewModel: ObservableObject {
-    @Published var cardModels = [CardModel]()
+    
+    // MARK: - Properties
+    
     @Published var animatedSwipeAction: SwipeAction?
     @Published var animating = false
-    @Published var matchedUser: User?
     @Published var cardStackState: CardStackState = .empty
     
-    var currentUser: User?
-    var potentialMatchIDs = [String]()
-    
-    private let userManager: UserManager
-    private var cancellables = Set<AnyCancellable>()
-    
-    init(userManager: UserManager) {
-        self.userManager = userManager
-                
-        fetchCurrentUserCards()
+    @Published var cardModels = [CardModel]() {
+        didSet { updateCardStackState() }
     }
-    
-    private func fetchCurrentUserCards() {
-        cardStackState = .loading
         
-        Task {
-            currentUser = userManager.currentUser
-            
-            if currentUser == nil {
-                currentUser = try await userManager.fetchCurrentUser()
-                await fetchCardsAndPotentialMatches()
-            } else {
-                await fetchCardsAndPotentialMatches()
-            }
-            
-            cardStackState = cardModels.isEmpty ? .empty : .hasData
-        }
+    private let currentUser: User?
+    private let cardService: CardServiceProtocol
+    private let matchManager: MatchManager
+    
+    // MARK: - Lifecycle
+    
+    init(currentUser: User?, cardService: CardServiceProtocol, matchManager: MatchManager) {
+        self.currentUser = currentUser
+        self.cardService = cardService
+        self.matchManager = matchManager
+                
+        Task { await fetchUserCards() }
     }
     
-    private func fetchCardsAndPotentialMatches() async {
-        await withTaskGroup(of: Void.self) { group in
-            group.addTask { await self.fetchUserCards() }
-            group.addTask { await self.fetchPotentialMatchIDs() }
-        }
-    }
-    
-    private func fetchUserCards() async {
-        do {
-            let users = try await userManager.fetchUserCards()
-            self.cardModels = users.map({ .init(user: $0) })
-        } catch {
-            print("DEBUG: Failed to fetch swipes with error \(error.localizedDescription)")
-        }
-    }
-    
-    private func fetchPotentialMatchIDs() async {
-        do {
-            self.potentialMatchIDs = try await userManager.fetchPotentialMatches()
-        } catch {
-            print("DEBUG: Failed to fetch potential matches \(error)")
-        }
-    }
-    
+    // MARK: - Card Helpers
+        
     private func removeCard(_ user: User) async throws {
         animating = true
         
@@ -84,24 +45,36 @@ class CardsViewModel: ObservableObject {
         try await Task.sleep(nanoseconds: 500_000_000)
         cardModels.remove(at: index)
         animating = false
-        
-        if cardModels.isEmpty {
-            cardStackState = .empty
-        }
     }
     
     func likeUser(_ user: User) async throws {
-        let showMatch = potentialMatchIDs.contains(user.id)
         try await removeCard(user)
-        
-        if showMatch {
-            matchedUser = user
-        }
-        
-        animating = false
+        matchManager.checkForMatch(fromUser: user)
     }
     
     func rejectUser(_ user: User) async throws {
         try await removeCard(user)
+        matchManager.removePotentialMatchIfNecessary(forUser: user)
+    }
+    
+    func updateCardStackState() {
+        cardStackState = cardModels.isEmpty ? .empty : .hasData(cardModels)
+    }
+}
+
+// MARK: - API
+// TODO: Extract to manager class?
+
+private extension CardsViewModel {
+    func fetchUserCards() async {
+        guard let currentUser else { return }
+        cardStackState = .loading
+        
+        do {
+            self.cardModels = try await cardService.fetchCards(for: currentUser)
+            cardStackState = cardModels.isEmpty ? .empty : .hasData(cardModels)
+        } catch {
+            print("DEBUG: Failed to fetch cards with error \(error.localizedDescription)")
+        }
     }
 }

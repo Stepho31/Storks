@@ -68,6 +68,9 @@ private extension SwipeActionButton {
 }
 
 #Preview {
-    SwipeActionButton(viewModel: CardsViewModel(userManager: UserManager(service: MockUserService())),
-                      config: .like)
+    SwipeActionButton(
+        viewModel: .init(currentUser: DeveloperPreview.user,
+                         cardService: MockCardService(),
+                         matchManager: MatchManager(service: MatchService())),
+        config: .like)
 }

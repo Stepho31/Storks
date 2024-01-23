@@ -155,9 +155,7 @@ struct EditProfileView: View {
                     }
                 }
             }
-            .onAppear {
-                onViewAppear()
-            }
+            .onAppear { onViewAppear() }
             .sheet(item: $sheetConfig) { config in
                 switch config {
                 case .relationshipGoals:
@@ -188,7 +186,7 @@ struct EditProfileView: View {
                     }
                     .fontWeight(.semibold)
                 }
-        }
+            }
         }
     }
 }
@@ -206,5 +204,6 @@ private extension EditProfileView {
 #Preview {
     NavigationStack {
         EditProfileView()
+            .environmentObject(UserManager(service: MockUserService()))
     }
 }

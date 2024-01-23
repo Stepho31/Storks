@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var authManager: AuthManager
-    
+    @EnvironmentObject var userManager: UserManager
     var body: some View {
         Group {
             if let userSessionId = authManager.userSessionId {
-                MainTabView()
+                if let user = userManager.currentUser {
+                    MainTabView()
+                }
             } else {
                 LoginView(authManager: authManager)
             }

@@ -22,12 +22,14 @@ struct TinderApp: App {
     
     @StateObject var userManager = UserManager(service: MockUserService())
     @StateObject var authmanager = AuthManager(service: MockAuthService())
+    @StateObject var matchManager = MatchManager(service: MatchService())
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(userManager)
                 .environmentObject(authmanager)
+                .environmentObject(matchManager)
         }
     }
 }

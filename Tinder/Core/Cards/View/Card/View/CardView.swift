@@ -131,6 +131,10 @@ private extension CardView {
 }
 
 #Preview {
-    CardView(viewModel: CardsViewModel(userManager: UserManager(service: MockUserService())),
-             cardModel: CardModel(user: DeveloperPreview.user))
+    CardView(
+        viewModel: .init(currentUser: DeveloperPreview.user,
+                         cardService: MockCardService(),
+                         matchManager: MatchManager(service: MatchService())),
+        cardModel: CardModel(user: DeveloperPreview.user)
+    )
 }

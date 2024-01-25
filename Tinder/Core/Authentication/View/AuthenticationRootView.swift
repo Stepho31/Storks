@@ -9,10 +9,10 @@ import SwiftUI
 
 struct AuthenticationRootView: View {
     var body: some View {
-
+        
         ZStack {
-                gradient()
-            VStack() {
+            gradient()
+            VStack {
                 AuthenticationTopView()
                 
                 Spacer()

@@ -9,7 +9,27 @@ import SwiftUI
 
 struct AuthenticationRootView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        ZStack {
+                gradient()
+            
+            VStack() {
+                AuthenticationTopView()
+                
+                Spacer()
+                
+                AuthenticationBottomView()
+            }
+            .padding(.vertical, 50)
+        }
+        .ignoresSafeArea()
+    }
+    
+    func gradient() -> LinearGradient {
+        return LinearGradient(stops: [
+            Gradient.Stop(color: Color(.pink), location: 0.1),
+            Gradient.Stop(color: Color(.pink), location: 0.55),
+        ], startPoint: .topTrailing, endPoint: .bottomLeading)
     }
 }
 

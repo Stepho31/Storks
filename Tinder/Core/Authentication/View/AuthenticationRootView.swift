@@ -12,7 +12,6 @@ struct AuthenticationRootView: View {
 
         ZStack {
                 gradient()
-            
             VStack() {
                 AuthenticationTopView()
                 
@@ -27,8 +26,8 @@ struct AuthenticationRootView: View {
     
     func gradient() -> LinearGradient {
         return LinearGradient(stops: [
-            Gradient.Stop(color: Color(.pink), location: 0.1),
-            Gradient.Stop(color: Color(.pink), location: 0.55),
+            Gradient.Stop(color: Color(.primaryPink), location: 0.1),
+            Gradient.Stop(color: Color(.secondaryPink), location: 0.55),
         ], startPoint: .topTrailing, endPoint: .bottomLeading)
     }
 }

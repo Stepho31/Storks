@@ -15,30 +15,23 @@ struct AuthenticationTopView: View {
                 .scaledToFit()
                 .frame(width: 100, height: 100)
    
-            
             VStack(spacing: 8) {
                 HStack {
                     Text("It Starts")
-                        .font(.largeTitle)
                         .bold()
-                        .foregroundColor(.white)
                     
                     Text("with")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
                     
                 }
                 HStack {
                     Text("a")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
                     
                     Text("Swipe")
-                        .font(.largeTitle)
                         .bold()
-                        .foregroundColor(.white)
                 }
             }
+            .font(.largeTitle)
+            .foregroundStyle(.white)
             .frame(width: 210)
             
             Spacer()

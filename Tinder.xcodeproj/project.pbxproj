@@ -675,6 +675,54 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2BA9A50C2B6339B7000C3AA4 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */,
+				2BA9A50E2B6339F4000C3AA4 /* Components */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		2BA9A50D2B6339D0000C3AA4 /* PasswordReset */ = {
+			isa = PBXGroup;
+			children = (
+				2BACD48D2A82FC1500452A2D /* ForgotPasswordView.swift */,
+			);
+			path = PasswordReset;
+			sourceTree = "<group>";
+		};
+		2BA9A50E2B6339F4000C3AA4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */,
+				CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2BA9A50F2B633A18000C3AA4 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
+		2BA9A5102B633A24000C3AA4 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		2BA9A5112B633A2E000C3AA4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2BACD4862A82FB8400452A2D /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		2BACD45E2A82BEC200452A2D = {
 			isa = PBXGroup;
 			children = (
@@ -821,10 +869,11 @@
 		2BACD4882A82FBD500452A2D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CA18AD052B62A8D30096AA0C /* HelperViews */,
-				2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */,
-				2BACD4862A82FB8400452A2D /* LoginView.swift */,
-				2BACD48D2A82FC1500452A2D /* ForgotPasswordView.swift */,
+				2BA9A50F2B633A18000C3AA4 /* Email */,
+				2BA9A5112B633A2E000C3AA4 /* Login */,
+				2BA9A5102B633A24000C3AA4 /* Password */,
+				2BA9A50D2B6339D0000C3AA4 /* PasswordReset */,
+				2BA9A50C2B6339B7000C3AA4 /* Root */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -881,15 +930,6 @@
 				2B4C7ECE2B447CEE00765971 /* SizeConstants.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		CA18AD052B62A8D30096AA0C /* HelperViews */ = {
-			isa = PBXGroup;
-			children = (
-				CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */,
-				CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */,
-			);
-			path = HelperViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

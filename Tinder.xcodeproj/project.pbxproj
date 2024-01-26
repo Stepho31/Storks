@@ -102,6 +102,7 @@
 		CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */; };
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
+		CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0E2B641A180096AA0C /* String+Email.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,6 +197,7 @@
 		CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTopView.swift; sourceTree = "<group>"; };
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		CA18AD0E2B641A180096AA0C /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -893,6 +895,7 @@
 		2BACD49A2A82FC8400452A2D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CA18AD0D2B641A040096AA0C /* String */,
 				2BACD4A92A82FDEF00452A2D /* Color.swift */,
 				2B4C7ECA2B447A2500765971 /* DeveloperPreview.swift */,
 				2B4C7F692B51850E00765971 /* Date.swift */,
@@ -933,6 +936,14 @@
 				CA18AD0B2B6416E60096AA0C /* EmailView.swift */,
 			);
 			path = Email;
+			sourceTree = "<group>";
+		};
+		CA18AD0D2B641A040096AA0C /* String */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD0E2B641A180096AA0C /* String+Email.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1096,6 +1107,7 @@
 				2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */,
 				2B4C80372B58ABCE00765971 /* UserCell.swift in Sources */,
 				2B4C80532B59C5DD00765971 /* Match.swift in Sources */,
+				CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */,
 				2B4C7F4A2B50C5DD00765971 /* Message.swift in Sources */,
 				2B4C7F512B50C67200765971 /* CircularProfileImageView.swift in Sources */,
 				2B4C7EC52B41EEE500765971 /* CardView.swift in Sources */,

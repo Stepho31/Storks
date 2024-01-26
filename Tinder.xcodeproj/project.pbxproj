@@ -101,6 +101,7 @@
 		2BACD4AC2A82FE8100452A2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */; };
 		CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */; };
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
+		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +195,7 @@
 		2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTopView.swift; sourceTree = "<group>"; };
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
+		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -701,13 +703,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		2BA9A50F2B633A18000C3AA4 /* Email */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Email;
-			sourceTree = "<group>";
-		};
 		2BA9A5102B633A24000C3AA4 /* Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -869,7 +864,7 @@
 		2BACD4882A82FBD500452A2D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2BA9A50F2B633A18000C3AA4 /* Email */,
+				CA18AD0A2B6416E10096AA0C /* Email */,
 				2BA9A5112B633A2E000C3AA4 /* Login */,
 				2BA9A5102B633A24000C3AA4 /* Password */,
 				2BA9A50D2B6339D0000C3AA4 /* PasswordReset */,
@@ -930,6 +925,14 @@
 				2B4C7ECE2B447CEE00765971 /* SizeConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		CA18AD0A2B6416E10096AA0C /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD0B2B6416E60096AA0C /* EmailView.swift */,
+			);
+			path = Email;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1070,6 +1073,7 @@
 				2B4C804E2B598C0400765971 /* CardImageView.swift in Sources */,
 				2B6618232B5DEACF00236B43 /* MockMatchService.swift in Sources */,
 				2BACD4842A82C14600452A2D /* MainTabView.swift in Sources */,
+				CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */,
 				2B66181E2B5DEA9800236B43 /* MatchManager.swift in Sources */,
 				2B4C7F7D2B51B61D00765971 /* GenderType.swift in Sources */,
 				2BACD49F2A82FD0000452A2D /* TinderTextFieldModifier.swift in Sources */,

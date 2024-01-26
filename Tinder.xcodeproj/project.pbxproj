@@ -99,6 +99,8 @@
 		2BACD4A82A82FDBC00452A2D /* FirestoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A72A82FDBC00452A2D /* FirestoreConstants.swift */; };
 		2BACD4AA2A82FDEF00452A2D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A92A82FDEF00452A2D /* Color.swift */; };
 		2BACD4AC2A82FE8100452A2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */; };
+		CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */; };
+		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +192,8 @@
 		2BACD4A72A82FDBC00452A2D /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
 		2BACD4A92A82FDEF00452A2D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTopView.swift; sourceTree = "<group>"; };
+		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -817,6 +821,7 @@
 		2BACD4882A82FBD500452A2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CA18AD052B62A8D30096AA0C /* HelperViews */,
 				2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */,
 				2BACD4862A82FB8400452A2D /* LoginView.swift */,
 				2BACD48D2A82FC1500452A2D /* ForgotPasswordView.swift */,
@@ -876,6 +881,15 @@
 				2B4C7ECE2B447CEE00765971 /* SizeConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		CA18AD052B62A8D30096AA0C /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */,
+				CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */,
+			);
+			path = HelperViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1006,6 +1020,7 @@
 				2B4C80572B59EC6900765971 /* CardStackState.swift in Sources */,
 				2BACD4A32A82FD5600452A2D /* UserService.swift in Sources */,
 				2B4C7EDA2B44A7CA00765971 /* ProfileInputField.swift in Sources */,
+				CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */,
 				2B6618362B5EB74D00236B43 /* AuthenticationRootView.swift in Sources */,
 				2B4C7F712B5197C000765971 /* ChatMessageCell.swift in Sources */,
 				2BA9A4A72B60326C000C3AA4 /* WelcomeView.swift in Sources */,
@@ -1026,6 +1041,7 @@
 				2B4C7EDF2B44AA0800765971 /* RelationshipGoalsType.swift in Sources */,
 				2B4C7ED52B44A0FB00765971 /* EditProfileView.swift in Sources */,
 				2B4C80432B58EE1500765971 /* CardModel.swift in Sources */,
+				CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */,
 				2B4C7F7F2B51B68900765971 /* GenderSelectionView.swift in Sources */,
 				2BACD4902A82FC2700452A2D /* AuthService.swift in Sources */,
 				2B66181A2B5DE8A500236B43 /* ToolbarLogo.swift in Sources */,

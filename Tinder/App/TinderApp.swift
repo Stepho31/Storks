@@ -26,7 +26,7 @@ struct TinderApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PasswordView()
                 .environmentObject(userManager)
                 .environmentObject(authmanager)
                 .environmentObject(matchManager)

@@ -10,12 +10,8 @@ import SwiftUI
 struct EmailView: View {
     @State var email = ""
     
-     var userCanContinue: Bool {
-        if email.isValidEmail() {
-            return true
-        } else {
-            return false
-        }
+     var formIsValid: Bool {
+         return email.isValidEmail()
     }
     var body: some View {
         
@@ -44,7 +40,6 @@ struct EmailView: View {
                     VStack(spacing: 10) {
                         TextField("Enter email", text: $email)
                         
-                        
                         Divider()
                             .frame(height: 1)
                             .opacity(0.5)
@@ -58,14 +53,14 @@ struct EmailView: View {
                     Text("Password View")
                 } label: {
                     Text("Next")
-                        .foregroundStyle(userCanContinue ?  Color(.white) : Color(.black).opacity(0.5))
+                        .foregroundStyle(formIsValid ?  Color(.white) : Color(.black).opacity(0.5))
                         .bold()
                         .font(.title3)
                         .frame(width: 320, height: 50)
-                        .background(userCanContinue ?  Color(.primaryPink) : Color(.systemGray5))
+                        .background(formIsValid ?  Color(.primaryPink) : Color(.systemGray5))
                         .clipShape(Capsule())
                 }
-                .disabled(!userCanContinue)
+                .disabled(!formIsValid)
             }
             .navigationBarBackButtonHidden()
             .padding(.horizontal, 20)

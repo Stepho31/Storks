@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PasswordView: View {
     @EnvironmentObject var authManager: AuthManager
-    @State var password = ""
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     @State var isSecure = true
     @State var showAlert = false
     
@@ -27,10 +28,10 @@ struct PasswordView: View {
                 VStack(spacing: 10) {
                     HStack {
                         if isSecure {
-                            SecureField("Enter password", text: $password)
+                            SecureField("Enter password", text: $authViewModel.password)
                                 .foregroundStyle(.white)
                         } else {
-                            TextField("Enter password", text: $password)
+                            TextField("Enter password", text: $authViewModel.password)
                         }
                         
                         Image(systemName: isSecure ? "eye.slash" : "eye")
@@ -46,7 +47,7 @@ struct PasswordView: View {
             Spacer()
             
             Button {
-                
+                onNext()
             } label: {
                 Text("Next")
                     .foregroundStyle(formIsValid ? .white : .black.opacity(0.5))
@@ -73,11 +74,20 @@ struct PasswordView: View {
         .padding()
         .background(.black)
     }
+    
+    private func onNext() {
+        Task {
+            await authManager.authenticate(
+                withEmail: authViewModel.email,
+                password: authViewModel.password
+            )
+        }
+    }
 }
 
 extension PasswordView: FormValidatorProtocol {
     var formIsValid: Bool {
-        return password.count >= 6
+        return authViewModel.password.count >= 6
     }
 }
 

@@ -21,6 +21,7 @@ struct AuthenticationRootView: View {
         .fullScreenCover(item: $authManager.authType, content: { _ in
             EmailView()
                 .environmentObject(authManager)
+                .environmentObject(AuthViewModel())
         })
         .preferredColorScheme(.dark)
     }

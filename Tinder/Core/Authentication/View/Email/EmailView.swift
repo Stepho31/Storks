@@ -10,7 +10,11 @@ import SwiftUI
 struct EmailView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var authManager: AuthManager
-    @State var email = ""
+    @EnvironmentObject var viewModel: AuthViewModel
+    
+    private var email: String {
+        return viewModel.email
+    }
         
     var body: some View {
         NavigationStack {
@@ -26,7 +30,7 @@ struct EmailView: View {
                         .foregroundStyle(.gray)
                     
                     VStack(spacing: 8) {
-                        TextField("Enter email", text: $email)
+                        TextField("Enter email", text: $viewModel.email)
                             .textInputAutocapitalization(.never)
                             .keyboardType(.emailAddress)
                             .foregroundStyle(.white)

@@ -99,6 +99,7 @@
 		2BACD4AC2A82FE8100452A2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */; };
 		2BEE1B862B65D7A0009627D9 /* AuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */; };
 		2BEE1B9B2B66F5D3009627D9 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */; };
+		2BEE1B9D2B66FCD1009627D9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B9C2B66FCD1009627D9 /* AuthViewModel.swift */; };
 		CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */; };
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
@@ -196,6 +197,7 @@
 		2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationType.swift; sourceTree = "<group>"; };
 		2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		2BEE1B9C2B66FCD1009627D9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTopView.swift; sourceTree = "<group>"; };
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
@@ -784,6 +786,7 @@
 				2B4C7EBE2B41EA5600765971 /* Protocols */,
 				2BACD48A2A82FBDB00452A2D /* Service */,
 				2BACD4882A82FBD500452A2D /* View */,
+				2BEE1B9E2B66FF22009627D9 /* ViewModel */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -926,6 +929,14 @@
 				2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		2BEE1B9E2B66FF22009627D9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1B9C2B66FCD1009627D9 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CA18AD0A2B6416E10096AA0C /* Email */ = {
@@ -1108,6 +1119,7 @@
 				2BEE1B862B65D7A0009627D9 /* AuthenticationType.swift in Sources */,
 				2B4C7F642B5182C400765971 /* InboxView.swift in Sources */,
 				2B4C803A2B58DC6B00765971 /* SwipeAction.swift in Sources */,
+				2BEE1B9D2B66FCD1009627D9 /* AuthViewModel.swift in Sources */,
 				2B6618322B5E23C400236B43 /* MockChatService.swift in Sources */,
 				2B4C7EDF2B44AA0800765971 /* RelationshipGoalsType.swift in Sources */,
 				2B4C7ED52B44A0FB00765971 /* EditProfileView.swift in Sources */,

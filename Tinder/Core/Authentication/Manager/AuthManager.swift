@@ -19,14 +19,18 @@ class AuthManager: ObservableObject {
 //        self.userSessionId = NSUUID().uuidString
     }
     
-    func authenticate(withEmail email: String, password: String) async throws {
+    func authenticate(withEmail email: String, password: String) async {
         guard let authType else { return }
         
-        switch authType {
-        case .createAccount:
-            try await createUser(withEmail: email, password: password)
-        case .login:
-            try await login(withEmail: email, password: password)
+        do {
+            switch authType {
+            case .createAccount:
+                try await createUser(withEmail: email, password: password)
+            case .login:
+                try await login(withEmail: email, password: password)
+            }
+        } catch {
+            print("DEBUG: Failed to auth with error: \(error)")
         }
     }
     

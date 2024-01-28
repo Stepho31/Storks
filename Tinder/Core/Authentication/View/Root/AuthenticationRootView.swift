@@ -8,30 +8,29 @@
 import SwiftUI
 
 struct AuthenticationRootView: View {
-    var body: some View {
-        
-        ZStack {
-            gradient()
-            VStack {
-                AuthenticationTopView()
-                
-                Spacer()
-                
-                AuthenticationBottomView()
-            }
-            .padding(.vertical, 50)
-        }
-        .ignoresSafeArea()
-    }
+    @State private var authType: AuthenticationType?
+    @EnvironmentObject var authManager: AuthManager
     
-    func gradient() -> LinearGradient {
-        return LinearGradient(stops: [
-            Gradient.Stop(color: Color(.primaryPink), location: 0.1),
-            Gradient.Stop(color: Color(.secondaryPink), location: 0.55),
-        ], startPoint: .topTrailing, endPoint: .bottomLeading)
+    var body: some View {
+        VStack {
+            AuthenticationTopView()
+            
+            Spacer()
+            
+            AuthenticationBottomView(authType: $authType)
+        }
+        .onChange(of: authType, perform: { value in
+            authManager.authType = value
+        })
+        .sheet(item: $authType, content: { _ in
+            EmailView()
+                .environmentObject(authManager)
+        })
+        .preferredColorScheme(.dark)
     }
 }
 
 #Preview {
     AuthenticationRootView()
+        .environmentObject(AuthManager(service: MockAuthService()))
 }

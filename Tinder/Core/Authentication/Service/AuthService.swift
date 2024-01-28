@@ -18,21 +18,14 @@ struct AuthService: AuthServiceProtocol {
         }
     }
     
-    func createUser(withEmail email: String, password: String, fullname: String, age: Int) async throws -> String? {
+    func createUser(withEmail email: String, password: String) async throws -> String? {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            try await uploadUserData(email: email, fullname: fullname, age: age, id: result.user.uid)
             return result.user.uid
         } catch {
             print("DEBUG: Failed to login with error \(error.localizedDescription)")
             throw error
         }
-    }
-    
-    private func uploadUserData(email: String, fullname: String, age: Int, id: String) async throws {
-//        let user = User(id: id, fullname: fullname, email: email, age: age, profileImageURLs: [])
-//        guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
-//        try await FirestoreConstants.UserCollection.document(id).setData(encodedUser)
     }
     
     func signOut() {

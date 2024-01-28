@@ -7,18 +7,15 @@
 
 import Foundation
 
-import Foundation
-
-class MockAuthService: AuthServiceProtocol {
+struct MockAuthService: AuthServiceProtocol {
 
     func login(withEmail email: String, password: String) async throws -> String? {
         return NSUUID().uuidString
     }
     
-    func createUser(withEmail email: String, password: String, fullname: String, age: Int) async throws -> String? {
+    func createUser(withEmail email: String, password: String) async throws -> String? {
         return NSUUID().uuidString
     }
     
-    func signOut() {
-    }
+    func signOut() {}
 }

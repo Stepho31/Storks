@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct AuthenticationBottomView: View {
-
+    @Binding var authType: AuthenticationType?
+    
     var body: some View {
-        
         VStack(alignment: .center, spacing: 20) {
             Text("By tapping 'Sign in' you agree to our Terms, Learn how we process your data in our Privacy Policy and Cookies Policy")
                 .multilineTextAlignment(.center)
@@ -18,27 +18,27 @@ struct AuthenticationBottomView: View {
                 .foregroundColor(.white)
             
             Button(action: {
-                
+                authType = .createAccount
             }, label: {
                 Text("Create Account")
                     .font(.headline)
                     .foregroundColor(.black).opacity(0.6)
+                    .frame(width: 340, height: 50)
             })
-            .frame(width: 340, height: 50)
-            .background()
-            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+            .background(.primary)
+            .clipShape(Capsule())
             
             Button(action: {
-                
+                authType = .login
             }, label: {
                 Text("Sign In")
                     .font(.headline)
                     .foregroundColor(.white)
+                    .frame(width: 340, height: 50)
             })
-            .frame(width: 340, height: 50)
             .overlay(
                 RoundedRectangle(cornerRadius: 25)
-                    .stroke(Color.white, lineWidth: 1.5)
+                    .stroke(.white, lineWidth: 1.5)
             )
             
             Button(action: {}, label: {
@@ -53,5 +53,5 @@ struct AuthenticationBottomView: View {
 
 
 #Preview {
-    AuthenticationBottomView()
+    AuthenticationBottomView(authType: .constant(.login))
 }

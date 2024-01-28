@@ -18,7 +18,7 @@ struct AuthenticationRootView: View {
             
             AuthenticationBottomView(authType: $authManager.authType)
         }
-        .sheet(item: $authManager.authType, content: { _ in
+        .fullScreenCover(item: $authManager.authType, content: { _ in
             EmailView()
                 .environmentObject(authManager)
         })

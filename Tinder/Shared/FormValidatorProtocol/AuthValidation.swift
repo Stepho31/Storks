@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FormisValid {
+protocol FormValidatorProtocol {
     
     var formIsValid: Bool { get }
 }

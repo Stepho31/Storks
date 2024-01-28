@@ -16,17 +16,9 @@ struct EmailView: View {
     var body: some View {
         
         NavigationStack {
-            VStack(spacing: 0) {
-                HStack {
-                    Button(action: {}, label: {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.gray)
-                            .opacity(0.6)
-                    })
-                    Spacer()
-                }
+            VStack(alignment: .leading, spacing: 0) {
+                
+                    BackButton()
                 
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Your email?")
@@ -67,6 +59,10 @@ struct EmailView: View {
             .padding(.vertical, 20)
         }
     }
+}
+
+extension EmailView: FormValidatorProtocol {
+    
 }
 
 #Preview {

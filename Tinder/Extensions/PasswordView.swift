@@ -7,32 +7,25 @@
 
 import SwiftUI
 
-struct PasswordView: View, FormisValid {
+struct PasswordView: View {
     
     @State var password = ""
     @State var isSecure = true
     @State var isValid = false
     
     var formIsValid: Bool {
-        get {
-            return password.isValidPassword(password: password)
+        if password.count >= 6 {
+            return true
+        } else {
+            return false
         }
     }
     
     var body: some View {
         
-        NavigationStack {
-            VStack(spacing: 0) {
-                HStack {
-                    Button(action: {}, label: {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.gray)
-                            .opacity(0.6)
-                    })
-                    Spacer()
-                }
+        VStack(alignment: .leading, spacing: 0) {
+        
+                    BackButton()
                 
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Your password?")
@@ -86,19 +79,20 @@ struct PasswordView: View, FormisValid {
                         isValid = false
                     }
                 }
+                .alert("Password must be six characters", isPresented: $isValid) {
+                        Button("OK", role: .cancel) {}
+                }
             }
+        
             .navigationBarBackButtonHidden()
             .padding(.horizontal, 20)
             .padding(.vertical, 20)
         }
-        .alert("Password must be six characters", isPresented: $isValid) {
-            Button(action: {
-                
-            }, label: {
-                Button("OK", role: .cancel) {}
-            })
-        }
     }
+
+
+extension PasswordView: FormValidatorProtocol {
+    
 }
 
 #Preview {

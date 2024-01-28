@@ -38,7 +38,7 @@ struct EmailView: View {
                 Spacer()
                 
                 NavigationLink {
-                    Text("Password View")
+                    PasswordView()
                 } label: {
                     Text("Next")
                         .foregroundStyle(formIsValid ? .white : .black.opacity(0.5))

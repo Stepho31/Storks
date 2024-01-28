@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PasswordView: View {
+    @EnvironmentObject var authManager: AuthManager
     @State var password = ""
     @State var isSecure = true
     @State var showAlert = false
@@ -73,7 +74,6 @@ struct PasswordView: View {
         .background(.black)
     }
 }
-
 
 extension PasswordView: FormValidatorProtocol {
     var formIsValid: Bool {

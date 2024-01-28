@@ -703,13 +703,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		2BA9A5102B633A24000C3AA4 /* Password */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Password;
-			sourceTree = "<group>";
-		};
 		2BACD45E2A82BEC200452A2D = {
 			isa = PBXGroup;
 			children = (
@@ -857,7 +850,6 @@
 			isa = PBXGroup;
 			children = (
 				CA18AD0A2B6416E10096AA0C /* Email */,
-				2BA9A5102B633A24000C3AA4 /* Password */,
 				2BA9A50D2B6339D0000C3AA4 /* PasswordReset */,
 				2BA9A50C2B6339B7000C3AA4 /* Root */,
 			);

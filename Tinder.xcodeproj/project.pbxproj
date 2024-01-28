@@ -98,11 +98,11 @@
 		2BACD4AA2A82FDEF00452A2D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A92A82FDEF00452A2D /* Color.swift */; };
 		2BACD4AC2A82FE8100452A2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */; };
 		2BEE1B862B65D7A0009627D9 /* AuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */; };
+		2BEE1B9B2B66F5D3009627D9 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */; };
 		CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */; };
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
 		CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0E2B641A180096AA0C /* String+Email.swift */; };
-		CA18AD132B65ABF90096AA0C /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD122B65ABF90096AA0C /* PasswordView.swift */; };
 		CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD172B65B8920096AA0C /* AuthValidation.swift */; };
 		CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD1A2B66DAA90096AA0C /* BackButton.swift */; };
 /* End PBXBuildFile section */
@@ -195,11 +195,11 @@
 		2BACD4A92A82FDEF00452A2D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationType.swift; sourceTree = "<group>"; };
+		2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTopView.swift; sourceTree = "<group>"; };
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		CA18AD0E2B641A180096AA0C /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
-		CA18AD122B65ABF90096AA0C /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordView.swift; path = Tinder/Core/Authentication/View/Password/PasswordView.swift; sourceTree = SOURCE_ROOT; };
 		CA18AD172B65B8920096AA0C /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
 		CA18AD1A2B66DAA90096AA0C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -858,6 +858,7 @@
 			isa = PBXGroup;
 			children = (
 				CA18AD0A2B6416E10096AA0C /* Email */,
+				2BEE1B972B66F5A1009627D9 /* Password */,
 				2BA9A50D2B6339D0000C3AA4 /* PasswordReset */,
 				2BA9A50C2B6339B7000C3AA4 /* Root */,
 			);
@@ -919,6 +920,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2BEE1B972B66F5A1009627D9 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
 		CA18AD0A2B6416E10096AA0C /* Email */ = {
 			isa = PBXGroup;
 			children = (
@@ -949,14 +958,6 @@
 				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
 			);
 			path = BackButton;
-			sourceTree = "<group>";
-		};
-		CA18AD1C2B66EBBA0096AA0C /* Password */ = {
-			isa = PBXGroup;
-			children = (
-				CA18AD122B65ABF90096AA0C /* PasswordView.swift */,
-			);
-			path = Password;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1096,7 +1097,7 @@
 				2B4C804E2B598C0400765971 /* CardImageView.swift in Sources */,
 				2B6618232B5DEACF00236B43 /* MockMatchService.swift in Sources */,
 				2BACD4842A82C14600452A2D /* MainTabView.swift in Sources */,
-				CA18AD132B65ABF90096AA0C /* PasswordView.swift in Sources */,
+				2BEE1B9B2B66F5D3009627D9 /* PasswordView.swift in Sources */,
 				CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */,
 				2B66181E2B5DEA9800236B43 /* MatchManager.swift in Sources */,
 				2B4C7F7D2B51B61D00765971 /* GenderType.swift in Sources */,

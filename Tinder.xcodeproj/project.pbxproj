@@ -202,7 +202,7 @@
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		CA18AD0E2B641A180096AA0C /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
-		CA18AD122B65ABF90096AA0C /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordView.swift; path = Tinder/Extensions/PasswordView.swift; sourceTree = SOURCE_ROOT; };
+		CA18AD122B65ABF90096AA0C /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordView.swift; path = Tinder/Core/Authentication/View/Password/PasswordView.swift; sourceTree = SOURCE_ROOT; };
 		CA18AD142B65ADE80096AA0C /* String+Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Password.swift"; sourceTree = "<group>"; };
 		CA18AD172B65B8920096AA0C /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
 		CA18AD1A2B66DAA90096AA0C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -715,14 +715,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		2BA9A5102B633A24000C3AA4 /* Password */ = {
-			isa = PBXGroup;
-			children = (
-				CA18AD122B65ABF90096AA0C /* PasswordView.swift */,
-			);
-			path = Password;
-			sourceTree = "<group>";
-		};
 		2BA9A5112B633A2E000C3AA4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,7 +871,7 @@
 			children = (
 				CA18AD0A2B6416E10096AA0C /* Email */,
 				2BA9A5112B633A2E000C3AA4 /* Login */,
-				2BA9A5102B633A24000C3AA4 /* Password */,
+				CA18AD1C2B66EBBA0096AA0C /* Password */,
 				2BA9A50D2B6339D0000C3AA4 /* PasswordReset */,
 				2BA9A50C2B6339B7000C3AA4 /* Root */,
 			);
@@ -972,6 +964,14 @@
 				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
 			);
 			path = BackButton;
+			sourceTree = "<group>";
+		};
+		CA18AD1C2B66EBBA0096AA0C /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD122B65ABF90096AA0C /* PasswordView.swift */,
+			);
+			path = Password;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

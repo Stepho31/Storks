@@ -27,6 +27,7 @@ struct EmailView: View {
                     
                     VStack(spacing: 8) {
                         TextField("Enter email", text: $email)
+                            .textInputAutocapitalization(.never)
                             .keyboardType(.emailAddress)
                             .foregroundStyle(.white)
                         

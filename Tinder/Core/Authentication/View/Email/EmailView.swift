@@ -52,15 +52,7 @@ struct EmailView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.gray)
-                            .opacity(0.6)
-                    }
+                    BackButton()
                 }
             }
             .navigationBarBackButtonHidden()

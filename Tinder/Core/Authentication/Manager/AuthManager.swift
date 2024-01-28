@@ -10,9 +10,9 @@ import Foundation
 @MainActor
 class AuthManager: ObservableObject {
     @Published var userSessionId: String?
+    @Published var authType: AuthenticationType?
     
     private let service: AuthServiceProtocol
-    var authType: AuthenticationType?
     
     init(service: AuthServiceProtocol) {
         self.service = service

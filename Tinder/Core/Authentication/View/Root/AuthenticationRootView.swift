@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AuthenticationRootView: View {
-    @State private var authType: AuthenticationType?
     @EnvironmentObject var authManager: AuthManager
     
     var body: some View {
@@ -17,12 +16,9 @@ struct AuthenticationRootView: View {
             
             Spacer()
             
-            AuthenticationBottomView(authType: $authType)
+            AuthenticationBottomView(authType: $authManager.authType)
         }
-        .onChange(of: authType, perform: { value in
-            authManager.authType = value
-        })
-        .sheet(item: $authType, content: { _ in
+        .sheet(item: $authManager.authType, content: { _ in
             EmailView()
                 .environmentObject(authManager)
         })

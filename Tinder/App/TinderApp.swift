@@ -30,6 +30,7 @@ struct TinderApp: App {
                 .environmentObject(userManager)
                 .environmentObject(authmanager)
                 .environmentObject(matchManager)
+                .preferredColorScheme(.dark)
         }
     }
 }

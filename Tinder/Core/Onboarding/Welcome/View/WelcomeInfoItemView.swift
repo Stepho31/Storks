@@ -15,10 +15,10 @@ struct WelcomeInfoItemView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)
                 .fontWeight(.semibold)
+                .foregroundStyle(.white)
             
             Text(subtitle)
                 .foregroundStyle(.gray)
-                
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .font(.subheadline)

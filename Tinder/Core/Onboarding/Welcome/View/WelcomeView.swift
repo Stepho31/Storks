@@ -16,9 +16,10 @@ struct WelcomeView: View {
                     .scaledToFill()
                     .frame(width: 40, height: 40)
                 
-                Text("Welcome to Tinder.")
+                Text("Welcome to Aurora.")
                     .font(.title)
                     .fontWeight(.bold)
+                    .foregroundStyle(.white)
                 
                 Text("Please follow these House Rules.")
                     .font(.footnote)
@@ -45,6 +46,7 @@ struct WelcomeView: View {
 
         }
         .padding()
+        .background(.black)
     }
 }
 

@@ -8,44 +8,32 @@
 import SwiftUI
 
 struct EmailView: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var authManager: AuthManager
     @State var email = ""
-    
-     var formIsValid: Bool {
-         return email.isValidEmail()
-    }
-    var body: some View {
         
+    var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                HStack {
-                    Button(action: {}, label: {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .fontWeight(.heavy)
-                            .foregroundStyle(.gray)
-                            .opacity(0.6)
-                    })
-                    Spacer()
-                }
-                
+            VStack {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Your email?")
+                        .foregroundStyle(.white)
                         .bold()
                         .font(.title)
                     
-                    Text("Don't lose access to your account, add your email.")
+                    Text(subtitle)
                         .font(.subheadline)
                         .foregroundStyle(.gray)
                     
-                    VStack(spacing: 10) {
+                    VStack(spacing: 8) {
                         TextField("Enter email", text: $email)
+                            .keyboardType(.emailAddress)
+                            .foregroundStyle(.white)
                         
                         Divider()
-                            .frame(height: 1)
-                            .opacity(0.5)
                     }
                 }
-                .padding(.horizontal, 28)
+                .padding(.horizontal)
                 
                 Spacer()
                 
@@ -53,19 +41,52 @@ struct EmailView: View {
                     Text("Password View")
                 } label: {
                     Text("Next")
-                        .foregroundStyle(formIsValid ?  Color(.white) : Color(.black).opacity(0.5))
+                        .foregroundStyle(formIsValid ? .white : .black.opacity(0.5))
                         .bold()
                         .font(.title3)
                         .frame(width: 320, height: 50)
-                        .background(formIsValid ?  Color(.primaryPink) : Color(.systemGray5))
+                        .background(formIsValid ? Color(.primaryPink) : Color(.systemGray5))
                         .clipShape(Capsule())
                 }
                 .disabled(!formIsValid)
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .fontWeight(.heavy)
+                            .foregroundStyle(.gray)
+                            .opacity(0.6)
+                    }
+                }
+            }
             .navigationBarBackButtonHidden()
-            .padding(.horizontal, 20)
-            .padding(.vertical, 20)
+            .padding()
+            .background(.black)
         }
+    }
+}
+
+private extension EmailView {
+    var subtitle: String {
+        guard let authType = authManager.authType else { return "" }
+        
+        switch authType {
+        case .createAccount:
+            return "Don't lose access to your account, add your email."
+        case .login:
+            return "Enter the email associated with your account to log back in"
+        }
+    }
+}
+
+private extension EmailView {
+    var formIsValid: Bool {
+        return email.isValidEmail() &&
+        email.contains("bath.ac.uk")
     }
 }
 

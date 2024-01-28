@@ -102,6 +102,9 @@
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
 		CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0E2B641A180096AA0C /* String+Email.swift */; };
+		CA18AD132B65ABF90096AA0C /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD122B65ABF90096AA0C /* PasswordView.swift */; };
+		CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD172B65B8920096AA0C /* AuthValidation.swift */; };
+		CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD1A2B66DAA90096AA0C /* BackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,6 +199,9 @@
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		CA18AD0E2B641A180096AA0C /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
+		CA18AD122B65ABF90096AA0C /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordView.swift; path = Tinder/Core/Authentication/View/Password/PasswordView.swift; sourceTree = SOURCE_ROOT; };
+		CA18AD172B65B8920096AA0C /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
+		CA18AD1A2B66DAA90096AA0C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +299,7 @@
 		2B4C7F4F2B50C66600765971 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CA18AD192B66DA8F0096AA0C /* BackButton */,
 				2B4C7F552B50C6C500765971 /* Avatar */,
 				2B6618182B5DE89100236B43 /* NavigationBar */,
 			);
@@ -383,6 +390,7 @@
 		2B4C7FB52B5301CF00765971 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CA18AD162B65B8670096AA0C /* FormValidatorProtocol */,
 				2B4C7FB62B5301D900765971 /* User */,
 			);
 			path = Shared;
@@ -927,6 +935,30 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		CA18AD162B65B8670096AA0C /* FormValidatorProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD172B65B8920096AA0C /* AuthValidation.swift */,
+			);
+			path = FormValidatorProtocol;
+			sourceTree = "<group>";
+		};
+		CA18AD192B66DA8F0096AA0C /* BackButton */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
+			);
+			path = BackButton;
+			sourceTree = "<group>";
+		};
+		CA18AD1C2B66EBBA0096AA0C /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD122B65ABF90096AA0C /* PasswordView.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1044,6 +1076,7 @@
 				2B4C7F592B50C6E000765971 /* ProfileImageSize.swift in Sources */,
 				2B4C804C2B598A4B00765971 /* SwipeActionIndicatorView.swift in Sources */,
 				2B6618212B5DEAC600236B43 /* MatchService.swift in Sources */,
+				CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */,
 				2B4C7F4E2B50C62B00765971 /* ChatBubble.swift in Sources */,
 				2BACD4A12A82FD3100452A2D /* TinderButtonModifier.swift in Sources */,
 				2B6618342B5E2B3300236B43 /* NewMatchItemView.swift in Sources */,
@@ -1063,11 +1096,13 @@
 				2B4C804E2B598C0400765971 /* CardImageView.swift in Sources */,
 				2B6618232B5DEACF00236B43 /* MockMatchService.swift in Sources */,
 				2BACD4842A82C14600452A2D /* MainTabView.swift in Sources */,
+				CA18AD132B65ABF90096AA0C /* PasswordView.swift in Sources */,
 				CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */,
 				2B66181E2B5DEA9800236B43 /* MatchManager.swift in Sources */,
 				2B4C7F7D2B51B61D00765971 /* GenderType.swift in Sources */,
 				2BACD49F2A82FD0000452A2D /* TinderTextFieldModifier.swift in Sources */,
 				2B4C7F832B51B98E00765971 /* SexualOrientationType.swift in Sources */,
+				CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */,
 				2B4C7ED32B449D0C00765971 /* CurrentUserProfileView.swift in Sources */,
 				2BEE1B862B65D7A0009627D9 /* AuthenticationType.swift in Sources */,
 				2B4C7F642B5182C400765971 /* InboxView.swift in Sources */,

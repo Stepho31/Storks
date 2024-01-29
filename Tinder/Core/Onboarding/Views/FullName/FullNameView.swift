@@ -8,38 +8,53 @@
 import SwiftUI
 
 struct FullNameView: View {
+    @EnvironmentObject var onboardingManager: OnboardingManager
     @State var fullName: String = ""
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("What's your full name?")
-                .font(.title)
-                .bold()
-            
-            VStack(alignment: .leading) {
-                TextField("Enter Full Name", text: $fullName)
-                
-                Divider()
+        VStack {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("What's your full name?")
+                    .font(.title)
+                    .bold()
                 
                 VStack(alignment: .leading) {
-                    Text("This is how it'll appear in your profile.")
-                        .font(.footnote)
-                        .opacity(0.6)
+                    TextField("Enter Full Name", text: $fullName)
                     
-                    Text("Can't change it later.")
-                        .font(.footnote)
-                        .bold()
+                    Divider()
+                    
+                    VStack(alignment: .leading) {
+                        Text("This is how it'll appear in your profile.")
+                            .font(.footnote)
+                            .opacity(0.6)
+                        
+                        Text("Can't change it later.")
+                            .font(.footnote)
+                            .bold()
+                    }
+                    .padding(.vertical, 6)
                 }
-                .padding(.vertical, 6)
+                
+                Spacer()
             }
             
-            Spacer()
+            Button {
+                onboardingManager.navigate()
+            } label: {
+                Text("Next")
+                    .foregroundStyle(.white)
+                    .bold()
+                    .font(.title3)
+                    .frame(width: 320, height: 50)
+                    .background(Color(.primaryPink))
+                    .clipShape(Capsule())
+            }
         }
         .padding()
         .foregroundStyle(.white)
         .background(.black)
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) 
+            ToolbarItem(placement: .topBarLeading)
             { BackButton() }
         }
     }

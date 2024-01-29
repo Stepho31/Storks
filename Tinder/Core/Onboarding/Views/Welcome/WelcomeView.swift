@@ -53,12 +53,15 @@ struct WelcomeView: View {
             })
             .navigationDestination(for: OnboardingSteps.self, destination: { step in
                 VStack {
-                    Text(String(step.rawValue))
-                    
-                    Button("Next") {
-                        manager.navigate()
+                    switch step {
+                    case .name:
+                        FullNameView()
+                    default:
+                        Text("Hello")
                     }
                 }
+                .environmentObject(manager)
+                .navigationBarBackButtonHidden()
             })
             .padding()
             .background(.black)

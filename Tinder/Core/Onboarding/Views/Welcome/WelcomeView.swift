@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct WelcomeView: View {    
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 24) {
             VStack(alignment: .leading, spacing: 8) {
                 Image(.tinderAppIcon)
                     .resizable()

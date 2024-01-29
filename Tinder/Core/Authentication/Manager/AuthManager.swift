@@ -17,7 +17,7 @@ class AuthManager: ObservableObject {
     init(service: AuthServiceProtocol) {
         self.service = service
 
-        self.authState = .authenticated(uid: NSUUID().uuidString)
+//        self.authState = .authenticated(uid: NSUUID().uuidString)
     }
     
     func authenticate(withEmail email: String, password: String) async {

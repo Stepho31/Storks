@@ -6,12 +6,14 @@
 //
 
 import Firebase
+import SwiftUI
 
 class UserManager: ObservableObject {
     
     // MARK: - Properties
     
     @Published var currentUser: User?
+    @Published var didCompleteOnboarding = false
     
     private let service: UserServiceProtocol
     
@@ -21,7 +23,6 @@ class UserManager: ObservableObject {
     }
     
     // MARK: - Lifecycle
-    
     
     init(service: UserServiceProtocol) {
         self.service = service

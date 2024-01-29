@@ -109,7 +109,7 @@
 		CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0E2B641A180096AA0C /* String+Email.swift */; };
 		CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD172B65B8920096AA0C /* AuthValidation.swift */; };
 		CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD1A2B66DAA90096AA0C /* BackButton.swift */; };
-		CA7831D22B6825E500F28D53 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7831D12B6825E500F28D53 /* Name.swift */; };
+		CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7831D12B6825E500F28D53 /* FullNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,7 +211,7 @@
 		CA18AD0E2B641A180096AA0C /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		CA18AD172B65B8920096AA0C /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
 		CA18AD1A2B66DAA90096AA0C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		CA7831D12B6825E500F28D53 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		CA7831D12B6825E500F28D53 /* FullNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -961,8 +961,8 @@
 		2BEE1BC72B672560009627D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CA7831D32B682D8500F28D53 /* FullName */,
 				2BA9A4AA2B603291000C3AA4 /* Welcome */,
-				CA7831D12B6825E500F28D53 /* Name.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -997,6 +997,14 @@
 				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
 			);
 			path = BackButton;
+			sourceTree = "<group>";
+		};
+		CA7831D32B682D8500F28D53 /* FullName */ = {
+			isa = PBXGroup;
+			children = (
+				CA7831D12B6825E500F28D53 /* FullNameView.swift */,
+			);
+			path = FullName;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1145,7 +1153,7 @@
 				2BACD49F2A82FD0000452A2D /* TinderTextFieldModifier.swift in Sources */,
 				2B4C7F832B51B98E00765971 /* SexualOrientationType.swift in Sources */,
 				CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */,
-				CA7831D22B6825E500F28D53 /* Name.swift in Sources */,
+				CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */,
 				2B4C7ED32B449D0C00765971 /* CurrentUserProfileView.swift in Sources */,
 				2BEE1B862B65D7A0009627D9 /* AuthenticationType.swift in Sources */,
 				2B4C7F642B5182C400765971 /* InboxView.swift in Sources */,

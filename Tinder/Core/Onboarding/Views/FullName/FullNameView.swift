@@ -9,9 +9,9 @@ import SwiftUI
 
 struct FullNameView: View {
     @State var fullName: String = ""
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            
             Text("What's your full name?")
                 .font(.title)
                 .bold()

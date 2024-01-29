@@ -102,6 +102,7 @@
 		2BEE1B9D2B66FCD1009627D9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B9C2B66FCD1009627D9 /* AuthViewModel.swift */; };
 		2BEE1BA12B6718EA009627D9 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BA02B6718EA009627D9 /* OnboardingSteps.swift */; };
 		2BEE1BC62B672384009627D9 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BC52B672384009627D9 /* OnboardingManager.swift */; };
+		2BEE1BC92B67EA5F009627D9 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BC82B67EA5F009627D9 /* AuthState.swift */; };
 		CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */; };
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
@@ -202,6 +203,7 @@
 		2BEE1B9C2B66FCD1009627D9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2BEE1BA02B6718EA009627D9 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
 		2BEE1BC52B672384009627D9 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
+		2BEE1BC82B67EA5F009627D9 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTopView.swift; sourceTree = "<group>"; };
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4C7EBC2B41EA3200765971 /* AuthManager.swift */,
+				2BEE1BC82B67EA5F009627D9 /* AuthState.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1146,6 +1149,7 @@
 				2BEE1B9D2B66FCD1009627D9 /* AuthViewModel.swift in Sources */,
 				2B6618322B5E23C400236B43 /* MockChatService.swift in Sources */,
 				2B4C7EDF2B44AA0800765971 /* RelationshipGoalsType.swift in Sources */,
+				2BEE1BC92B67EA5F009627D9 /* AuthState.swift in Sources */,
 				2B4C7ED52B44A0FB00765971 /* EditProfileView.swift in Sources */,
 				2B4C80432B58EE1500765971 /* CardModel.swift in Sources */,
 				CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */,

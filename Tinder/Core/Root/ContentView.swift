@@ -13,12 +13,13 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if authManager.userSessionId != nil {
+            switch authManager.authState {
+            case .unauthenticated:
+                AuthenticationRootView()
+            case .authenticated:
                 if userManager.currentUser != nil {
                     MainTabView()
                 }
-            } else {
-                AuthenticationRootView()
             }
         }
     }

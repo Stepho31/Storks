@@ -9,14 +9,15 @@ import Foundation
 
 @MainActor
 class AuthManager: ObservableObject {
-    @Published var userSessionId: String?
+    @Published var authState: AuthState = .unauthenticated
     @Published var authType: AuthenticationType?
     
     private let service: AuthServiceProtocol
     
     init(service: AuthServiceProtocol) {
         self.service = service
-//        self.userSessionId = NSUUID().uuidString
+
+        self.authState = .authenticated(uid: NSUUID().uuidString)
     }
     
     func authenticate(withEmail email: String, password: String) async {
@@ -35,15 +36,17 @@ class AuthManager: ObservableObject {
     }
     
     private func login(withEmail email: String, password: String) async throws {
-        self.userSessionId = try await service.login(withEmail: email, password: password)
+        guard let uid = try await service.login(withEmail: email, password: password) else { return }
+        self.authState = .authenticated(uid: uid)
     }
     
     private func createUser(withEmail email: String, password: String) async throws {
-        self.userSessionId = try await service.createUser(withEmail: email, password: password)
+        guard let uid = try await service.createUser(withEmail: email, password: password) else { return }
+        self.authState = .authenticated(uid: uid)
     }
     
     func signout() {
         service.signOut()
-        self.userSessionId = nil
+        self.authState = .unauthenticated
     }
 }

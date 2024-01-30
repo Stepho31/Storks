@@ -16,3 +16,7 @@ enum OnboardingSteps: Int, CaseIterable {
     case sexualOrientation
     case photos
 }
+
+extension OnboardingSteps: Identifiable, Hashable {
+    var id: Int { return self.rawValue }
+}

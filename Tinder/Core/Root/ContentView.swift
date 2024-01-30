@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var authManager: AuthManager
-    @EnvironmentObject var userManager: UserManager
+    @EnvironmentObject var userManager: UserManager    
     
     var body: some View {
         Group {
@@ -17,8 +17,12 @@ struct ContentView: View {
             case .unauthenticated:
                 AuthenticationRootView()
             case .authenticated:
-                if userManager.currentUser != nil {
-                    MainTabView()
+                if userManager.didCompleteOnboarding {
+                    if userManager.currentUser != nil {
+                        MainTabView()
+                    }
+                } else {
+                    WelcomeView(didCompleteOnboarding: $userManager.didCompleteOnboarding)
                 }
             }
         }

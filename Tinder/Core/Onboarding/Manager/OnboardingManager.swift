@@ -9,6 +9,7 @@ import Foundation
 
 class OnboardingManager: ObservableObject {
     @Published var navigationPath = [OnboardingSteps]()
+    @Published var didCompleteOnboarding = false
     private var currentStep: OnboardingSteps?
     
     func start() {
@@ -20,8 +21,8 @@ class OnboardingManager: ObservableObject {
         self.currentStep = navigationPath.last
         
         guard let index = currentStep?.rawValue else { return }
-        guard let nextStep = OnboardingSteps(rawValue: index) else {
-            print("DEBUG: Complete onboarding")
+        guard let nextStep = OnboardingSteps(rawValue: index + 1) else {
+            didCompleteOnboarding = true 
             return
         }
         

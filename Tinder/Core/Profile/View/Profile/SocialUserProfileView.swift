@@ -9,12 +9,7 @@ import SwiftUI
 
 struct SocialUserProfileView: View {
     let user: User
-    
-    private let items = [
-        GridItem(.flexible(), spacing: 1),
-        GridItem(.flexible(), spacing: 1),
-        GridItem(.flexible(), spacing: 1),
-    ]
+    private let items = Array(repeating: GridItem(.flexible(), spacing:1), count: 3)
     private let width = (UIScreen.main.bounds.width / 3) - 2
     
     var body: some View {
@@ -24,7 +19,6 @@ struct SocialUserProfileView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(height: 500)
-                    .clipShape(Rectangle())
                 
                 VStack(spacing: 4) {
                     VStack(alignment: .leading, spacing: 4) {
@@ -39,15 +33,12 @@ struct SocialUserProfileView: View {
                         
                         VStack(alignment: .leading, spacing: 16) {
                             Divider()
-                            
-                            if let bio = user.bio {
-                                Text(bio)
-                            }
-                            
+                            if let bio = user.bio { Text(bio) }
                             Divider()
                         }
                         .padding(.top)
                     }
+                    .font(.subheadline)
                     .padding()
 
                     LazyVGrid(columns: items, spacing: 2) {
@@ -61,13 +52,10 @@ struct SocialUserProfileView: View {
                             }
                         }
                     }
-                    .ignoresSafeArea()
                 }
-                .font(.subheadline)
-                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .toolbar(.hidden, for: .tabBar)
         }
+        .toolbar(.hidden, for: .tabBar)
         .scrollIndicators(.hidden)
         .ignoresSafeArea()
     }

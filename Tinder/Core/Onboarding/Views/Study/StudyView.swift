@@ -1,25 +1,24 @@
 //
-//  Name.swift
+//  StudyView.swift
 //  Tinder
 //
-//  Created by Brandon on 1/29/24.
+//  Created by Brandon on 1/30/24.
 //
 
 import SwiftUI
 
-struct FullNameView: View {
+struct StudyView: View {
     @EnvironmentObject var onboardingManager: OnboardingManager
-    @State var fullName: String = ""
-    
+    @State var study: String = ""
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 20) {
-                Text("What's your full name?")
+                Text("What's your study?")
                     .font(.title)
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    TextField("Enter Full Name", text: $fullName)
+                    TextField("Enter your study", text: $study)
                     
                     Divider()
                     
@@ -28,7 +27,7 @@ struct FullNameView: View {
                             .font(.footnote)
                             .opacity(0.6)
                         
-                        Text("Can't change it later.")
+                        Text("You can modify this later.")
                             .font(.footnote)
                             .bold()
                     }
@@ -61,8 +60,6 @@ struct FullNameView: View {
 }
 
 #Preview {
-    NavigationStack {
-        FullNameView()
-            .environmentObject(OnboardingManager())
-    }
+    StudyView()
+        .environmentObject(OnboardingManager())
 }

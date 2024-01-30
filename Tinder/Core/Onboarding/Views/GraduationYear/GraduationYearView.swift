@@ -1,25 +1,36 @@
 //
-//  Name.swift
+//  GraduationYearView.swift
 //  Tinder
 //
-//  Created by Brandon on 1/29/24.
+//  Created by Brandon on 1/30/24.
 //
 
 import SwiftUI
 
-struct FullNameView: View {
+struct GraduationYearView: View {
+    
     @EnvironmentObject var onboardingManager: OnboardingManager
-    @State var fullName: String = ""
+    @State var year: String = ""
+    var currentYear =  Calendar.current.component(.year, from: Date.now)
     
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 20) {
-                Text("What's your full name?")
+                Text("What's your graduation year?")
                     .font(.title)
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    TextField("Enter Full Name", text: $fullName)
+                    Menu(year.isEmpty ? "Graduation Year" : "\(year)") {
+                        ForEach(currentYear...endYear, id: \.self) { year in
+                            let year = year.formatted(.number.grouping(.never))
+                            Button(action: {
+                                self.year = String(year)
+                            }, label: {
+                                Text("\(year)")
+                            })
+                        }
+                    }
                     
                     Divider()
                     
@@ -28,7 +39,7 @@ struct FullNameView: View {
                             .font(.footnote)
                             .opacity(0.6)
                         
-                        Text("Can't change it later.")
+                        Text("You can modify this later.")
                             .font(.footnote)
                             .bold()
                     }
@@ -60,9 +71,14 @@ struct FullNameView: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        FullNameView()
-            .environmentObject(OnboardingManager())
+extension GraduationYearView {
+
+    var endYear: Int {
+        return currentYear + 4
     }
+}
+
+#Preview {
+    GraduationYearView()
+        .environmentObject(OnboardingManager())
 }

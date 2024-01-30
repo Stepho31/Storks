@@ -56,6 +56,10 @@ struct WelcomeView: View {
                     switch step {
                     case .name:
                         FullNameView()
+                    case .birthday:
+                        BirthdayView()
+                    case .study:
+                        StudyView()
                     default:
                         Text("Hello")
                     }

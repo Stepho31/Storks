@@ -109,6 +109,8 @@
 		CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0E2B641A180096AA0C /* String+Email.swift */; };
 		CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD172B65B8920096AA0C /* AuthValidation.swift */; };
 		CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD1A2B66DAA90096AA0C /* BackButton.swift */; };
+		CA27F8832B6954EE006797E8 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8822B6954EE006797E8 /* BirthdayView.swift */; };
+		CA27F8862B6969A7006797E8 /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8852B6969A7006797E8 /* StudyView.swift */; };
 		CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7831D12B6825E500F28D53 /* FullNameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -211,6 +213,8 @@
 		CA18AD0E2B641A180096AA0C /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		CA18AD172B65B8920096AA0C /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
 		CA18AD1A2B66DAA90096AA0C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		CA27F8822B6954EE006797E8 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
+		CA27F8852B6969A7006797E8 /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
 		CA7831D12B6825E500F28D53 /* FullNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -961,6 +965,8 @@
 		2BEE1BC72B672560009627D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CA27F8842B696996006797E8 /* Study */,
+				CA27F8812B6954DC006797E8 /* Birthday */,
 				CA7831D32B682D8500F28D53 /* FullName */,
 				2BA9A4AA2B603291000C3AA4 /* Welcome */,
 			);
@@ -997,6 +1003,22 @@
 				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
 			);
 			path = BackButton;
+			sourceTree = "<group>";
+		};
+		CA27F8812B6954DC006797E8 /* Birthday */ = {
+			isa = PBXGroup;
+			children = (
+				CA27F8822B6954EE006797E8 /* BirthdayView.swift */,
+			);
+			path = Birthday;
+			sourceTree = "<group>";
+		};
+		CA27F8842B696996006797E8 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				CA27F8852B6969A7006797E8 /* StudyView.swift */,
+			);
+			path = Study;
 			sourceTree = "<group>";
 		};
 		CA7831D32B682D8500F28D53 /* FullName */ = {
@@ -1147,11 +1169,13 @@
 				2B6618232B5DEACF00236B43 /* MockMatchService.swift in Sources */,
 				2BACD4842A82C14600452A2D /* MainTabView.swift in Sources */,
 				2BEE1B9B2B66F5D3009627D9 /* PasswordView.swift in Sources */,
+				CA27F8862B6969A7006797E8 /* StudyView.swift in Sources */,
 				CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */,
 				2B66181E2B5DEA9800236B43 /* MatchManager.swift in Sources */,
 				2B4C7F7D2B51B61D00765971 /* GenderType.swift in Sources */,
 				2BACD49F2A82FD0000452A2D /* TinderTextFieldModifier.swift in Sources */,
 				2B4C7F832B51B98E00765971 /* SexualOrientationType.swift in Sources */,
+				CA27F8832B6954EE006797E8 /* BirthdayView.swift in Sources */,
 				CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */,
 				CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */,
 				2B4C7ED32B449D0C00765971 /* CurrentUserProfileView.swift in Sources */,

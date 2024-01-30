@@ -1,25 +1,26 @@
 //
-//  Name.swift
+//  BirthdayView.swift
 //  Tinder
 //
-//  Created by Brandon on 1/29/24.
+//  Created by Brandon on 1/30/24.
 //
 
 import SwiftUI
 
-struct FullNameView: View {
+struct BirthdayView: View {
+    
     @EnvironmentObject var onboardingManager: OnboardingManager
-    @State var fullName: String = ""
+    @State var selectedDate: Date = Date()
     
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 20) {
-                Text("What's your full name?")
+                Text("What's your birthday?")
                     .font(.title)
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    TextField("Enter Full Name", text: $fullName)
+                    DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
                     
                     Divider()
                     
@@ -34,21 +35,22 @@ struct FullNameView: View {
                     }
                     .padding(.vertical, 6)
                 }
+                .accentColor(.white)
+                .datePickerStyle(GraphicalDatePickerStyle())
                 
                 Spacer()
             }
-            
-            Button {
-                onboardingManager.navigate()
-            } label: {
-                Text("Next")
-                    .foregroundStyle(.white)
-                    .bold()
-                    .font(.title3)
-                    .frame(width: 320, height: 50)
-                    .background(Color(.primaryPink))
-                    .clipShape(Capsule())
-            }
+        }
+        Button {
+            onboardingManager.navigate()
+        } label: {
+            Text("Next")
+                .foregroundStyle(.white)
+                .bold()
+                .font(.title3)
+                .frame(width: 320, height: 50)
+                .background(Color(.primaryPink))
+                .clipShape(Capsule())
         }
         .padding()
         .foregroundStyle(.white)
@@ -61,8 +63,6 @@ struct FullNameView: View {
 }
 
 #Preview {
-    NavigationStack {
-        FullNameView()
-            .environmentObject(OnboardingManager())
-    }
+    BirthdayView()
+        .environmentObject(OnboardingManager())
 }

@@ -11,23 +11,21 @@ struct GraduationYearView: View {
     
     @EnvironmentObject var onboardingManager: OnboardingManager
     @State var year: String = ""
-    @State var selectedYear =  false
     var currentYear =  Calendar.current.component(.year, from: Date.now)
     
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 20) {
                 Text("What's your graduation year?")
-                    .font(.title2)
+                    .font(.title)
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    Menu(selectedYear ? year : "Graduation Year") {
+                    Menu(year.isEmpty ? "Graduation Year" : "\(year)") {
                         ForEach(currentYear...endYear, id: \.self) { year in
                             let year = year.formatted(.number.grouping(.never))
                             Button(action: {
                                 self.year = String(year)
-                                selectedYear = true
                             }, label: {
                                 Text("\(year)")
                             })
@@ -41,7 +39,7 @@ struct GraduationYearView: View {
                             .font(.footnote)
                             .opacity(0.6)
                         
-                        Text("Can't change it later.")
+                        Text("You can modify this later.")
                             .font(.footnote)
                             .bold()
                     }

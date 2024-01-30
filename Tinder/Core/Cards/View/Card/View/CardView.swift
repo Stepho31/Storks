@@ -101,7 +101,6 @@ private extension CardView {
     
     private func onReceiveSwipeAction(_ action: SwipeAction?) {
         guard let action else { return }
-        
         let topCard = viewModel.cardModels.last
         
         if topCard == cardModel {

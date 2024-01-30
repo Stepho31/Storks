@@ -53,10 +53,9 @@ struct UserProfileView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
-                    .background(.white)
+                    .background(Color(.secondarySystemBackground))
                     .font(.subheadline)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding(.horizontal)
                     
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Essentials")
@@ -69,10 +68,9 @@ struct UserProfileView: View {
                         ProfileInfoRowView(imageName: "book", title: user.major)
                     }
                     .padding()
-                    .background(.white)
+                    .background(Color(.secondarySystemBackground))
                     .font(.subheadline)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding(.horizontal)
                     
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Looking for")
@@ -83,10 +81,9 @@ struct UserProfileView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
-                    .background(.white)
+                    .background(Color(.secondarySystemBackground))
                     .font(.subheadline)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding(.horizontal)
                 }
                 
                 VStack {
@@ -115,6 +112,7 @@ struct UserProfileView: View {
                 .padding(.vertical)
 
             }
+            .scrollIndicators(.hidden)
             .background(Color(.systemGroupedBackground))
         }
 
@@ -123,4 +121,5 @@ struct UserProfileView: View {
 
 #Preview {
     UserProfileView(user: DeveloperPreview.user)
+        .preferredColorScheme(.dark)
 }

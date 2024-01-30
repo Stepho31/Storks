@@ -60,6 +60,8 @@ struct WelcomeView: View {
                         BirthdayView()
                     case .study:
                         StudyView()
+                    case .graduationYear:
+                        GraduationYearView()
                     default:
                         Text("Hello")
                     }

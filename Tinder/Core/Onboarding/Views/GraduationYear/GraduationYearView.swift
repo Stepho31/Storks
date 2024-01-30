@@ -1,5 +1,5 @@
 //
-//  StudyView.swift
+//  GraduationYearView.swift
 //  Tinder
 //
 //  Created by Brandon on 1/30/24.
@@ -7,18 +7,32 @@
 
 import SwiftUI
 
-struct StudyView: View {
+struct GraduationYearView: View {
+    
     @EnvironmentObject var onboardingManager: OnboardingManager
-    @State var study: String = ""
+    @State var year: String = ""
+    @State var selectedYear =  false
+    var currentYear =  Calendar.current.component(.year, from: Date.now)
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 20) {
-                Text("What's your study?")
-                    .font(.title)
+                Text("What's your graduation year?")
+                    .font(.title2)
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    TextField("Enter your study", text: $study)
+                    Menu(selectedYear ? year : "Graduation Year") {
+                        ForEach(currentYear...endYear, id: \.self) { year in
+                            let year = year.formatted(.number.grouping(.never))
+                            Button(action: {
+                                self.year = String(year)
+                                selectedYear = true
+                            }, label: {
+                                Text("\(year)")
+                            })
+                        }
+                    }
                     
                     Divider()
                     
@@ -27,7 +41,7 @@ struct StudyView: View {
                             .font(.footnote)
                             .opacity(0.6)
                         
-                        Text("You can modify this later.")
+                        Text("Can't change it later.")
                             .font(.footnote)
                             .bold()
                     }
@@ -59,7 +73,14 @@ struct StudyView: View {
     }
 }
 
+extension GraduationYearView {
+
+    var endYear: Int {
+        return currentYear + 4
+    }
+}
+
 #Preview {
-    StudyView()
+    GraduationYearView()
         .environmentObject(OnboardingManager())
 }

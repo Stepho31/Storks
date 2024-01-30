@@ -111,6 +111,7 @@
 		CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD1A2B66DAA90096AA0C /* BackButton.swift */; };
 		CA27F8832B6954EE006797E8 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8822B6954EE006797E8 /* BirthdayView.swift */; };
 		CA27F8862B6969A7006797E8 /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8852B6969A7006797E8 /* StudyView.swift */; };
+		CA27F88B2B697E11006797E8 /* GraduationYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F88A2B697E11006797E8 /* GraduationYearView.swift */; };
 		CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7831D12B6825E500F28D53 /* FullNameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +216,7 @@
 		CA18AD1A2B66DAA90096AA0C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		CA27F8822B6954EE006797E8 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		CA27F8852B6969A7006797E8 /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
+		CA27F88A2B697E11006797E8 /* GraduationYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraduationYearView.swift; sourceTree = "<group>"; };
 		CA7831D12B6825E500F28D53 /* FullNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -965,6 +967,7 @@
 		2BEE1BC72B672560009627D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CA27F8872B697A6F006797E8 /* GraduationYear */,
 				CA27F8842B696996006797E8 /* Study */,
 				CA27F8812B6954DC006797E8 /* Birthday */,
 				CA7831D32B682D8500F28D53 /* FullName */,
@@ -1019,6 +1022,14 @@
 				CA27F8852B6969A7006797E8 /* StudyView.swift */,
 			);
 			path = Study;
+			sourceTree = "<group>";
+		};
+		CA27F8872B697A6F006797E8 /* GraduationYear */ = {
+			isa = PBXGroup;
+			children = (
+				CA27F88A2B697E11006797E8 /* GraduationYearView.swift */,
+			);
+			path = GraduationYear;
 			sourceTree = "<group>";
 		};
 		CA7831D32B682D8500F28D53 /* FullName */ = {
@@ -1120,6 +1131,7 @@
 				2B4C80502B59997300765971 /* MockUserService.swift in Sources */,
 				2B4C7F462B50C55700765971 /* SearchView.swift in Sources */,
 				2B6618172B5DE6AC00236B43 /* SwipeActionButtonsView.swift in Sources */,
+				CA27F88B2B697E11006797E8 /* GraduationYearView.swift in Sources */,
 				2B4C7EC72B41F6FA00765971 /* UserCardsView.swift in Sources */,
 				2B4C7ED12B447DDB00765971 /* ImageScrollingOverlay.swift in Sources */,
 				2B4C7FBB2B53023500765971 /* UserError.swift in Sources */,

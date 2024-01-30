@@ -13,7 +13,7 @@ class UserManager: ObservableObject {
     // MARK: - Properties
     
     @Published var currentUser: User?
-    @Published var didCompleteOnboarding = false
+    @Published var didCompleteOnboarding = true
     
     private let service: UserServiceProtocol
     

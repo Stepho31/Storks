@@ -19,6 +19,7 @@ struct SocialUserProfileView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(height: 500)
+                    .clipped()
                 
                 VStack(spacing: 4) {
                     VStack(alignment: .leading, spacing: 4) {

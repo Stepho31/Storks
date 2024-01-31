@@ -11,11 +11,11 @@ struct ChatBubbleModifier: ViewModifier {
     let isFromCurrentUser: Bool
     
     var messageBackgroundColor: Color {
-        return isFromCurrentUser ? Color(.systemGray6) : .blue
+        return isFromCurrentUser ? Color(.secondarySystemBackground) : .blue
     }
     
     var messageTextColor: Color {
-        return isFromCurrentUser ? .black : .white
+        return .white
     }
     
     var maxWidth: CGFloat {

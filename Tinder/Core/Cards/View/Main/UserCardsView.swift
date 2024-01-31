@@ -49,9 +49,12 @@ struct UserCardsView: View {
                 
                 if showMatchView {
                     UserMatchView(show: $showMatchView)
-                        .environmentObject(viewModel)
+                        .onDisappear { matchManager.matchedUser = nil }
                 }
             }
+            .navigationDestination(for: User.self, destination: { user in
+                ChatView(user: user, thread: nil)
+            })
             .onReceive(matchManager.$matchedUser, perform: { user in
                showMatchView = user != nil 
             })

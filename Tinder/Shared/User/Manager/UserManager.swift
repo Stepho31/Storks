@@ -34,10 +34,6 @@ class UserManager: ObservableObject {
     
     @MainActor
     func fetchCurrentUser() async throws -> User? {
-        if let currentUser {
-            return currentUser
-        }
-        
         guard let currentUid else { return nil }
         
         do {
@@ -57,9 +53,5 @@ class UserManager: ObservableObject {
             print("DEBUG: Failed to fetch swipes with error \(error)")
             throw error
         }
-    }
-    
-    func fetchPotentialMatches() async throws -> [String] {
-        return ["abc"]
     }
 }

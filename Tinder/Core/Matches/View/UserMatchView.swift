@@ -15,7 +15,7 @@ struct UserMatchView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .opacity(0.7)
+                .fill(.black.opacity(0.7))
                 .ignoresSafeArea()
             
             VStack(spacing: 120) {
@@ -37,17 +37,16 @@ struct UserMatchView: View {
                 }
                                
                 VStack(spacing: 16) {
-                    Button {
-                        show.toggle()
-                        matchManager.matchedUser = nil
-                    } label: {
+                    NavigationLink(value: matchManager.matchedUser) {
                         Text("Send Message")
                             .modifier(TinderButtonModifier())
                     }
+                    .simultaneousGesture(TapGesture().onEnded({
+                        show.toggle()
+                    }))
                     
                     Button {
                         show.toggle()
-                        matchManager.matchedUser = nil
                     } label: {
                         Text("Keep Swiping")
                             .modifier(TinderButtonModifier(backgroundColor: .clear))

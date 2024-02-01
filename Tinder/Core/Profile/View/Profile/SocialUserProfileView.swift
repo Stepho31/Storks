@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SocialUserProfileView: View {
+    @State private var showProfilePhotosTabView = false
+    
     let user: User
     private let items = Array(repeating: GridItem(.flexible(), spacing:1), count: 3)
     private let width = (UIScreen.main.bounds.width / 3) - 2
@@ -15,11 +17,7 @@ struct SocialUserProfileView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
-                Image(user.profileImageURLs.first ?? "")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 500)
-                    .clipped()
+                CircularProfileImageView(user: user, size: .xxxLarge)
                 
                 VStack(spacing: 4) {
                     VStack(alignment: .leading, spacing: 4) {
@@ -50,15 +48,20 @@ struct SocialUserProfileView: View {
                                     .scaledToFill()
                                     .frame(width: width, height: width)
                                     .clipped()
+                                    .onTapGesture { showProfilePhotosTabView.toggle() }
                             }
                         }
                     }
                 }
             }
         }
+        .navigationTitle(user.firstName)
+        .navigationBarTitleDisplayMode(.inline)
+        .fullScreenCover(isPresented: $showProfilePhotosTabView, content: {
+            ProfilePhotosTabView(user: user)
+        })
         .toolbar(.hidden, for: .tabBar)
         .scrollIndicators(.hidden)
-        .ignoresSafeArea()
     }
 }
 

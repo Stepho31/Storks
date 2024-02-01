@@ -103,6 +103,15 @@
 		2BEE1BA12B6718EA009627D9 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BA02B6718EA009627D9 /* OnboardingSteps.swift */; };
 		2BEE1BC62B672384009627D9 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BC52B672384009627D9 /* OnboardingManager.swift */; };
 		2BEE1BC92B67EA5F009627D9 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BC82B67EA5F009627D9 /* AuthState.swift */; };
+		2BEE1BDC2B6AF6F3009627D9 /* ProfilePhotosTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BDB2B6AF6F3009627D9 /* ProfilePhotosTabView.swift */; };
+		2BEE1BDF2B6AF9A4009627D9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BDE2B6AF9A4009627D9 /* CloseButton.swift */; };
+		2BEE1BE32B6B53BE009627D9 /* BlockUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BE22B6B53BE009627D9 /* BlockUserView.swift */; };
+		2BEE1BE62B6B53D8009627D9 /* AccountRestrictionInfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BE52B6B53D8009627D9 /* AccountRestrictionInfoItemView.swift */; };
+		2BEE1BE92B6B54EE009627D9 /* UserProfileSheetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BE82B6B54EE009627D9 /* UserProfileSheetConfiguration.swift */; };
+		2BEE1BEC2B6B55C1009627D9 /* ReportUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BEB2B6B55C1009627D9 /* ReportUserView.swift */; };
+		2BEE1BF02B6B55E2009627D9 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BEF2B6B55E2009627D9 /* Report.swift */; };
+		2BEE1BF22B6B5602009627D9 /* ReportOptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BF12B6B5602009627D9 /* ReportOptionsModel.swift */; };
+		2BEE1BF42B6B56B9009627D9 /* ReportCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BF32B6B56B9009627D9 /* ReportCompletionView.swift */; };
 		CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */; };
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
@@ -208,6 +217,15 @@
 		2BEE1BA02B6718EA009627D9 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
 		2BEE1BC52B672384009627D9 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		2BEE1BC82B67EA5F009627D9 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		2BEE1BDB2B6AF6F3009627D9 /* ProfilePhotosTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotosTabView.swift; sourceTree = "<group>"; };
+		2BEE1BDE2B6AF9A4009627D9 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		2BEE1BE22B6B53BE009627D9 /* BlockUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserView.swift; sourceTree = "<group>"; };
+		2BEE1BE52B6B53D8009627D9 /* AccountRestrictionInfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRestrictionInfoItemView.swift; sourceTree = "<group>"; };
+		2BEE1BE82B6B54EE009627D9 /* UserProfileSheetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSheetConfiguration.swift; sourceTree = "<group>"; };
+		2BEE1BEB2B6B55C1009627D9 /* ReportUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserView.swift; sourceTree = "<group>"; };
+		2BEE1BEF2B6B55E2009627D9 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		2BEE1BF12B6B5602009627D9 /* ReportOptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportOptionsModel.swift; sourceTree = "<group>"; };
+		2BEE1BF32B6B56B9009627D9 /* ReportCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCompletionView.swift; sourceTree = "<group>"; };
 		CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTopView.swift; sourceTree = "<group>"; };
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
@@ -277,11 +295,7 @@
 		2B4C7EDD2B44A9FC00765971 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B4C7F7A2B51B51200765971 /* EditProfileSheetConfiguration.swift */,
-				2B4C7F7C2B51B61D00765971 /* GenderType.swift */,
-				2B4C7EDE2B44AA0800765971 /* RelationshipGoalsType.swift */,
-				2B4C7F822B51B98E00765971 /* SexualOrientationType.swift */,
-				2B4C7FBE2B53053200765971 /* SexualPreferenceType.swift */,
+				2BEE1BE72B6B54D5009627D9 /* SheetConfigurations */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,7 +330,7 @@
 		2B4C7F4F2B50C66600765971 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CA18AD192B66DA8F0096AA0C /* BackButton */,
+				2BEE1BDD2B6AF98F009627D9 /* Buttons */,
 				2B4C7F552B50C6C500765971 /* Avatar */,
 				2B6618182B5DE89100236B43 /* NavigationBar */,
 			);
@@ -384,6 +398,7 @@
 				2B4C7ED22B449D0C00765971 /* CurrentUserProfileView.swift */,
 				2B4C7F872B51EA3500765971 /* UserProfileView.swift */,
 				2B4C80462B59776600765971 /* SocialUserProfileView.swift */,
+				2BEE1BDB2B6AF6F3009627D9 /* ProfilePhotosTabView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -392,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4C7ED42B44A0FB00765971 /* EditProfileView.swift */,
+				2B4C7F842B51BAA000765971 /* Selection */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -426,6 +442,10 @@
 		2B4C7FB72B5301DF00765971 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B4C7F7C2B51B61D00765971 /* GenderType.swift */,
+				2B4C7EDE2B44AA0800765971 /* RelationshipGoalsType.swift */,
+				2B4C7F822B51B98E00765971 /* SexualOrientationType.swift */,
+				2B4C7FBE2B53053200765971 /* SexualPreferenceType.swift */,
 				2BACD4A42A82FD6700452A2D /* User.swift */,
 				2B4C7FBA2B53023500765971 /* UserError.swift */,
 			);
@@ -742,6 +762,7 @@
 			isa = PBXGroup;
 			children = (
 				2BACD4782A82BEDF00452A2D /* App */,
+				2BEE1BE02B6B53AF009627D9 /* AccountRestriction */,
 				2BACD4792A82BEE700452A2D /* Core */,
 				2BACD49A2A82FC8400452A2D /* Extensions */,
 				2B4C7FB52B5301CF00765971 /* Shared */,
@@ -838,7 +859,6 @@
 			children = (
 				2B4C7F862B51BAA800765971 /* EditProfile */,
 				2B4C7F852B51BAA500765971 /* Profile */,
-				2B4C7F842B51BAA000765971 /* Selection */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -976,6 +996,77 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2BEE1BDD2B6AF98F009627D9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
+				2BEE1BDE2B6AF9A4009627D9 /* CloseButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		2BEE1BE02B6B53AF009627D9 /* AccountRestriction */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1BE12B6B53B7009627D9 /* Blocking */,
+				2BEE1BE42B6B53CC009627D9 /* Components */,
+				2BEE1BEA2B6B55AB009627D9 /* Reporting */,
+			);
+			path = AccountRestriction;
+			sourceTree = "<group>";
+		};
+		2BEE1BE12B6B53B7009627D9 /* Blocking */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1BE22B6B53BE009627D9 /* BlockUserView.swift */,
+			);
+			path = Blocking;
+			sourceTree = "<group>";
+		};
+		2BEE1BE42B6B53CC009627D9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1BE52B6B53D8009627D9 /* AccountRestrictionInfoItemView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2BEE1BE72B6B54D5009627D9 /* SheetConfigurations */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7F7A2B51B51200765971 /* EditProfileSheetConfiguration.swift */,
+				2BEE1BE82B6B54EE009627D9 /* UserProfileSheetConfiguration.swift */,
+			);
+			path = SheetConfigurations;
+			sourceTree = "<group>";
+		};
+		2BEE1BEA2B6B55AB009627D9 /* Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1BEE2B6B55DB009627D9 /* Model */,
+				2BEE1BED2B6B55D6009627D9 /* Views */,
+			);
+			path = Reporting;
+			sourceTree = "<group>";
+		};
+		2BEE1BED2B6B55D6009627D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1BF32B6B56B9009627D9 /* ReportCompletionView.swift */,
+				2BEE1BEB2B6B55C1009627D9 /* ReportUserView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BEE1BEE2B6B55DB009627D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1BEF2B6B55E2009627D9 /* Report.swift */,
+				2BEE1BF12B6B5602009627D9 /* ReportOptionsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CA18AD0A2B6416E10096AA0C /* Email */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,14 +1089,6 @@
 				CA18AD172B65B8920096AA0C /* AuthValidation.swift */,
 			);
 			path = FormValidatorProtocol;
-			sourceTree = "<group>";
-		};
-		CA18AD192B66DA8F0096AA0C /* BackButton */ = {
-			isa = PBXGroup;
-			children = (
-				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
-			);
-			path = BackButton;
 			sourceTree = "<group>";
 		};
 		CA27F8812B6954DC006797E8 /* Birthday */ = {
@@ -1122,10 +1205,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BEE1BF42B6B56B9009627D9 /* ReportCompletionView.swift in Sources */,
 				2BACD46D2A82BEC200452A2D /* ContentView.swift in Sources */,
 				2B4C7F7B2B51B51200765971 /* EditProfileSheetConfiguration.swift in Sources */,
 				2B4C7F622B5181A400765971 /* MessageInputView.swift in Sources */,
 				2B6618302B5E20EF00236B43 /* ChatManager.swift in Sources */,
+				2BEE1BDC2B6AF6F3009627D9 /* ProfilePhotosTabView.swift in Sources */,
 				2BACD46B2A82BEC200452A2D /* TinderApp.swift in Sources */,
 				2B4C7F8A2B52064300765971 /* ProfileInfoRowView.swift in Sources */,
 				2B4C80502B59997300765971 /* MockUserService.swift in Sources */,
@@ -1155,9 +1240,11 @@
 				2B4C80552B59E19800765971 /* CardsLoadingView.swift in Sources */,
 				2B4C7ECF2B447CEE00765971 /* SizeConstants.swift in Sources */,
 				2B4C7F662B5182CA00765971 /* ChatView.swift in Sources */,
+				2BEE1BE62B6B53D8009627D9 /* AccountRestrictionInfoItemView.swift in Sources */,
 				2B4C7F592B50C6E000765971 /* ProfileImageSize.swift in Sources */,
 				2B4C804C2B598A4B00765971 /* SwipeActionIndicatorView.swift in Sources */,
 				2B6618212B5DEAC600236B43 /* MatchService.swift in Sources */,
+				2BEE1BF22B6B5602009627D9 /* ReportOptionsModel.swift in Sources */,
 				CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */,
 				2B4C7F4E2B50C62B00765971 /* ChatBubble.swift in Sources */,
 				2BACD4A12A82FD3100452A2D /* TinderButtonModifier.swift in Sources */,
@@ -1188,6 +1275,7 @@
 				2BACD49F2A82FD0000452A2D /* TinderTextFieldModifier.swift in Sources */,
 				2B4C7F832B51B98E00765971 /* SexualOrientationType.swift in Sources */,
 				CA27F8832B6954EE006797E8 /* BirthdayView.swift in Sources */,
+				2BEE1BE32B6B53BE009627D9 /* BlockUserView.swift in Sources */,
 				CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */,
 				CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */,
 				2B4C7ED32B449D0C00765971 /* CurrentUserProfileView.swift in Sources */,
@@ -1203,7 +1291,9 @@
 				CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */,
 				2B4C7F7F2B51B68900765971 /* GenderSelectionView.swift in Sources */,
 				2BACD4902A82FC2700452A2D /* AuthService.swift in Sources */,
+				2BEE1BE92B6B54EE009627D9 /* UserProfileSheetConfiguration.swift in Sources */,
 				2B66181A2B5DE8A500236B43 /* ToolbarLogo.swift in Sources */,
+				2BEE1BF02B6B55E2009627D9 /* Report.swift in Sources */,
 				2B4C80472B59776600765971 /* SocialUserProfileView.swift in Sources */,
 				2BA9A4A92B603287000C3AA4 /* WelcomeInfoItemView.swift in Sources */,
 				2B4C7ED82B44A40500765971 /* ProfileImageGridView.swift in Sources */,
@@ -1211,6 +1301,8 @@
 				2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */,
 				2B4C80372B58ABCE00765971 /* UserCell.swift in Sources */,
 				2B4C80532B59C5DD00765971 /* Match.swift in Sources */,
+				2BEE1BEC2B6B55C1009627D9 /* ReportUserView.swift in Sources */,
+				2BEE1BDF2B6AF9A4009627D9 /* CloseButton.swift in Sources */,
 				CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */,
 				2B4C7F4A2B50C5DD00765971 /* Message.swift in Sources */,
 				2B4C7F512B50C67200765971 /* CircularProfileImageView.swift in Sources */,

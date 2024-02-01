@@ -103,6 +103,8 @@
 		2BEE1BA12B6718EA009627D9 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BA02B6718EA009627D9 /* OnboardingSteps.swift */; };
 		2BEE1BC62B672384009627D9 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BC52B672384009627D9 /* OnboardingManager.swift */; };
 		2BEE1BC92B67EA5F009627D9 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BC82B67EA5F009627D9 /* AuthState.swift */; };
+		2BEE1BDC2B6AF6F3009627D9 /* ProfilePhotosTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BDB2B6AF6F3009627D9 /* ProfilePhotosTabView.swift */; };
+		2BEE1BDF2B6AF9A4009627D9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BDE2B6AF9A4009627D9 /* CloseButton.swift */; };
 		CA18AD022B62A0DA0096AA0C /* AuthenticationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */; };
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
@@ -208,6 +210,8 @@
 		2BEE1BA02B6718EA009627D9 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
 		2BEE1BC52B672384009627D9 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		2BEE1BC82B67EA5F009627D9 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		2BEE1BDB2B6AF6F3009627D9 /* ProfilePhotosTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotosTabView.swift; sourceTree = "<group>"; };
+		2BEE1BDE2B6AF9A4009627D9 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		CA18AD012B62A0DA0096AA0C /* AuthenticationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTopView.swift; sourceTree = "<group>"; };
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
@@ -316,7 +320,7 @@
 		2B4C7F4F2B50C66600765971 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CA18AD192B66DA8F0096AA0C /* BackButton */,
+				2BEE1BDD2B6AF98F009627D9 /* Buttons */,
 				2B4C7F552B50C6C500765971 /* Avatar */,
 				2B6618182B5DE89100236B43 /* NavigationBar */,
 			);
@@ -384,6 +388,7 @@
 				2B4C7ED22B449D0C00765971 /* CurrentUserProfileView.swift */,
 				2B4C7F872B51EA3500765971 /* UserProfileView.swift */,
 				2B4C80462B59776600765971 /* SocialUserProfileView.swift */,
+				2BEE1BDB2B6AF6F3009627D9 /* ProfilePhotosTabView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4C7ED42B44A0FB00765971 /* EditProfileView.swift */,
+				2B4C7F842B51BAA000765971 /* Selection */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -838,7 +844,6 @@
 			children = (
 				2B4C7F862B51BAA800765971 /* EditProfile */,
 				2B4C7F852B51BAA500765971 /* Profile */,
-				2B4C7F842B51BAA000765971 /* Selection */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -976,6 +981,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2BEE1BDD2B6AF98F009627D9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
+				2BEE1BDE2B6AF9A4009627D9 /* CloseButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		CA18AD0A2B6416E10096AA0C /* Email */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,14 +1012,6 @@
 				CA18AD172B65B8920096AA0C /* AuthValidation.swift */,
 			);
 			path = FormValidatorProtocol;
-			sourceTree = "<group>";
-		};
-		CA18AD192B66DA8F0096AA0C /* BackButton */ = {
-			isa = PBXGroup;
-			children = (
-				CA18AD1A2B66DAA90096AA0C /* BackButton.swift */,
-			);
-			path = BackButton;
 			sourceTree = "<group>";
 		};
 		CA27F8812B6954DC006797E8 /* Birthday */ = {
@@ -1126,6 +1132,7 @@
 				2B4C7F7B2B51B51200765971 /* EditProfileSheetConfiguration.swift in Sources */,
 				2B4C7F622B5181A400765971 /* MessageInputView.swift in Sources */,
 				2B6618302B5E20EF00236B43 /* ChatManager.swift in Sources */,
+				2BEE1BDC2B6AF6F3009627D9 /* ProfilePhotosTabView.swift in Sources */,
 				2BACD46B2A82BEC200452A2D /* TinderApp.swift in Sources */,
 				2B4C7F8A2B52064300765971 /* ProfileInfoRowView.swift in Sources */,
 				2B4C80502B59997300765971 /* MockUserService.swift in Sources */,
@@ -1211,6 +1218,7 @@
 				2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */,
 				2B4C80372B58ABCE00765971 /* UserCell.swift in Sources */,
 				2B4C80532B59C5DD00765971 /* Match.swift in Sources */,
+				2BEE1BDF2B6AF9A4009627D9 /* CloseButton.swift in Sources */,
 				CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */,
 				2B4C7F4A2B50C5DD00765971 /* Message.swift in Sources */,
 				2B4C7F512B50C67200765971 /* CircularProfileImageView.swift in Sources */,

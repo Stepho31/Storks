@@ -21,6 +21,8 @@ struct User: Identifiable, Codable, Hashable {
     let gender: GenderType
     let sexualOrientation: SexualOrientationType
     let sexualPreference: SexualPreferenceType
+    var blockedUIDs: [String]
+    var blockedByUIDs: [String]
     
     var isCurrentUser: Bool {
         return id == Auth.auth().currentUser?.uid

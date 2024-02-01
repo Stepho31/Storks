@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct BlockUserView: View {
-    let user: User
-//    @StateObject var viewModel = BlockUserViewModel(service: BlockUserService())
+    @Binding var accountRestrictionAction: UserAccountRestrictionAction?
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var userManager: UserManager
+    @StateObject var blockingManager = BlockUserManager(service: BlockUserService())
+    
+    let user: User
     
     var body: some View {
         VStack {
@@ -38,12 +41,7 @@ struct BlockUserView: View {
             
             Divider()
             
-            Button {
-                Task {
-//                    await viewModel.blockUser(user.id)
-                    dismiss()
-                }
-            } label: {
+            Button { onBlockTapped() } label: {
                 Text("Block")
                     .modifier(TinderButtonModifier())
             }
@@ -51,9 +49,18 @@ struct BlockUserView: View {
         .presentationDetents([.height(520)])
         .presentationDragIndicator(.visible)
     }
+    
+    private func onBlockTapped() {
+        Task {
+            await blockingManager.blockUser(user)
+            await userManager.fetchCurrentUser()
+            accountRestrictionAction = .blocked
+            dismiss()
+        }
+    }
 }
 
 #Preview {
-    BlockUserView(user: DeveloperPreview.user)
+    BlockUserView(accountRestrictionAction: .constant(nil), user: DeveloperPreview.user)
         .preferredColorScheme(.dark)
 }

@@ -7,10 +7,16 @@
 
 import SwiftUI
 
-struct UserProfileView: View {
+protocol Blockable {
+    var onBlock: (() -> Void)? { get }
+}
+
+struct UserProfileView: View, Blockable {
     @Environment(\.dismiss) var dismiss
     @State private var currentImageIndex = 0
     @State private var sheetConfig: UserProfileSheetConfiguration?
+    @State private var accountRestrictionAction: UserAccountRestrictionAction?
+    var onBlock: (() -> Void)?
     
     let user: User
 
@@ -62,7 +68,6 @@ struct UserProfileView: View {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Essentials")
                             .fontWeight(.semibold)
-
                         
                         ProfileInfoRowView(imageName: "person", title: user.gender.description)
                         
@@ -122,24 +127,32 @@ struct UserProfileView: View {
                     }
                 }
                 .padding(.vertical)
-
             }
-            .sheet(item: $sheetConfig, content: { config in
-                switch config {
-                case .block:
-                    BlockUserView(user: user)
-                case .report:
-                    ReportUserView(user: user)
-                }
-            })
-            .scrollIndicators(.hidden)
-            .background(Color(.systemGroupedBackground))
         }
-
+        .onChange(of: accountRestrictionAction, perform: { value in
+            switch value {
+            case .blocked:
+                if let onBlock { onBlock() }
+            case .reported:
+                dismiss()
+            case .none:
+                break
+            }
+        })
+        .sheet(item: $sheetConfig, content: { config in
+            switch config {
+            case .block:
+                BlockUserView(accountRestrictionAction: $accountRestrictionAction, user: user)
+            case .report:
+                ReportUserView(user: user)
+            }
+        })
+        .scrollIndicators(.hidden)
+        .background(Color(.systemGroupedBackground))
     }
 }
 
 #Preview {
-    UserProfileView(user: DeveloperPreview.user)
+    UserProfileView(user: DeveloperPreview.user )
         .preferredColorScheme(.dark)
 }

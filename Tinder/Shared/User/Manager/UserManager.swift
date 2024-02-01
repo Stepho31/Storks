@@ -9,9 +9,6 @@ import Firebase
 import SwiftUI
 
 class UserManager: ObservableObject {
-    
-    // MARK: - Properties
-    
     @Published var currentUser: User?
     @Published var didCompleteOnboarding = true
     
@@ -21,37 +18,21 @@ class UserManager: ObservableObject {
         guard let uid = Auth.auth().currentUser?.uid else { return "123" }
         return uid
     }
-    
-    // MARK: - Lifecycle
-    
+        
     init(service: UserServiceProtocol) {
         self.service = service
         
-        Task { try await fetchCurrentUser() }
+        Task { await fetchCurrentUser() }
     }
-    
-    // MARK: - API
-    
+        
     @MainActor
-    func fetchCurrentUser() async throws -> User? {
-        guard let currentUid else { return nil }
+    func fetchCurrentUser() async {
+        guard let currentUid else { return }
         
         do {
             currentUser = try await service.fetchUser(withUid: currentUid)
-            return currentUser
         } catch {
-            throw error
-        }
-    }
-    
-    func fetchUserCards() async throws -> [User] {
-        guard let currentUser else { return [] }
-        
-        do {
-            return try await service.fetchUsers(for: currentUser)
-        } catch {
-            print("DEBUG: Failed to fetch swipes with error \(error)")
-            throw error
+            print("DEBUG: Failed to fetch current user with error: \(error)")
         }
     }
 }

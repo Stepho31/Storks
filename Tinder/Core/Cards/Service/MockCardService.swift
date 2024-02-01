@@ -14,6 +14,7 @@ struct MockCardService: CardServiceProtocol {
         
         return DeveloperPreview.users
             .filter({ $0.gender == sexualPreference.preferredGender })
+            .filter({ !currentUser.blockedUIDs.contains($0.id) })
             .map({ CardModel(user: $0) })
     }
 }

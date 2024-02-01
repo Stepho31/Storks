@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct UserProfileView: View {
-    let user: User
-    @State private var currentImageIndex = 0
     @Environment(\.dismiss) var dismiss
+    @State private var currentImageIndex = 0
+    @State private var sheetConfig: UserProfileSheetConfiguration?
     
+    let user: User
+
     var body: some View {
         VStack {
             HStack {
@@ -63,9 +65,17 @@ struct UserProfileView: View {
 
                         
                         ProfileInfoRowView(imageName: "person", title: user.gender.description)
+                        
+                        Divider()
+                        
                         ProfileInfoRowView(imageName: "arrow.down.forward.and.arrow.up.backward.circle",
                                            title: user.sexualOrientation.description)
+                        Divider()
+
                         ProfileInfoRowView(imageName: "book", title: user.major)
+                        
+                        Divider()
+
                     }
                     .padding()
                     .background(Color(.secondarySystemBackground))
@@ -88,30 +98,40 @@ struct UserProfileView: View {
                 
                 VStack {
                     Button {
-                        
+                        sheetConfig = .block
                     } label: {
                         Text("Block \(user.firstName)")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.white)
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
-                            .background(.white)
+                            .background(Color(.tertiaryBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     
                     Button {
-                        
+                        sheetConfig = .report
                     } label: {
                         Text("Report \(user.firstName)")
                             .foregroundStyle(.red)
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
-                            .background(.white)
+                            .background(Color(.tertiaryBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                 }
                 .padding(.vertical)
 
             }
+            .sheet(item: $sheetConfig, content: { config in
+                switch config {
+                case .block:
+                    BlockUserView(user: user)
+                case .report:
+                    ReportUserView(user: user)
+                }
+            })
             .scrollIndicators(.hidden)
             .background(Color(.systemGroupedBackground))
         }

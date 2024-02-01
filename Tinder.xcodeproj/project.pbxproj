@@ -806,7 +806,6 @@
 			isa = PBXGroup;
 			children = (
 				2BACD4782A82BEDF00452A2D /* App */,
-				2BEE1BE02B6B53AF009627D9 /* AccountRestriction */,
 				2BACD4792A82BEE700452A2D /* Core */,
 				2BACD49A2A82FC8400452A2D /* Extensions */,
 				2B4C7FB52B5301CF00765971 /* Shared */,
@@ -837,6 +836,7 @@
 		2BACD4792A82BEE700452A2D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2BEE1BE02B6B53AF009627D9 /* AccountRestriction */,
 				2B4C7F4F2B50C66600765971 /* Components */,
 				2BACD47A2A82BEEC00452A2D /* Authentication */,
 				2B4C7EC32B41EEA500765971 /* Cards */,

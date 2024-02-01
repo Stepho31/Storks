@@ -48,6 +48,7 @@ struct GraduationYearView: View {
                 
                 Spacer()
             }
+            
             NextButton()
         }
         .backgroundModifier()
@@ -59,7 +60,6 @@ struct GraduationYearView: View {
 }
 
 extension GraduationYearView {
-
     var endYear: Int {
         return currentYear + 4
     }

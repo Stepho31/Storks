@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BirthdayView: View {
-    
     @EnvironmentObject var onboardingManager: OnboardingManager
     @State var selectedDate: Date = Date()
     
@@ -40,14 +39,14 @@ struct BirthdayView: View {
                 
                 Spacer()
             }
+            
+            NextButton()
         }
-        NextButton()
-        
-            .backgroundModifier()
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading)
-                { BackButton() }
-            }
+        .backgroundModifier()
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading)
+            { BackButton() }
+        }
     }
 }
 

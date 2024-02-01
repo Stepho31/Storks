@@ -10,6 +10,7 @@ import SwiftUI
 struct StudyView: View {
     @EnvironmentObject var onboardingManager: OnboardingManager
     @State var study: String = ""
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 20) {
@@ -36,6 +37,7 @@ struct StudyView: View {
                 
                 Spacer()
             }
+            
             NextButton()
         }
         .backgroundModifier()

@@ -35,4 +35,6 @@ class UserManager: ObservableObject {
             print("DEBUG: Failed to fetch current user with error: \(error)")
         }
     }
+    
+    
 }

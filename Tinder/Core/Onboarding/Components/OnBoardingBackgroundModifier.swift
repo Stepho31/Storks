@@ -1,5 +1,5 @@
 //
-//  onBoardingBackgroundModifier.swift
+//  OnBoardingBackgroundModifier.swift
 //  Tinder
 //
 //  Created by Brandon on 2/1/24.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct onBoardingBackgroundModifier: ViewModifier {
+struct OnBoardingBackgroundModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
@@ -18,6 +18,6 @@ struct onBoardingBackgroundModifier: ViewModifier {
 }
 extension View {
     func backgroundModifier() -> some View {
-        modifier(onBoardingBackgroundModifier())
+        modifier(OnBoardingBackgroundModifier())
     }
 }

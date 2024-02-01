@@ -16,8 +16,4 @@ struct MockCardService: CardServiceProtocol {
             .filter({ $0.gender == sexualPreference.preferredGender })
             .map({ CardModel(user: $0) })
     }
-    
-    func fetchPotentialMatches() async throws -> [String] {
-        return ["abc"]
-    }
 }

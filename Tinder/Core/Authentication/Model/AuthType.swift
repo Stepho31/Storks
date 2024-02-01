@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum AuthenticationType {
+enum AuthType {
     case createAccount
     case login
 }
 
-extension AuthenticationType: Identifiable {
+extension AuthType: Identifiable {
     var id: String { return NSUUID().uuidString }
 }

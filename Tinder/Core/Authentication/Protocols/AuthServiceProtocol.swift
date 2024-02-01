@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AuthServiceProtocol {
-    func login(withEmail email: String, password: String) async throws -> String?
-    func createUser(withEmail email: String, password: String) async throws -> String?
+    func login(withEmail email: String, password: String) async throws -> String
+    func createUser(withEmail email: String, password: String) async throws -> String
     func signOut()
 }

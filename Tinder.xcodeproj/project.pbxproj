@@ -95,7 +95,6 @@
 		2BACD4A32A82FD5600452A2D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A22A82FD5600452A2D /* UserService.swift */; };
 		2BACD4A52A82FD6700452A2D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A42A82FD6700452A2D /* User.swift */; };
 		2BACD4A82A82FDBC00452A2D /* FirestoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A72A82FDBC00452A2D /* FirestoreConstants.swift */; };
-		2BACD4AA2A82FDEF00452A2D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A92A82FDEF00452A2D /* Color.swift */; };
 		2BACD4AC2A82FE8100452A2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */; };
 		2BEE1B862B65D7A0009627D9 /* AuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */; };
 		2BEE1B9B2B66F5D3009627D9 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */; };
@@ -116,7 +115,7 @@
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
 		CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0E2B641A180096AA0C /* String+Email.swift */; };
-		CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD172B65B8920096AA0C /* AuthValidation.swift */; };
+		CA18AD182B65B8920096AA0C /* FormValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD172B65B8920096AA0C /* FormValidatorProtocol.swift */; };
 		CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD1A2B66DAA90096AA0C /* BackButton.swift */; };
 		CA27F8832B6954EE006797E8 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8822B6954EE006797E8 /* BirthdayView.swift */; };
 		CA27F8862B6969A7006797E8 /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8852B6969A7006797E8 /* StudyView.swift */; };
@@ -209,7 +208,6 @@
 		2BACD4A22A82FD5600452A2D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2BACD4A42A82FD6700452A2D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2BACD4A72A82FDBC00452A2D /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
-		2BACD4A92A82FDEF00452A2D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationType.swift; sourceTree = "<group>"; };
 		2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
@@ -230,7 +228,7 @@
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		CA18AD0E2B641A180096AA0C /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
-		CA18AD172B65B8920096AA0C /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
+		CA18AD172B65B8920096AA0C /* FormValidatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorProtocol.swift; sourceTree = "<group>"; };
 		CA18AD1A2B66DAA90096AA0C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		CA27F8822B6954EE006797E8 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		CA27F8852B6969A7006797E8 /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
@@ -423,7 +421,7 @@
 		2B4C7FB52B5301CF00765971 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CA18AD162B65B8670096AA0C /* FormValidatorProtocol */,
+				CA18AD162B65B8670096AA0C /* Protocols */,
 				2B4C7FB62B5301D900765971 /* User */,
 			);
 			path = Shared;
@@ -910,7 +908,6 @@
 			isa = PBXGroup;
 			children = (
 				CA18AD0D2B641A040096AA0C /* String */,
-				2BACD4A92A82FDEF00452A2D /* Color.swift */,
 				2B4C7ECA2B447A2500765971 /* DeveloperPreview.swift */,
 				2B4C7F692B51850E00765971 /* Date.swift */,
 			);
@@ -1083,12 +1080,12 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		CA18AD162B65B8670096AA0C /* FormValidatorProtocol */ = {
+		CA18AD162B65B8670096AA0C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				CA18AD172B65B8920096AA0C /* AuthValidation.swift */,
+				CA18AD172B65B8920096AA0C /* FormValidatorProtocol.swift */,
 			);
-			path = FormValidatorProtocol;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CA27F8812B6954DC006797E8 /* Birthday */ = {
@@ -1223,7 +1220,6 @@
 				2B4C7F752B51A23F00765971 /* InboxService.swift in Sources */,
 				2BACD4A82A82FDBC00452A2D /* FirestoreConstants.swift in Sources */,
 				2B4C7ECB2B447A2500765971 /* DeveloperPreview.swift in Sources */,
-				2BACD4AA2A82FDEF00452A2D /* Color.swift in Sources */,
 				2B66180A2B5DDC4500236B43 /* CardService.swift in Sources */,
 				2B4C7EBD2B41EA3200765971 /* AuthManager.swift in Sources */,
 				2B4C7F812B51B69100765971 /* SexualOrientationSelectionView.swift in Sources */,
@@ -1245,7 +1241,7 @@
 				2B4C804C2B598A4B00765971 /* SwipeActionIndicatorView.swift in Sources */,
 				2B6618212B5DEAC600236B43 /* MatchService.swift in Sources */,
 				2BEE1BF22B6B5602009627D9 /* ReportOptionsModel.swift in Sources */,
-				CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */,
+				CA18AD182B65B8920096AA0C /* FormValidatorProtocol.swift in Sources */,
 				2B4C7F4E2B50C62B00765971 /* ChatBubble.swift in Sources */,
 				2BACD4A12A82FD3100452A2D /* TinderButtonModifier.swift in Sources */,
 				2B6618342B5E2B3300236B43 /* NewMatchItemView.swift in Sources */,

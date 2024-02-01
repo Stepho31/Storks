@@ -30,7 +30,7 @@ struct CardView: View {
             UserInfoView(user: user, showProfileView: $showProfileView)
         }
         .fullScreenCover(isPresented: $showProfileView, content: {
-            UserProfileView(user: user)
+            UserProfileView(onBlock: onBlock, user: user)
         })
         .onReceive(viewModel.$animatedSwipeAction, perform: { action in
             onReceiveSwipeAction(action)
@@ -73,7 +73,7 @@ private extension CardView {
     }
 }
 
-// MARK: - Helper Methods
+// MARK: - Swiping Helper Methods
 
 private extension CardView {
     private func returnToCenter() {
@@ -126,6 +126,14 @@ private extension CardView {
         } else {
             swipeLeft()
         }
+    }
+}
+
+// MARK: - Account Restriction Handlers
+
+extension CardView {
+    func onBlock() {
+        viewModel.animatedSwipeAction = .reject
     }
 }
 

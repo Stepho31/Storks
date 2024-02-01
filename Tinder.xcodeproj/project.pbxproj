@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B26548B2B6BEDEF0007555D /* BlockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26548A2B6BEDEF0007555D /* BlockUserService.swift */; };
+		2B26548E2B6BF05F0007555D /* BlockUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26548D2B6BF05F0007555D /* BlockUserManager.swift */; };
+		2B2654922B6C0A2F0007555D /* UserAccountRestrictionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654912B6C0A2F0007555D /* UserAccountRestrictionAction.swift */; };
 		2B4C7EBD2B41EA3200765971 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBC2B41EA3200765971 /* AuthManager.swift */; };
 		2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */; };
 		2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */; };
@@ -95,9 +98,8 @@
 		2BACD4A32A82FD5600452A2D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A22A82FD5600452A2D /* UserService.swift */; };
 		2BACD4A52A82FD6700452A2D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A42A82FD6700452A2D /* User.swift */; };
 		2BACD4A82A82FDBC00452A2D /* FirestoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A72A82FDBC00452A2D /* FirestoreConstants.swift */; };
-		2BACD4AA2A82FDEF00452A2D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BACD4A92A82FDEF00452A2D /* Color.swift */; };
 		2BACD4AC2A82FE8100452A2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */; };
-		2BEE1B862B65D7A0009627D9 /* AuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */; };
+		2BEE1B862B65D7A0009627D9 /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B852B65D7A0009627D9 /* AuthType.swift */; };
 		2BEE1B9B2B66F5D3009627D9 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */; };
 		2BEE1B9D2B66FCD1009627D9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1B9C2B66FCD1009627D9 /* AuthViewModel.swift */; };
 		2BEE1BA12B6718EA009627D9 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1BA02B6718EA009627D9 /* OnboardingSteps.swift */; };
@@ -116,7 +118,7 @@
 		CA18AD042B62A87E0096AA0C /* AuthenticationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */; };
 		CA18AD0C2B6416E60096AA0C /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0B2B6416E60096AA0C /* EmailView.swift */; };
 		CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD0E2B641A180096AA0C /* String+Email.swift */; };
-		CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD172B65B8920096AA0C /* AuthValidation.swift */; };
+		CA18AD182B65B8920096AA0C /* FormValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD172B65B8920096AA0C /* FormValidatorProtocol.swift */; };
 		CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18AD1A2B66DAA90096AA0C /* BackButton.swift */; };
 		CA27F8832B6954EE006797E8 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8822B6954EE006797E8 /* BirthdayView.swift */; };
 		CA27F8862B6969A7006797E8 /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8852B6969A7006797E8 /* StudyView.swift */; };
@@ -125,6 +127,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B26548A2B6BEDEF0007555D /* BlockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserService.swift; sourceTree = "<group>"; };
+		2B26548D2B6BF05F0007555D /* BlockUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserManager.swift; sourceTree = "<group>"; };
+		2B2654912B6C0A2F0007555D /* UserAccountRestrictionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountRestrictionAction.swift; sourceTree = "<group>"; };
 		2B4C7EBC2B41EA3200765971 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
@@ -209,9 +214,8 @@
 		2BACD4A22A82FD5600452A2D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2BACD4A42A82FD6700452A2D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2BACD4A72A82FDBC00452A2D /* FirestoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreConstants.swift; sourceTree = "<group>"; };
-		2BACD4A92A82FDEF00452A2D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2BACD4AB2A82FE8100452A2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationType.swift; sourceTree = "<group>"; };
+		2BEE1B852B65D7A0009627D9 /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
 		2BEE1B9A2B66F5D3009627D9 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		2BEE1B9C2B66FCD1009627D9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2BEE1BA02B6718EA009627D9 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
@@ -230,7 +234,7 @@
 		CA18AD032B62A87E0096AA0C /* AuthenticationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBottomView.swift; sourceTree = "<group>"; };
 		CA18AD0B2B6416E60096AA0C /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		CA18AD0E2B641A180096AA0C /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
-		CA18AD172B65B8920096AA0C /* AuthValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidation.swift; sourceTree = "<group>"; };
+		CA18AD172B65B8920096AA0C /* FormValidatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidatorProtocol.swift; sourceTree = "<group>"; };
 		CA18AD1A2B66DAA90096AA0C /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		CA27F8822B6954EE006797E8 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		CA27F8852B6969A7006797E8 /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
@@ -254,11 +258,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B2654882B6BEDDA0007555D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B26548A2B6BEDEF0007555D /* BlockUserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2B2654892B6BEDE10007555D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE1BE22B6B53BE009627D9 /* BlockUserView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B26548C2B6BF0510007555D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2B26548D2B6BF05F0007555D /* BlockUserManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2B26548F2B6BF2890007555D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7F7C2B51B61D00765971 /* GenderType.swift */,
+				2B4C7EDE2B44AA0800765971 /* RelationshipGoalsType.swift */,
+				2B4C7F822B51B98E00765971 /* SexualOrientationType.swift */,
+				2B4C7FBE2B53053200765971 /* SexualPreferenceType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2B2654902B6BF2990007555D /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C7FBA2B53023500765971 /* UserError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		2B4C7EBB2B41EA2C00765971 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				2B4C7EBC2B41EA3200765971 /* AuthManager.swift */,
-				2BEE1BC82B67EA5F009627D9 /* AuthState.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -296,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				2BEE1BE72B6B54D5009627D9 /* SheetConfigurations */,
+				2B2654912B6C0A2F0007555D /* UserAccountRestrictionAction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,7 +470,7 @@
 		2B4C7FB52B5301CF00765971 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CA18AD162B65B8670096AA0C /* FormValidatorProtocol */,
+				CA18AD162B65B8670096AA0C /* Protocols */,
 				2B4C7FB62B5301D900765971 /* User */,
 			);
 			path = Shared;
@@ -442,12 +489,9 @@
 		2B4C7FB72B5301DF00765971 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B4C7F7C2B51B61D00765971 /* GenderType.swift */,
-				2B4C7EDE2B44AA0800765971 /* RelationshipGoalsType.swift */,
-				2B4C7F822B51B98E00765971 /* SexualOrientationType.swift */,
-				2B4C7FBE2B53053200765971 /* SexualPreferenceType.swift */,
+				2B26548F2B6BF2890007555D /* Enums */,
+				2B2654902B6BF2990007555D /* Error */,
 				2BACD4A42A82FD6700452A2D /* User.swift */,
-				2B4C7FBA2B53023500765971 /* UserError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -910,7 +954,6 @@
 			isa = PBXGroup;
 			children = (
 				CA18AD0D2B641A040096AA0C /* String */,
-				2BACD4A92A82FDEF00452A2D /* Color.swift */,
 				2B4C7ECA2B447A2500765971 /* DeveloperPreview.swift */,
 				2B4C7F692B51850E00765971 /* Date.swift */,
 			);
@@ -947,7 +990,8 @@
 		2BEE1B842B65D78F009627D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BEE1B852B65D7A0009627D9 /* AuthenticationType.swift */,
+				2BEE1BC82B67EA5F009627D9 /* AuthState.swift */,
+				2BEE1B852B65D7A0009627D9 /* AuthType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1018,7 +1062,9 @@
 		2BEE1BE12B6B53B7009627D9 /* Blocking */ = {
 			isa = PBXGroup;
 			children = (
-				2BEE1BE22B6B53BE009627D9 /* BlockUserView.swift */,
+				2B26548C2B6BF0510007555D /* Manager */,
+				2B2654882B6BEDDA0007555D /* Service */,
+				2B2654892B6BEDE10007555D /* View */,
 			);
 			path = Blocking;
 			sourceTree = "<group>";
@@ -1083,12 +1129,12 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		CA18AD162B65B8670096AA0C /* FormValidatorProtocol */ = {
+		CA18AD162B65B8670096AA0C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				CA18AD172B65B8920096AA0C /* AuthValidation.swift */,
+				CA18AD172B65B8920096AA0C /* FormValidatorProtocol.swift */,
 			);
-			path = FormValidatorProtocol;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CA27F8812B6954DC006797E8 /* Birthday */ = {
@@ -1215,7 +1261,9 @@
 				2B4C7F8A2B52064300765971 /* ProfileInfoRowView.swift in Sources */,
 				2B4C80502B59997300765971 /* MockUserService.swift in Sources */,
 				2B4C7F462B50C55700765971 /* SearchView.swift in Sources */,
+				2B2654922B6C0A2F0007555D /* UserAccountRestrictionAction.swift in Sources */,
 				2B6618172B5DE6AC00236B43 /* SwipeActionButtonsView.swift in Sources */,
+				2B26548B2B6BEDEF0007555D /* BlockUserService.swift in Sources */,
 				CA27F88B2B697E11006797E8 /* GraduationYearView.swift in Sources */,
 				2B4C7EC72B41F6FA00765971 /* UserCardsView.swift in Sources */,
 				2B4C7ED12B447DDB00765971 /* ImageScrollingOverlay.swift in Sources */,
@@ -1223,7 +1271,6 @@
 				2B4C7F752B51A23F00765971 /* InboxService.swift in Sources */,
 				2BACD4A82A82FDBC00452A2D /* FirestoreConstants.swift in Sources */,
 				2B4C7ECB2B447A2500765971 /* DeveloperPreview.swift in Sources */,
-				2BACD4AA2A82FDEF00452A2D /* Color.swift in Sources */,
 				2B66180A2B5DDC4500236B43 /* CardService.swift in Sources */,
 				2B4C7EBD2B41EA3200765971 /* AuthManager.swift in Sources */,
 				2B4C7F812B51B69100765971 /* SexualOrientationSelectionView.swift in Sources */,
@@ -1245,8 +1292,9 @@
 				2B4C804C2B598A4B00765971 /* SwipeActionIndicatorView.swift in Sources */,
 				2B6618212B5DEAC600236B43 /* MatchService.swift in Sources */,
 				2BEE1BF22B6B5602009627D9 /* ReportOptionsModel.swift in Sources */,
-				CA18AD182B65B8920096AA0C /* AuthValidation.swift in Sources */,
+				CA18AD182B65B8920096AA0C /* FormValidatorProtocol.swift in Sources */,
 				2B4C7F4E2B50C62B00765971 /* ChatBubble.swift in Sources */,
+				2B26548E2B6BF05F0007555D /* BlockUserManager.swift in Sources */,
 				2BACD4A12A82FD3100452A2D /* TinderButtonModifier.swift in Sources */,
 				2B6618342B5E2B3300236B43 /* NewMatchItemView.swift in Sources */,
 				2B6618142B5DE66D00236B43 /* CardStackView.swift in Sources */,
@@ -1279,7 +1327,7 @@
 				CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */,
 				CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */,
 				2B4C7ED32B449D0C00765971 /* CurrentUserProfileView.swift in Sources */,
-				2BEE1B862B65D7A0009627D9 /* AuthenticationType.swift in Sources */,
+				2BEE1B862B65D7A0009627D9 /* AuthType.swift in Sources */,
 				2B4C7F642B5182C400765971 /* InboxView.swift in Sources */,
 				2B4C803A2B58DC6B00765971 /* SwipeAction.swift in Sources */,
 				2BEE1B9D2B66FCD1009627D9 /* AuthViewModel.swift in Sources */,

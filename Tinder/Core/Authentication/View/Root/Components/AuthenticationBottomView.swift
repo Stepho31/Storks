@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AuthenticationBottomView: View {
-    @Binding var authType: AuthenticationType?
+    @Binding var authType: AuthType?
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {

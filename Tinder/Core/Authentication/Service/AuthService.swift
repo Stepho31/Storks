@@ -8,7 +8,7 @@
 import Firebase
 
 struct AuthService: AuthServiceProtocol {
-    func login(withEmail email: String, password: String) async throws -> String? {
+    func login(withEmail email: String, password: String) async throws -> String {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             return result.user.uid
@@ -18,7 +18,7 @@ struct AuthService: AuthServiceProtocol {
         }
     }
     
-    func createUser(withEmail email: String, password: String) async throws -> String? {
+    func createUser(withEmail email: String, password: String) async throws -> String {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             return result.user.uid

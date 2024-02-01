@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 class AuthManager: ObservableObject {
     @Published var authState: AuthState = .unauthenticated
-    @Published var authType: AuthenticationType?
+    @Published var authType: AuthType?
     
     private let service: AuthServiceProtocol
     
@@ -36,12 +36,12 @@ class AuthManager: ObservableObject {
     }
     
     private func login(withEmail email: String, password: String) async throws {
-        guard let uid = try await service.login(withEmail: email, password: password) else { return }
+        let uid = try await service.login(withEmail: email, password: password)
         self.authState = .authenticated(uid: uid)
     }
     
     private func createUser(withEmail email: String, password: String) async throws {
-        guard let uid = try await service.createUser(withEmail: email, password: password) else { return }
+        let uid = try await service.createUser(withEmail: email, password: password)
         self.authState = .authenticated(uid: uid)
     }
     

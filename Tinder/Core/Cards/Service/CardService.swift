@@ -9,6 +9,10 @@ import Foundation
 
 protocol CardServiceProtocol {
     func fetchCards(for currentUser: User) async throws -> [CardModel]
-    func fetchPotentialMatches() async throws -> [String]
 }
 
+struct CardService: CardServiceProtocol {
+    func fetchCards(for currentUser: User) async throws -> [CardModel] {
+        return [] 
+    }
+}

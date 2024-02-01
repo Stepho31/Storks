@@ -7,11 +7,7 @@
 
 import SwiftUI
 
-protocol Blockable {
-    var onBlock: (() -> Void)? { get }
-}
-
-struct UserProfileView: View, Blockable {
+struct UserProfileView: View, UserBlockable {
     @Environment(\.dismiss) var dismiss
     @State private var currentImageIndex = 0
     @State private var sheetConfig: UserProfileSheetConfiguration?

@@ -10,6 +10,7 @@
 		2B26548B2B6BEDEF0007555D /* BlockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26548A2B6BEDEF0007555D /* BlockUserService.swift */; };
 		2B26548E2B6BF05F0007555D /* BlockUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26548D2B6BF05F0007555D /* BlockUserManager.swift */; };
 		2B2654922B6C0A2F0007555D /* UserAccountRestrictionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654912B6C0A2F0007555D /* UserAccountRestrictionAction.swift */; };
+		2B2654AF2B6C1ECB0007555D /* UserBlockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654AE2B6C1ECB0007555D /* UserBlockable.swift */; };
 		2B4C7EBD2B41EA3200765971 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBC2B41EA3200765971 /* AuthManager.swift */; };
 		2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */; };
 		2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */; };
@@ -130,6 +131,7 @@
 		2B26548A2B6BEDEF0007555D /* BlockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserService.swift; sourceTree = "<group>"; };
 		2B26548D2B6BF05F0007555D /* BlockUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserManager.swift; sourceTree = "<group>"; };
 		2B2654912B6C0A2F0007555D /* UserAccountRestrictionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountRestrictionAction.swift; sourceTree = "<group>"; };
+		2B2654AE2B6C1ECB0007555D /* UserBlockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockable.swift; sourceTree = "<group>"; };
 		2B4C7EBC2B41EA3200765971 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 				2B4C7FBA2B53023500765971 /* UserError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		2B2654AD2B6C1EC20007555D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2B2654AE2B6C1ECB0007555D /* UserBlockable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		2B4C7EBB2B41EA2C00765971 /* Manager */ = {
@@ -1052,6 +1062,7 @@
 		2BEE1BE02B6B53AF009627D9 /* AccountRestriction */ = {
 			isa = PBXGroup;
 			children = (
+				2B2654AD2B6C1EC20007555D /* Protocols */,
 				2BEE1BE12B6B53B7009627D9 /* Blocking */,
 				2BEE1BE42B6B53CC009627D9 /* Components */,
 				2BEE1BEA2B6B55AB009627D9 /* Reporting */,
@@ -1343,6 +1354,7 @@
 				2B66181A2B5DE8A500236B43 /* ToolbarLogo.swift in Sources */,
 				2BEE1BF02B6B55E2009627D9 /* Report.swift in Sources */,
 				2B4C80472B59776600765971 /* SocialUserProfileView.swift in Sources */,
+				2B2654AF2B6C1ECB0007555D /* UserBlockable.swift in Sources */,
 				2BA9A4A92B603287000C3AA4 /* WelcomeInfoItemView.swift in Sources */,
 				2B4C7ED82B44A40500765971 /* ProfileImageGridView.swift in Sources */,
 				2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */,

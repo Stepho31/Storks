@@ -37,22 +37,9 @@ struct FullNameView: View {
                 
                 Spacer()
             }
-            
-            Button {
-                onboardingManager.navigate()
-            } label: {
-                Text("Next")
-                    .foregroundStyle(.white)
-                    .bold()
-                    .font(.title3)
-                    .frame(width: 320, height: 50)
-                    .background(Color(.primaryPink))
-                    .clipShape(Capsule())
-            }
+            NextButton()
         }
-        .padding()
-        .foregroundStyle(.white)
-        .background(.black)
+        .backgroundModifier()
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }

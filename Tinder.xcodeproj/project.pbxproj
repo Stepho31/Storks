@@ -124,6 +124,8 @@
 		CA27F8832B6954EE006797E8 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8822B6954EE006797E8 /* BirthdayView.swift */; };
 		CA27F8862B6969A7006797E8 /* StudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8852B6969A7006797E8 /* StudyView.swift */; };
 		CA27F88B2B697E11006797E8 /* GraduationYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F88A2B697E11006797E8 /* GraduationYearView.swift */; };
+		CA27F8992B6C35C3006797E8 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F8982B6C35C3006797E8 /* NextButton.swift */; };
+		CA27F89B2B6C3F49006797E8 /* onBoardingBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27F89A2B6C3F49006797E8 /* onBoardingBackgroundModifier.swift */; };
 		CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7831D12B6825E500F28D53 /* FullNameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -241,6 +243,8 @@
 		CA27F8822B6954EE006797E8 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		CA27F8852B6969A7006797E8 /* StudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyView.swift; sourceTree = "<group>"; };
 		CA27F88A2B697E11006797E8 /* GraduationYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraduationYearView.swift; sourceTree = "<group>"; };
+		CA27F8982B6C35C3006797E8 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		CA27F89A2B6C3F49006797E8 /* onBoardingBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingBackgroundModifier.swift; sourceTree = "<group>"; };
 		CA7831D12B6825E500F28D53 /* FullNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -754,6 +758,7 @@
 		2BA9A4A52B603176000C3AA4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				CA27F8972B6C35B1006797E8 /* Components */,
 				2BEE1BC42B672374009627D9 /* Manager */,
 				2BEE1B9F2B6718E2009627D9 /* Models */,
 				2BEE1BC72B672560009627D9 /* Views */,
@@ -1172,6 +1177,15 @@
 			path = GraduationYear;
 			sourceTree = "<group>";
 		};
+		CA27F8972B6C35B1006797E8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CA27F8982B6C35C3006797E8 /* NextButton.swift */,
+				CA27F89A2B6C3F49006797E8 /* onBoardingBackgroundModifier.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		CA7831D32B682D8500F28D53 /* FullName */ = {
 			isa = PBXGroup;
 			children = (
@@ -1352,6 +1366,7 @@
 				2BACD4902A82FC2700452A2D /* AuthService.swift in Sources */,
 				2BEE1BE92B6B54EE009627D9 /* UserProfileSheetConfiguration.swift in Sources */,
 				2B66181A2B5DE8A500236B43 /* ToolbarLogo.swift in Sources */,
+				CA27F8992B6C35C3006797E8 /* NextButton.swift in Sources */,
 				2BEE1BF02B6B55E2009627D9 /* Report.swift in Sources */,
 				2B4C80472B59776600765971 /* SocialUserProfileView.swift in Sources */,
 				2B2654AF2B6C1ECB0007555D /* UserBlockable.swift in Sources */,
@@ -1368,6 +1383,7 @@
 				2B4C7F512B50C67200765971 /* CircularProfileImageView.swift in Sources */,
 				2B4C7EC52B41EEE500765971 /* CardView.swift in Sources */,
 				2B4C7F682B5183B900765971 /* InboxRowView.swift in Sources */,
+				CA27F89B2B6C3F49006797E8 /* onBoardingBackgroundModifier.swift in Sources */,
 				2B4C80412B58E74000765971 /* SwipeActionButton.swift in Sources */,
 				2B4C7F6A2B51850E00765971 /* Date.swift in Sources */,
 				2B4C7FBF2B53053200765971 /* SexualPreferenceType.swift in Sources */,

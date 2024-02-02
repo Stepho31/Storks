@@ -29,10 +29,9 @@ struct ProfileImageGridView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         
                     } else {
-                        Rectangle()
-                            .fill(Color(.systemGroupedBackground))
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color(.secondarySystemBackground))
                             .frame(width: 110, height: 160)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                 }
             }
@@ -42,4 +41,5 @@ struct ProfileImageGridView: View {
 
 #Preview {
     ProfileImageGridView()
+        .environmentObject(UserManager(service: MockUserService()))
 }

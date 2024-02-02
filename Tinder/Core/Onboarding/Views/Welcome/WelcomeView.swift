@@ -62,8 +62,12 @@ struct WelcomeView: View {
                         StudyView()
                     case .graduationYear:
                         GraduationYearView()
-                    default:
-                        Text("Hello")
+                    case .gender:
+                        GenderView()
+                    case .sexualOrientation:
+                        SexualOrientationView()
+                    case .photos:
+                        AddProfilePhotosView()
                     }
                 }
                 .environmentObject(manager)

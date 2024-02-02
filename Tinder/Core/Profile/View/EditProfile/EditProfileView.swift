@@ -24,12 +24,6 @@ struct EditProfileView: View {
         return userManager.currentUser
     }
     
-    let columns: [GridItem] = [
-        .init(.flexible()),
-        .init(.flexible()),
-        .init(.flexible())
-    ]
-    
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {

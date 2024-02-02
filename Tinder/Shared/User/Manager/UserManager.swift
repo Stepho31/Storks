@@ -10,7 +10,7 @@ import SwiftUI
 
 class UserManager: ObservableObject {
     @Published var currentUser: User?
-    @Published var didCompleteOnboarding = true
+    @Published var didCompleteOnboarding = false
     
     private let service: UserServiceProtocol
     

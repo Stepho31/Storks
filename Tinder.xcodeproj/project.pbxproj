@@ -11,6 +11,8 @@
 		2B26548E2B6BF05F0007555D /* BlockUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26548D2B6BF05F0007555D /* BlockUserManager.swift */; };
 		2B2654922B6C0A2F0007555D /* UserAccountRestrictionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654912B6C0A2F0007555D /* UserAccountRestrictionAction.swift */; };
 		2B2654AF2B6C1ECB0007555D /* UserBlockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654AE2B6C1ECB0007555D /* UserBlockable.swift */; };
+		2B2654DA2B6D41AD0007555D /* SexualOrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654D92B6D41AD0007555D /* SexualOrientationView.swift */; };
+		2B2654DD2B6D438A0007555D /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654DC2B6D438A0007555D /* GenderView.swift */; };
 		2B4C7EBD2B41EA3200765971 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBC2B41EA3200765971 /* AuthManager.swift */; };
 		2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */; };
 		2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */; };
@@ -134,6 +136,8 @@
 		2B26548D2B6BF05F0007555D /* BlockUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserManager.swift; sourceTree = "<group>"; };
 		2B2654912B6C0A2F0007555D /* UserAccountRestrictionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountRestrictionAction.swift; sourceTree = "<group>"; };
 		2B2654AE2B6C1ECB0007555D /* UserBlockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockable.swift; sourceTree = "<group>"; };
+		2B2654D92B6D41AD0007555D /* SexualOrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexualOrientationView.swift; sourceTree = "<group>"; };
+		2B2654DC2B6D438A0007555D /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		2B4C7EBC2B41EA3200765971 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
@@ -313,6 +317,22 @@
 				2B2654AE2B6C1ECB0007555D /* UserBlockable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2B2654D82B6D41A00007555D /* SexualOrienatation */ = {
+			isa = PBXGroup;
+			children = (
+				2B2654D92B6D41AD0007555D /* SexualOrientationView.swift */,
+			);
+			path = SexualOrienatation;
+			sourceTree = "<group>";
+		};
+		2B2654DB2B6D437D0007555D /* Gender */ = {
+			isa = PBXGroup;
+			children = (
+				2B2654DC2B6D438A0007555D /* GenderView.swift */,
+			);
+			path = Gender;
 			sourceTree = "<group>";
 		};
 		2B4C7EBB2B41EA2C00765971 /* Manager */ = {
@@ -1046,10 +1066,12 @@
 		2BEE1BC72B672560009627D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CA27F8872B697A6F006797E8 /* GraduationYear */,
-				CA27F8842B696996006797E8 /* Study */,
 				CA27F8812B6954DC006797E8 /* Birthday */,
 				CA7831D32B682D8500F28D53 /* FullName */,
+				2B2654DB2B6D437D0007555D /* Gender */,
+				CA27F8872B697A6F006797E8 /* GraduationYear */,
+				2B2654D82B6D41A00007555D /* SexualOrienatation */,
+				CA27F8842B696996006797E8 /* Study */,
 				2BA9A4AA2B603291000C3AA4 /* Welcome */,
 			);
 			path = Views;
@@ -1375,12 +1397,14 @@
 				2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */,
 				2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */,
 				2B4C80372B58ABCE00765971 /* UserCell.swift in Sources */,
+				2B2654DD2B6D438A0007555D /* GenderView.swift in Sources */,
 				2B4C80532B59C5DD00765971 /* Match.swift in Sources */,
 				2BEE1BEC2B6B55C1009627D9 /* ReportUserView.swift in Sources */,
 				2BEE1BDF2B6AF9A4009627D9 /* CloseButton.swift in Sources */,
 				CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */,
 				2B4C7F4A2B50C5DD00765971 /* Message.swift in Sources */,
 				2B4C7F512B50C67200765971 /* CircularProfileImageView.swift in Sources */,
+				2B2654DA2B6D41AD0007555D /* SexualOrientationView.swift in Sources */,
 				2B4C7EC52B41EEE500765971 /* CardView.swift in Sources */,
 				2B4C7F682B5183B900765971 /* InboxRowView.swift in Sources */,
 				CA27F89B2B6C3F49006797E8 /* OnBoardingBackgroundModifier.swift in Sources */,

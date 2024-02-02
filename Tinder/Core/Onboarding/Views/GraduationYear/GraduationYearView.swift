@@ -10,7 +10,7 @@ import SwiftUI
 struct GraduationYearView: View {
     
     @EnvironmentObject var onboardingManager: OnboardingManager
-    @State var year: String = ""
+    @State var yearAsString: String = ""
     var currentYear =  Calendar.current.component(.year, from: Date.now)
     
     var body: some View {
@@ -21,13 +21,14 @@ struct GraduationYearView: View {
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    Menu(year.isEmpty ? "Graduation Year" : "\(year)") {
+                    Menu(yearAsString.isEmpty ? "Select Graduation Year" : "\(yearAsString)") {
                         ForEach(currentYear...endYear, id: \.self) { year in
-                            let year = year.formatted(.number.grouping(.never))
+                            let yearFormatted = year.formatted(.number.grouping(.never))
                             Button(action: {
-                                self.year = String(year)
+                                self.yearAsString = String(year)
+                                onboardingManager.graduationYear = year
                             }, label: {
-                                Text("\(year)")
+                                Text(yearAsString)
                             })
                         }
                     }

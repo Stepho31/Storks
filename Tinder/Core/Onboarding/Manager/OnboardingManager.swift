@@ -5,12 +5,20 @@
 //  Created by Stephan Dowless on 1/28/24.
 //
 
-import Foundation
+import UIKit
 
 class OnboardingManager: ObservableObject {
     @Published var navigationPath = [OnboardingSteps]()
     @Published var didCompleteOnboarding = false
     private var currentStep: OnboardingSteps?
+    
+    var name = ""
+    var birthday = Date()
+    var study = ""
+    var graduationYear = Calendar.current.component(.year, from: Date())
+    var gender: GenderType?
+    var sexualOrientation: SexualOrientationType?
+    var profilePhotos = [UIImage]()
     
     func start() {
         guard let initialStep = OnboardingSteps(rawValue: 0) else { return }

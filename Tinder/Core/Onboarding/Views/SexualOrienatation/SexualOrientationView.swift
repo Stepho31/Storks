@@ -45,6 +45,9 @@ struct SexualOrientationView: View {
 
             NextButton()
         }
+        .onChange(of: sexualOrientation, perform: { value in
+            onboardingManager.sexualOrientation = value
+        })
         .frame(alignment: .leading)
         .padding()
         .foregroundStyle(.white)

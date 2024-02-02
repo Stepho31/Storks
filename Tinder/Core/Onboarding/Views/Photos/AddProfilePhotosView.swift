@@ -90,15 +90,16 @@ struct AddProfilePhotosView: View {
 extension AddProfilePhotosView {
     func loadProfilePhotos() {
         Task {
-            var images = [Image]()
+            var images = [UIImage]()
             
             for item in selectedPhotoItems {
                 guard let imageData = try? await item.loadTransferable(type: Data.self) else { return }
                 guard let uiImage = UIImage(data: imageData) else { return }
-                images.append(Image(uiImage: uiImage))
+                images.append(uiImage)
             }
             
-            self.profileImages = images
+            self.profileImages = images.map({ Image(uiImage: $0) })
+            onboardingManager.profilePhotos = images
         }
     }
 }

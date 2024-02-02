@@ -9,7 +9,6 @@ import SwiftUI
 
 struct StudyView: View {
     @EnvironmentObject var onboardingManager: OnboardingManager
-    @State var study: String = ""
     
     var body: some View {
         VStack {
@@ -19,7 +18,7 @@ struct StudyView: View {
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    TextField("Enter your study", text: $study)
+                    TextField("Enter your study", text: $onboardingManager.study)
                     
                     Divider()
                     

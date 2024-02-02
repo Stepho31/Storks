@@ -36,6 +36,9 @@ struct GenderView: View {
             
             NextButton()
         }
+        .onChange(of: selectedGender, perform: { value in
+            onboardingManager.gender = value
+        })
         .frame(maxWidth: .infinity)
         .foregroundStyle(.white)
         .background(.black)

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BirthdayView: View {
     @EnvironmentObject var onboardingManager: OnboardingManager
-    @State var selectedDate: Date = Date()
     
     var body: some View {
         VStack {
@@ -19,7 +18,7 @@ struct BirthdayView: View {
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+                    DatePicker("Select Date", selection: $onboardingManager.birthday, displayedComponents: [.date])
                     
                     Divider()
                     

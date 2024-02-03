@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileImageGridView: View {
-//    let user: User
     @EnvironmentObject var userManager: UserManager
     
     let columns: [GridItem] = [
@@ -22,7 +22,7 @@ struct ProfileImageGridView: View {
             if let user = userManager.currentUser {
                 ForEach(0 ..< 6) { index in
                     if index < user.numberOfImages {
-                        Image(user.profileImageURLs[index])
+                        KFImage(URL(string: user.profileImageURLs[index]))
                             .resizable()
                             .scaledToFill()
                             .frame(width: 110, height: 160)

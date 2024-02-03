@@ -23,12 +23,11 @@ struct GraduationYearView: View {
                 VStack(alignment: .leading) {
                     Menu(yearAsString.isEmpty ? "Select Graduation Year" : "\(yearAsString)") {
                         ForEach(currentYear...endYear, id: \.self) { year in
-                            let yearFormatted = year.formatted(.number.grouping(.never))
                             Button(action: {
                                 self.yearAsString = String(year)
                                 onboardingManager.graduationYear = year
                             }, label: {
-                                Text(yearAsString)
+                                Text(String(year))
                             })
                         }
                     }
@@ -50,13 +49,19 @@ struct GraduationYearView: View {
                 Spacer()
             }
             
-            NextButton()
+            NextButton(formIsValid: formIsValid)
         }
         .backgroundModifier()
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }
         }
+    }
+}
+
+extension GraduationYearView: FormValidatorProtocol {
+    var formIsValid: Bool {
+        return !yearAsString.isEmpty
     }
 }
 

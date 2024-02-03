@@ -8,6 +8,6 @@
 import Foundation
 
 class AuthViewModel: ObservableObject {
-    var email = ""
-    var password = ""
+    @Published var email = ""
+    @Published var password = ""
 }

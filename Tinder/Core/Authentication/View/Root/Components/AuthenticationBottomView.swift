@@ -22,7 +22,7 @@ struct AuthenticationBottomView: View {
             }, label: {
                 Text("Create Account")
                     .font(.headline)
-                    .foregroundColor(.black).opacity(0.6)
+                    .foregroundColor(.black)
                     .frame(width: 340, height: 50)
             })
             .background(.primary)
@@ -36,10 +36,10 @@ struct AuthenticationBottomView: View {
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50)
             })
-            .overlay(
-                RoundedRectangle(cornerRadius: 25)
+            .overlay {
+                Capsule()
                     .stroke(.white, lineWidth: 1.5)
-            )
+            }
             
             Button(action: {}, label: {
                 Text("Trouble signing in?")

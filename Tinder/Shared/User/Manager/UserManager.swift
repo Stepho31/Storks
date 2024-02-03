@@ -8,24 +8,25 @@
 import Firebase
 import SwiftUI
 
+@MainActor
 class UserManager: ObservableObject {
     @Published var currentUser: User?
-    @Published var didCompleteOnboarding = false
+    @Published var didCompleteOnboarding = true
     
     private let service: UserServiceProtocol
+    private let imageUploader: ImageUploader
     
     private var currentUid: String? {
-        guard let uid = Auth.auth().currentUser?.uid else { return "123" }
-        return uid
+        return Auth.auth().currentUser?.uid
     }
         
     init(service: UserServiceProtocol) {
         self.service = service
+        self.imageUploader = ImageUploader()
         
         Task { await fetchCurrentUser() }
     }
         
-    @MainActor
     func fetchCurrentUser() async {
         guard let currentUid else { return }
         
@@ -36,5 +37,11 @@ class UserManager: ObservableObject {
         }
     }
     
-    
+    func uploadUserData(_ user: User, profilePhotos: [UIImage]) async {
+        do {
+            self.currentUser = try await service.uploadUserData(user, profilePhotos: profilePhotos)
+        } catch {
+            print("DEBUG: Failed to upload user data with error: \(error.localizedDescription)")
+        }
+    }
 }

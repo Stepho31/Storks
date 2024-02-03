@@ -9,18 +9,21 @@ import SwiftUI
 
 struct NextButton: View {
     @EnvironmentObject var onboardingManager: OnboardingManager
+    let formIsValid: Bool
+    
     var body: some View {
         Button {
             onboardingManager.navigate()
         } label: {
             Text("Next")
-                .foregroundStyle(.white)
+                .foregroundStyle(formIsValid ? .white : .black.opacity(0.5))
                 .bold()
                 .font(.title3)
                 .frame(width: 320, height: 50)
-                .background(Color(.primaryPink))
+                .background(formIsValid ? Color(.primaryPink) : Color(.systemGray5))
                 .clipShape(Capsule())
         }
+        .disabled(!formIsValid)
     }
 }
 

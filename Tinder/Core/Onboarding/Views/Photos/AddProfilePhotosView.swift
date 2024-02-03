@@ -75,7 +75,7 @@ struct AddProfilePhotosView: View {
             .padding(.vertical)
             .font(.subheadline)
             
-            NextButton()
+            NextButton(formIsValid: formIsValid)
         }
         .onChange(of: selectedPhotoItems, perform: { value in
             loadProfilePhotos()
@@ -84,6 +84,12 @@ struct AddProfilePhotosView: View {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }
         }
+    }
+}
+
+extension AddProfilePhotosView: FormValidatorProtocol {
+    var formIsValid: Bool {
+        return profileImages.count > 1
     }
 }
 

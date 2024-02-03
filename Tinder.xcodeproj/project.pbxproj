@@ -14,6 +14,7 @@
 		2B2654DA2B6D41AD0007555D /* SexualOrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654D92B6D41AD0007555D /* SexualOrientationView.swift */; };
 		2B2654DD2B6D438A0007555D /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654DC2B6D438A0007555D /* GenderView.swift */; };
 		2B2654E02B6D4C390007555D /* AddProfilePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654DF2B6D4C390007555D /* AddProfilePhotosView.swift */; };
+		2B2654E32B6ED39D0007555D /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654E22B6ED39D0007555D /* ImageUploader.swift */; };
 		2B4C7EBD2B41EA3200765971 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBC2B41EA3200765971 /* AuthManager.swift */; };
 		2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */; };
 		2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */; };
@@ -140,6 +141,7 @@
 		2B2654D92B6D41AD0007555D /* SexualOrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexualOrientationView.swift; sourceTree = "<group>"; };
 		2B2654DC2B6D438A0007555D /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		2B2654DF2B6D4C390007555D /* AddProfilePhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfilePhotosView.swift; sourceTree = "<group>"; };
+		2B2654E22B6ED39D0007555D /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		2B4C7EBC2B41EA3200765971 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
@@ -345,6 +347,14 @@
 			path = Photos;
 			sourceTree = "<group>";
 		};
+		2B2654E12B6ED38C0007555D /* ImageUploading */ = {
+			isa = PBXGroup;
+			children = (
+				2B2654E22B6ED39D0007555D /* ImageUploader.swift */,
+			);
+			path = ImageUploading;
+			sourceTree = "<group>";
+		};
 		2B4C7EBB2B41EA2C00765971 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +524,7 @@
 		2B4C7FB52B5301CF00765971 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2B2654E12B6ED38C0007555D /* ImageUploading */,
 				CA18AD162B65B8670096AA0C /* Protocols */,
 				2B4C7FB62B5301D900765971 /* User */,
 			);
@@ -1366,6 +1377,7 @@
 				2B6618362B5EB74D00236B43 /* AuthenticationRootView.swift in Sources */,
 				2B4C7F712B5197C000765971 /* ChatMessageCell.swift in Sources */,
 				2BA9A4A72B60326C000C3AA4 /* WelcomeView.swift in Sources */,
+				2B2654E32B6ED39D0007555D /* ImageUploader.swift in Sources */,
 				2B4C7F5F2B50C87700765971 /* NewMatchesView.swift in Sources */,
 				2BEE1BA12B6718EA009627D9 /* OnboardingSteps.swift in Sources */,
 				2B4C7EDC2B44A9E500765971 /* RelationshipGoalsSelectionView.swift in Sources */,

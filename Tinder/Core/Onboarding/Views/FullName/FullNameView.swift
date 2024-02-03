@@ -36,13 +36,20 @@ struct FullNameView: View {
                 
                 Spacer()
             }
-            NextButton()
+            
+            NextButton(formIsValid: formIsValid)
         }
         .backgroundModifier()
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }
         }
+    }
+}
+
+extension FullNameView: FormValidatorProtocol {
+    var formIsValid: Bool {
+        return onboardingManager.name.count > 2
     }
 }
 

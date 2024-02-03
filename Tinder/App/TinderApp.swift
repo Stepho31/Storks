@@ -20,8 +20,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct TinderApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject var userManager = UserManager(service: MockUserService())
-    @StateObject var authmanager = AuthManager(service: MockAuthService())
+    @StateObject var userManager = UserManager(service: UserService())
+    @StateObject var authmanager = AuthManager(service: AuthService())
     @StateObject var matchManager = MatchManager(service: MatchService())
     
     var body: some Scene {

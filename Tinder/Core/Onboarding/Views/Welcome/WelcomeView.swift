@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct WelcomeView: View {    
-    @StateObject var manager = OnboardingManager()
     @Binding var didCompleteOnboarding: Bool
+    @EnvironmentObject var userManager: UserManager
+    @StateObject var manager = OnboardingManager()
     
     var body: some View {
         NavigationStack(path: $manager.navigationPath) {
@@ -50,6 +51,10 @@ struct WelcomeView: View {
             }
             .onChange(of: manager.didCompleteOnboarding, perform: { value in
                 self.didCompleteOnboarding = value
+            })
+            .task(id: manager.user, {
+                guard let user = manager.user, !manager.profilePhotos.isEmpty else { return }
+                await userManager.uploadUserData(user, profilePhotos: manager.profilePhotos)
             })
             .navigationDestination(for: OnboardingSteps.self, destination: { step in
                 VStack {

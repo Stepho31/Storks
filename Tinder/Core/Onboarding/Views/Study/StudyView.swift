@@ -37,13 +37,19 @@ struct StudyView: View {
                 Spacer()
             }
             
-            NextButton()
+            NextButton(formIsValid: formIsValid)
         }
         .backgroundModifier()
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }
         }
+    }
+}
+
+extension StudyView: FormValidatorProtocol {
+    var formIsValid: Bool {
+        return !onboardingManager.study.isEmpty
     }
 }
 

@@ -5,7 +5,7 @@
 //  Created by Stephan Dowless on 12/31/23.
 //
 
-import Foundation
+import Firebase
 
 @MainActor
 class AuthManager: ObservableObject {
@@ -16,8 +16,10 @@ class AuthManager: ObservableObject {
     
     init(service: AuthServiceProtocol) {
         self.service = service
-
-        self.authState = .authenticated(uid: NSUUID().uuidString)
+        
+        if let currentUid = Auth.auth().currentUser?.uid {
+            self.authState = .authenticated(uid: currentUid)
+        }
     }
     
     func authenticate(withEmail email: String, password: String) async {
@@ -35,6 +37,11 @@ class AuthManager: ObservableObject {
         }
     }
     
+    func signout() {
+        service.signOut()
+        self.authState = .unauthenticated
+    }
+    
     private func login(withEmail email: String, password: String) async throws {
         let uid = try await service.login(withEmail: email, password: password)
         self.authState = .authenticated(uid: uid)
@@ -43,10 +50,5 @@ class AuthManager: ObservableObject {
     private func createUser(withEmail email: String, password: String) async throws {
         let uid = try await service.createUser(withEmail: email, password: password)
         self.authState = .authenticated(uid: uid)
-    }
-    
-    func signout() {
-        service.signOut()
-        self.authState = .unauthenticated
     }
 }

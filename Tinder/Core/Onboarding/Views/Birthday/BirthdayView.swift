@@ -39,7 +39,7 @@ struct BirthdayView: View {
                 Spacer()
             }
             
-            NextButton()
+            NextButton(formIsValid: true)
         }
         .backgroundModifier()
         .toolbar {

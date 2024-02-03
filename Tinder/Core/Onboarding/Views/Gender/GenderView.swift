@@ -34,7 +34,7 @@ struct GenderView: View {
             
             Spacer()
             
-            NextButton()
+            NextButton(formIsValid: formIsValid)
         }
         .onChange(of: selectedGender, perform: { value in
             onboardingManager.gender = value
@@ -46,6 +46,12 @@ struct GenderView: View {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }
         }
+    }
+}
+
+extension GenderView: FormValidatorProtocol {
+    var formIsValid: Bool {
+        return selectedGender != nil
     }
 }
 

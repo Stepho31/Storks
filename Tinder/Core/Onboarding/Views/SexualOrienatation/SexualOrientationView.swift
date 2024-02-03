@@ -43,7 +43,7 @@ struct SexualOrientationView: View {
             }
             Spacer()
 
-            NextButton()
+            NextButton(formIsValid: formIsValid)
         }
         .onChange(of: sexualOrientation, perform: { value in
             onboardingManager.sexualOrientation = value
@@ -56,6 +56,12 @@ struct SexualOrientationView: View {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }
         }
+    }
+}
+
+extension SexualOrientationView: FormValidatorProtocol {
+    var formIsValid: Bool {
+        return sexualOrientation != nil
     }
 }
 

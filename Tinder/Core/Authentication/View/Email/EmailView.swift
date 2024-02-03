@@ -82,8 +82,8 @@ private extension EmailView {
 
 private extension EmailView {
     var formIsValid: Bool {
-        return email.isValidEmail() &&
-        email.contains("bath.ac.uk")
+        return email.isValidEmail() 
+//        && email.contains("bath.ac.uk")
     }
 }
 

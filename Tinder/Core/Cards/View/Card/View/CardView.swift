@@ -87,7 +87,7 @@ private extension CardView {
         xOffset = 500
         degrees = 12
         
-        Task { try await viewModel.likeUser(user) }
+        Task { await viewModel.likeUser(user) }
     }
     
     private func swipeLeft() {

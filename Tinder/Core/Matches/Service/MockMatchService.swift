@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct MatchService: MatchServiceProtocol {
-    func fetchPotentialMatchIDs() async throws -> [String] {
-        try await Task.sleep(nanoseconds: 1_000_000_000)
-        return ["abc"]
+struct MockMatchService: MatchServiceProtocol {
+    func checkForMatch(withUser user: User) async throws -> Bool {
+        return false 
     }
     
     func fetchMatches() async throws -> [Match] {

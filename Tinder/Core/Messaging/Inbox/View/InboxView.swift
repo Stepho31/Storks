@@ -23,16 +23,21 @@ struct InboxView: View {
                         .font(.subheadline)
                         .fontWeight(.semibold)
                     
-                    ForEach(DeveloperPreview.threads) { thread in
-                        ZStack {
-                            NavigationLink(value: thread) {
-                                EmptyView()
-                            }.opacity(0.0)
-                            
-                            InboxRowView(thread: thread)
+                    if inboxViewModel.threads.isEmpty {
+                        InboxEmptyStateView()
+                            .padding(.top, 64)
+                    } else {
+                        ForEach(inboxViewModel.threads) { thread in
+                            ZStack {
+                                NavigationLink(value: thread) {
+                                    EmptyView()
+                                }.opacity(0.0)
+                                
+                                InboxRowView(thread: thread)
+                            }
                         }
+                        .padding(.vertical, 8)
                     }
-                    .padding(.vertical, 8)
                 }
                 .listRowSeparator(.hidden)
             }

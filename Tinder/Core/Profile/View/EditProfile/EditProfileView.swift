@@ -115,7 +115,7 @@ struct EditProfileView: View {
                             .padding(.leading)
                         
                         HStack {
-                            Text(selectedGender?.description ?? "Add Gender")
+                            Text(user?.gender.description ?? "Add Gender")
                             
                             Spacer()
                             
@@ -135,7 +135,7 @@ struct EditProfileView: View {
                             .padding(.leading)
                         
                         HStack {
-                            Text(selectedOrientation?.description ?? "Add Orientation")
+                            Text(user?.sexualOrientation.description ?? "Add Orientation")
                             
                             Spacer()
                             
@@ -192,6 +192,8 @@ private extension EditProfileView {
         self.bio = user.bio ?? ""
         self.graduationYear = String(user.graduationYear)
         self.major = user.major
+        self.selectedGender = user.gender
+        self.selectedOrientation = user.sexualOrientation
     }
 }
 

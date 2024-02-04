@@ -26,7 +26,7 @@ struct GenderSelectionView: View {
                                     Image(systemName: "checkmark")
                                 }
                             }
-                            .background(.white)
+                            .background(Color(.secondarySystemBackground))
                             .onTapGesture { selectedGender = gender }
                         }
                     }

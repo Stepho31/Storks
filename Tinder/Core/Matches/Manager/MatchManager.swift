@@ -14,12 +14,10 @@ class MatchManager: ObservableObject {
     @Published var matches = [Match]()
     
     private let service: MatchServiceProtocol
-    private var potentialMatchIDs = [String]()
     
     init(service: MatchServiceProtocol) {
         self.service = service
         
-        Task { await fetchPotentialMatchIDs() }
         Task { await fetchMatches() }
     }
     
@@ -31,20 +29,13 @@ class MatchManager: ObservableObject {
         }
     }
     
-    func fetchPotentialMatchIDs() async {
+    // consider using a queue structure for matches
+    func checkForMatch(fromUser user: User) async  {
         do {
-            potentialMatchIDs = try await service.fetchPotentialMatchIDs()
+            let didMatch = try await service.checkForMatch(withUser: user)
+            if didMatch { matchedUser = user }
         } catch {
-            print("DEBUG: Failed to fetch potential matches: \(error)")
+            print("DEBUG: Failed to check match with error: \(error)")
         }
-    }
-    
-    func checkForMatch(fromUser user: User) {
-        guard potentialMatchIDs.contains(user.id) else { return }
-        matchedUser = user
-    }
-    
-    func removePotentialMatchIfNecessary(forUser user: User) {
-        potentialMatchIDs.removeAll(where: { $0 == user.id })
     }
 }

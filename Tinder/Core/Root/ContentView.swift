@@ -20,6 +20,8 @@ struct ContentView: View {
                 if userManager.didCompleteOnboarding {
                     if userManager.currentUser != nil {
                         MainTabView()
+                    } else {
+                        ProgressView()
                     }
                 } else {
                     WelcomeView(didCompleteOnboarding: $userManager.didCompleteOnboarding)

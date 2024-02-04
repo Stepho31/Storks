@@ -18,7 +18,7 @@ struct User: Identifiable, Codable, Hashable {
     var bio: String?
     let major: String
     let graduationYear: Int
-    let gender: GenderType
+    var gender: GenderType
     let sexualOrientation: SexualOrientationType
     let sexualPreference: SexualPreferenceType
     var blockedUIDs: [String]

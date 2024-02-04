@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfilePhotosTabView: View {
     let user: User
@@ -13,7 +14,7 @@ struct ProfilePhotosTabView: View {
     var body: some View {
         TabView {
             ForEach(user.profileImageURLs, id: \.self) { imageUrl in
-                Image(imageUrl)
+                KFImage(URL(string: imageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(height: 500)

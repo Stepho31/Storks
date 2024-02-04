@@ -7,8 +7,15 @@
 
 import Foundation
 
+enum InboxLoadingState {
+    case loading
+    case empty
+    case hasData
+}
+
 class InboxViewModel: ObservableObject {
     @Published var threads = [Thread]()
+    @Published var loadingState: InboxLoadingState = .loading
     
     private let service: InboxServiceProtocol
     
@@ -21,6 +28,8 @@ class InboxViewModel: ObservableObject {
             for try await thread in service.observeThreads() {
                 threads.append(thread)
             }
+            
+            loadingState = threads.isEmpty ? .empty : .hasData
         }
     }
 }

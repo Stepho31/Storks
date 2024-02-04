@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SocialUserProfileView: View {
     @State private var showProfilePhotosTabView = false
@@ -32,8 +33,12 @@ struct SocialUserProfileView: View {
                         
                         VStack(alignment: .leading, spacing: 16) {
                             Divider()
-                            if let bio = user.bio { Text(bio) }
-                            Divider()
+                            
+                            if let bio = user.bio {
+                                Text(bio)
+                                
+                                Divider()
+                            }
                         }
                         .padding(.top)
                     }
@@ -43,7 +48,7 @@ struct SocialUserProfileView: View {
                     LazyVGrid(columns: items, spacing: 2) {
                         ForEach(user.profileImageURLs, id: \.self) { imageUrl in
                             if imageUrl != user.profileImageURLs.first {
-                                Image(imageUrl)
+                                KFImage(URL(string: imageUrl))
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: width, height: width)
@@ -55,6 +60,7 @@ struct SocialUserProfileView: View {
                 }
             }
         }
+        .padding(.top)
         .navigationTitle(user.firstName)
         .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(isPresented: $showProfilePhotosTabView, content: {

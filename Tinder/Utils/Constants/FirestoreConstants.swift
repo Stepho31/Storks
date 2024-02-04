@@ -16,4 +16,8 @@ struct FirestoreConstants {
     static func MatchesCollection(uid: String) -> CollectionReference {
         return UserCollection.document(uid).collection("user-matches")
     }
+    
+    static func UserLikesCollection(uid: String) -> CollectionReference {
+        return UserCollection.document(uid).collection("user-likes")
+    }
 }

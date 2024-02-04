@@ -47,14 +47,18 @@ class CardsViewModel: ObservableObject {
         animating = false
     }
     
-    func likeUser(_ user: User) async throws {
-        try await removeCard(user)
-        matchManager.checkForMatch(fromUser: user)
+    func likeUser(_ user: User) async {
+        do {
+            try await removeCard(user)
+            try await cardService.saveLike(forUser: user)
+            await matchManager.checkForMatch(fromUser: user)
+        } catch {
+            print("DEBUG: Like user failed with error: \(error)")
+        }
     }
     
     func rejectUser(_ user: User) async throws {
         try await removeCard(user)
-        matchManager.removePotentialMatchIfNecessary(forUser: user)
     }
     
     func updateCardStackState() {

@@ -17,4 +17,8 @@ struct MockCardService: CardServiceProtocol {
             .filter({ !currentUser.blockedUIDs.contains($0.id) })
             .map({ CardModel(user: $0) })
     }
+    
+    func saveLike(forUser user: User)async throws {
+        print("DEBUG: Save like for user \(user.firstName)")
+    }
 }

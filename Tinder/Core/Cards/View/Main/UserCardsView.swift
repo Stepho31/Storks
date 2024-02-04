@@ -19,7 +19,7 @@ struct UserCardsView: View {
         self.matchManager = matchManager
         
         let viewModel = CardsViewModel(currentUser: userManager.currentUser,
-                                       cardService: MockCardService(),
+                                       cardService: CardService(),
                                        matchManager: matchManager)
         
         self._viewModel = StateObject(wrappedValue: viewModel)

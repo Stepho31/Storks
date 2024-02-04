@@ -9,12 +9,13 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
+    @StateObject var searchViewModel = SearchViewModel(service: SearchService())
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 16) {
-                    ForEach(DeveloperPreview.users) { user in
+                    ForEach(searchViewModel.users) { user in
                         NavigationLink(value: user) {
                             UserCell(user: user)
                         }

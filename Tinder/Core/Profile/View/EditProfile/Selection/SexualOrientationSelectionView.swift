@@ -26,7 +26,7 @@ struct SexualOrientationSelectionView: View {
                                     Image(systemName: "checkmark")
                                 }
                             }
-                            .background(.white)
+                            .background(Color(.secondarySystemBackground))
                             .onTapGesture { selectedOrientation = orientation }
                         }
                     }

@@ -15,6 +15,9 @@
 		2B2654DD2B6D438A0007555D /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654DC2B6D438A0007555D /* GenderView.swift */; };
 		2B2654E02B6D4C390007555D /* AddProfilePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654DF2B6D4C390007555D /* AddProfilePhotosView.swift */; };
 		2B2654E32B6ED39D0007555D /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654E22B6ED39D0007555D /* ImageUploader.swift */; };
+		2B2654E52B6F005A0007555D /* InboxEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654E42B6F005A0007555D /* InboxEmptyStateView.swift */; };
+		2B2654E82B6F18690007555D /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654E72B6F18690007555D /* SearchService.swift */; };
+		2B2654EB2B6F18CC0007555D /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2654EA2B6F18CC0007555D /* SearchViewModel.swift */; };
 		2B4C7EBD2B41EA3200765971 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBC2B41EA3200765971 /* AuthManager.swift */; };
 		2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */; };
 		2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */; };
@@ -142,6 +145,9 @@
 		2B2654DC2B6D438A0007555D /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		2B2654DF2B6D4C390007555D /* AddProfilePhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfilePhotosView.swift; sourceTree = "<group>"; };
 		2B2654E22B6ED39D0007555D /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		2B2654E42B6F005A0007555D /* InboxEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxEmptyStateView.swift; sourceTree = "<group>"; };
+		2B2654E72B6F18690007555D /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		2B2654EA2B6F18CC0007555D /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		2B4C7EBC2B41EA3200765971 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		2B4C7EBF2B41EA6200765971 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		2B4C7EC12B41EA7F00765971 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
@@ -355,6 +361,22 @@
 			path = ImageUploading;
 			sourceTree = "<group>";
 		};
+		2B2654E62B6F185D0007555D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2B2654E72B6F18690007555D /* SearchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2B2654E92B6F18C20007555D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B2654EA2B6F18CC0007555D /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2B4C7EBB2B41EA2C00765971 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,7 +427,9 @@
 			isa = PBXGroup;
 			children = (
 				2B4C80352B58ABB400765971 /* Components */,
+				2B2654E62B6F185D0007555D /* Service */,
 				2B4C80342B58ABAB00765971 /* View */,
+				2B2654E92B6F18C20007555D /* ViewModel */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -415,6 +439,7 @@
 			children = (
 				2B4C7F632B5182C400765971 /* InboxView.swift */,
 				2B4C7F672B5183B900765971 /* InboxRowView.swift */,
+				2B2654E42B6F005A0007555D /* InboxEmptyStateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1331,6 +1356,7 @@
 				2B4C80502B59997300765971 /* MockUserService.swift in Sources */,
 				2B4C7F462B50C55700765971 /* SearchView.swift in Sources */,
 				2B2654922B6C0A2F0007555D /* UserAccountRestrictionAction.swift in Sources */,
+				2B2654E82B6F18690007555D /* SearchService.swift in Sources */,
 				2B6618172B5DE6AC00236B43 /* SwipeActionButtonsView.swift in Sources */,
 				2B26548B2B6BEDEF0007555D /* BlockUserService.swift in Sources */,
 				CA27F88B2B697E11006797E8 /* GraduationYearView.swift in Sources */,
@@ -1396,6 +1422,7 @@
 				CA27F8832B6954EE006797E8 /* BirthdayView.swift in Sources */,
 				2BEE1BE32B6B53BE009627D9 /* BlockUserView.swift in Sources */,
 				CA18AD1B2B66DAA90096AA0C /* BackButton.swift in Sources */,
+				2B2654E52B6F005A0007555D /* InboxEmptyStateView.swift in Sources */,
 				CA7831D22B6825E500F28D53 /* FullNameView.swift in Sources */,
 				2B4C7ED32B449D0C00765971 /* CurrentUserProfileView.swift in Sources */,
 				2BEE1B862B65D7A0009627D9 /* AuthType.swift in Sources */,
@@ -1417,6 +1444,7 @@
 				2B4C80472B59776600765971 /* SocialUserProfileView.swift in Sources */,
 				2B2654AF2B6C1ECB0007555D /* UserBlockable.swift in Sources */,
 				2BA9A4A92B603287000C3AA4 /* WelcomeInfoItemView.swift in Sources */,
+				2B2654EB2B6F18CC0007555D /* SearchViewModel.swift in Sources */,
 				2B4C7ED82B44A40500765971 /* ProfileImageGridView.swift in Sources */,
 				2B4C7EC22B41EA7F00765971 /* MockAuthService.swift in Sources */,
 				2B4C7EC02B41EA6200765971 /* AuthServiceProtocol.swift in Sources */,

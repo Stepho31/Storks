@@ -51,7 +51,7 @@ class CardsViewModel: ObservableObject {
         do {
             try await removeCard(user)
             try await cardService.saveLike(forUser: user)
-            await matchManager.checkForMatch(fromUser: user)
+            await matchManager.checkForMatch(fromUser: user, currentUser: currentUser)
         } catch {
             print("DEBUG: Like user failed with error: \(error)")
         }

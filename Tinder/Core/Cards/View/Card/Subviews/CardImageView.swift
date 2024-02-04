@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct CardImageView: View {
     let user: User
     @Binding var currentImageIndex: Int
     
     var body: some View {
-        Image(user.profileImageURLs[currentImageIndex])
+        KFImage(URL(string: user.profileImageURLs[currentImageIndex]))
             .resizable()
             .scaledToFill()
             .frame(width: SizeConstants.cardWidth, height: SizeConstants.cardHeight)

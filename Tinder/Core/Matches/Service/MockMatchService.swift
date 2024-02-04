@@ -8,6 +8,10 @@
 import Foundation
 
 struct MockMatchService: MatchServiceProtocol {
+    func saveMatch(withUser user: User, currentUser: User) async throws {
+        
+    }
+    
     func checkForMatch(withUser user: User) async throws -> Bool {
         return false 
     }

@@ -47,7 +47,9 @@ struct InboxView: View {
                 }
             })
             .navigationDestination(for: Match.self, destination: { match in
-                ChatView(user: match.user, thread: nil)
+                if let user = match.user {
+                    ChatView(user: user, thread: nil)
+                }
             })
             .navigationTitle("Matches")
             .navigationBarTitleDisplayMode(.inline)

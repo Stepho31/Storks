@@ -9,6 +9,8 @@ import Firebase
 
 struct Match: Codable, Identifiable, Hashable {
     let id: String
-    let user: User
+    let userId: String
     let matchTimestamp: Timestamp
+    
+    var user: User?
 }

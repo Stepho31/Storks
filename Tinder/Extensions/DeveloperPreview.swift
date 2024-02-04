@@ -173,7 +173,7 @@ extension DeveloperPreview {
 
 extension DeveloperPreview {
     static let matches: [Match] = [
-        .init(id: NSUUID().uuidString, user: users[2], matchTimestamp: Timestamp()),
-        .init(id: NSUUID().uuidString, user: users[3], matchTimestamp: Timestamp()),
+        .init(id: NSUUID().uuidString, userId: users[2].id, matchTimestamp: Timestamp()),
+        .init(id: NSUUID().uuidString, userId: users[3].id, matchTimestamp: Timestamp()),
     ]
 }

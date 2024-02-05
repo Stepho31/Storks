@@ -14,12 +14,13 @@ protocol CardServiceProtocol {
 
 struct CardService: CardServiceProtocol {
     func fetchCards(for currentUser: User) async throws -> [CardModel] {
-        let genderToFetch = genderToFetch(for: currentUser)
-        
+        let preferredGender = preferredGender(for: currentUser)
+
         do {
             let snapshot = try await FirestoreConstants
                 .UserCollection
-                .whereField("gender", isEqualTo: genderToFetch.rawValue)
+                .whereField("gender", isEqualTo: preferredGender.rawValue)
+                .whereField("sexualOrientation", isEqualTo: currentUser.sexualOrientation.rawValue)
                 .getDocuments()
             
             let users = snapshot.documents.compactMap({ try? $0.data(as: User.self) })
@@ -41,7 +42,7 @@ struct CardService: CardServiceProtocol {
             .setData([:])
     }
     
-    private func genderToFetch(for currentUser: User) -> GenderType {
+    private func preferredGender(for currentUser: User) -> GenderType {
         let orientation = currentUser.sexualOrientation
         let gender = currentUser.gender
         

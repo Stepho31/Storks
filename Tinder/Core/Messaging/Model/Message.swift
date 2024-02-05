@@ -22,6 +22,6 @@ struct Message: Identifiable, Codable, Hashable {
     }
     
     var isFromCurrentUser: Bool {
-        return fromId == user?.id
+        return fromId == Auth.auth().currentUser?.uid
     }
 }

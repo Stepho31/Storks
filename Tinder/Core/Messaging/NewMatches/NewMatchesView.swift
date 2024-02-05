@@ -34,7 +34,10 @@ struct NewMatchesView: View {
                 }
             }
         }
-        .padding()
+        .listRowSeparator(.hidden)
+        .listRowInsets(EdgeInsets())
+        .padding(.horizontal, 8)
+        .padding(.top)
     }
 }
 

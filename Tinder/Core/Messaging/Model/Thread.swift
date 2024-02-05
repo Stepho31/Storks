@@ -9,10 +9,14 @@ import Firebase
 
 struct Thread: Identifiable, Hashable, Codable {
     let id: String
-    let uids: [String]
-    var lastMessage: Message
-    var imageUrl: String?
+    var uids: [String]
+    var lastMessage: Message?
     var lastUpdated: Timestamp
     
     var chatPartner: User?
+    
+    var chatPartnerId: String {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return "" }
+        return uids.filter({ $0 != currentUid }).first ?? ""
+    }
 }

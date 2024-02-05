@@ -27,15 +27,26 @@ struct MessageInputView: View {
             }
             .fontWeight(.semibold)
             .padding(.horizontal)
+            .disabled(messageText.isEmpty)
+            .opacity(messageText.isEmpty ? 0.87 : 1.0)
         }
         .font(.subheadline)
     }
     
     private func onSend() {
-        Task { await chatManager.sendMessage(messageText) }
+        Task { 
+            await chatManager.sendMessage(messageText)
+            messageText = ""
+        }
     }
 }
 
 #Preview {
-    MessageInputView(messageText: .constant(""), chatManager: ChatManager(service: MockChatService()))
+    MessageInputView(
+        messageText: .constant(""),
+        chatManager: ChatManager(
+            service: MockChatService(),
+            thread: nil
+        )
+    )
 }

@@ -17,23 +17,29 @@ struct ChatView: View {
         self.user = user
         self.thread = thread
         
-        let chatService = MockChatService()
-        self._chatManager = StateObject(wrappedValue: ChatManager(service: chatService))
+        let chatService = ChatService(chatPartner: user, thread: thread)
+        let manager = ChatManager(service: chatService, thread: thread)
+        self._chatManager = StateObject(wrappedValue: manager)
     }
     
     var body: some View {
         VStack {
             ScrollView {
                 LazyVStack {
-                    ForEach(DeveloperPreview.messages) { message in
+                    ForEach(chatManager.messages) { message in
                         ChatMessageCell(message: message)
                     }
                 }
             }
                         
             MessageInputView(messageText: $messageText, chatManager: chatManager)
-                .padding()
+                .padding(8)
         }
+        .task(id: chatManager.initiateThreadObserver) {
+            guard chatManager.initiateThreadObserver else { return }
+            await chatManager.observeMessages()
+        }
+        .task { await chatManager.fetchThreadIfNecessary() }
         .navigationTitle(user.firstName)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .tabBar)

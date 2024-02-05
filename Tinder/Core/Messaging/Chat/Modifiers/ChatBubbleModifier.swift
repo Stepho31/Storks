@@ -11,7 +11,7 @@ struct ChatBubbleModifier: ViewModifier {
     let isFromCurrentUser: Bool
     
     var messageBackgroundColor: Color {
-        return isFromCurrentUser ? Color(.secondarySystemBackground) : .blue
+        return isFromCurrentUser ? .blue : Color(.secondarySystemBackground)
     }
     
     var messageTextColor: Color {

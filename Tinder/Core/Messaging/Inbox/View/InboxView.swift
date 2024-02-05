@@ -14,33 +14,18 @@ struct InboxView: View {
         NavigationStack {
             List {
                 NewMatchesView()
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets())
-                    .padding(.horizontal, 8)
-                
-                VStack(alignment: .leading) {
-                    Text("Messages")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
                     
-                    if inboxViewModel.threads.isEmpty {
-                        InboxEmptyStateView()
-                            .padding(.top, 64)
-                    } else {
-                        ForEach(inboxViewModel.threads) { thread in
-                            ZStack {
-                                NavigationLink(value: thread) {
-                                    EmptyView()
-                                }.opacity(0.0)
-                                
-                                InboxRowView(thread: thread)
-                            }
-                        }
-                        .padding(.vertical, 8)
-                    }
+                
+                switch inboxViewModel.loadingState {
+                case .loading:
+                    InboxLoadingView()
+                case .empty:
+                    InboxEmptyStateView()
+                case .hasData:
+                    InboxListView(viewModel: inboxViewModel)
                 }
-                .listRowSeparator(.hidden)
             }
+            .listStyle(PlainListStyle())
             .navigationDestination(for: Thread.self, destination: { thread in
                 if let user = thread.chatPartner {
                     ChatView(user: user, thread: thread)

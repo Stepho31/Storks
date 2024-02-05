@@ -154,8 +154,7 @@ extension DeveloperPreview {
         id: NSUUID().uuidString,
         uids: ["123", "456"],
         lastMessage: messages[0],
-        lastUpdated: Timestamp(),
-        chatPartner: users[0]
+        lastUpdated: Timestamp()
     )
     
     static var threads: [Thread] = [
@@ -163,8 +162,7 @@ extension DeveloperPreview {
             id: NSUUID().uuidString,
             uids: ["123", "456"],
             lastMessage: messages[0],
-            lastUpdated: Timestamp(),
-            chatPartner: users[0]
+            lastUpdated: Timestamp()
         )
     ]
 }

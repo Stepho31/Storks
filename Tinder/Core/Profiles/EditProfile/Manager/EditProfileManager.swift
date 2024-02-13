@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class EditProfileManager: ObservableObject {
     
     private let service: EditProfileService
@@ -17,6 +16,10 @@ class EditProfileManager: ObservableObject {
     }
     
     func saveUserData(_ user: User) async {
-        
+        do {
+            try await service.saveUserData(user)
+        } catch {
+            print("DEBUG: Failed to save user data with error: \(error)")
+        }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditProfileView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var userManager: UserManager
     
     @State private var bio = ""
@@ -18,7 +19,7 @@ struct EditProfileView: View {
     @State private var selectedOrientation: SexualOrientationType?
     @State private var sheetConfig: EditProfileSheetConfiguration?
     
-    @Environment(\.dismiss) var dismiss
+    @StateObject var editProfileManager = EditProfileManager(service: EditProfileService())
     
     private var user: User? {
         return userManager.currentUser
@@ -150,10 +151,10 @@ struct EditProfileView: View {
                         dismiss()
                     }
                 }
+                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
-                        onDoneTapped()
-                        dismiss()
+                        Task { await onDoneTapped() }
                     }
                     .fontWeight(.semibold)
                 }
@@ -173,7 +174,7 @@ private extension EditProfileView {
         self.selectedOrientation = user.sexualOrientation
     }
     
-    func onDoneTapped() {
+    func onDoneTapped() async {
         guard let user else { return }
         
         let newUser = User(
@@ -182,6 +183,7 @@ private extension EditProfileView {
             email: user.email,
             age: user.age,
             profileImageURLs: user.profileImageURLs,
+            bio: self.bio.isEmpty ? nil : self.bio,
             major: self.major,
             graduationYear: user.graduationYear,
             gender: self.selectedGender ?? user.gender,
@@ -192,8 +194,11 @@ private extension EditProfileView {
         )
         
         if newUser != user {
-            print("DEBUG: Update user")
+            await editProfileManager.saveUserData(newUser)
+            userManager.currentUser = newUser
         }
+        
+        dismiss()
     }
 }
 

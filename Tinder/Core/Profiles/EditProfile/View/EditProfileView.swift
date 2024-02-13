@@ -37,35 +37,11 @@ struct EditProfileView: View {
                             .fontWeight(.bold)
                             .padding(.leading)
                         
-                        TextField("", text: $bio, axis: .vertical)
+                        TextField("Add your bio", text: $bio, axis: .vertical)
                             .padding()
                             .frame(height: 64, alignment: .top)
-                            .background(Color(.systemGroupedBackground))
+                            .background(Color(.secondarySystemBackground))
                             .font(.subheadline)
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("RELATIONSHIP GOALS")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                            .padding(.leading)
-                        
-                        HStack {
-                            Image(systemName: "eye")
-                            Text("Looking for")
-                            
-                            Spacer()
-                            
-                            Text(selectedGoalType?.fullDescription ?? "Select type")
-                                .font(.footnote)
-                            
-                            Image(systemName: "chevron.right")
-                                .imageScale(.small)
-                        }
-                        .padding()
-                        .background(Color(.systemGroupedBackground))
-                        .font(.subheadline)
-                        .onTapGesture { sheetConfig = .relationshipGoals }
                     }
                     
                     VStack(alignment: .leading) {
@@ -84,7 +60,7 @@ struct EditProfileView: View {
                                 .font(.footnote)
                         }
                         .padding()
-                        .background(Color(.systemGroupedBackground))
+                        .background(Color(.secondarySystemBackground))
                         .font(.subheadline)
                     }
                     
@@ -104,7 +80,7 @@ struct EditProfileView: View {
                                 .font(.footnote)
                         }
                         .padding()
-                        .background(Color(.systemGroupedBackground))
+                        .background(Color(.secondarySystemBackground))
                         .font(.subheadline)
                     }
                     
@@ -115,7 +91,7 @@ struct EditProfileView: View {
                             .padding(.leading)
                         
                         HStack {
-                            Text(user?.gender.description ?? "Add Gender")
+                            Text(selectedGender?.description ?? "Add Gender")
                             
                             Spacer()
                             
@@ -123,7 +99,7 @@ struct EditProfileView: View {
                                 .imageScale(.small)
                         }
                         .padding()
-                        .background(Color(.systemGroupedBackground))
+                        .background(Color(.secondarySystemBackground))
                         .font(.subheadline)
                         .onTapGesture { sheetConfig = .gender }
                     }
@@ -143,7 +119,7 @@ struct EditProfileView: View {
                                 .imageScale(.small)
                         }
                         .padding()
-                        .background(Color(.systemGroupedBackground))
+                        .background(Color(.secondarySystemBackground))
                         .font(.subheadline)
                         .onTapGesture { sheetConfig = .sexualOrientation }
                     }
@@ -176,6 +152,7 @@ struct EditProfileView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
+                        onDoneTapped()
                         dismiss()
                     }
                     .fontWeight(.semibold)
@@ -194,6 +171,29 @@ private extension EditProfileView {
         self.major = user.major
         self.selectedGender = user.gender
         self.selectedOrientation = user.sexualOrientation
+    }
+    
+    func onDoneTapped() {
+        guard let user else { return }
+        
+        let newUser = User(
+            id: user.id,
+            fullname: user.fullname,
+            email: user.email,
+            age: user.age,
+            profileImageURLs: user.profileImageURLs,
+            major: self.major,
+            graduationYear: user.graduationYear,
+            gender: self.selectedGender ?? user.gender,
+            sexualOrientation: self.selectedOrientation ?? user.sexualOrientation,
+            sexualPreference: user.sexualPreference,
+            blockedUIDs: user.blockedUIDs,
+            blockedByUIDs: user.blockedByUIDs
+        )
+        
+        if newUser != user {
+            print("DEBUG: Update user")
+        }
     }
 }
 

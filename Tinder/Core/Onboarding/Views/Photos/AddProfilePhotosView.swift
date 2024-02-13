@@ -23,16 +23,22 @@ struct AddProfilePhotosView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Add your recent pics")
-                .font(.title)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
+            VStack(alignment: .leading, spacing: 12) {
+                Text("Add your recent pics")
+                    .font(.title)
+                    .bold()
+                
+                Text("The first item will be your main profile picture")
+                    .font(.footnote)
+                    .opacity(0.9)
+                    
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
             
             PhotosPicker(selection: $selectedPhotoItems, maxSelectionCount: maxNumberOfPhotos) {
                 LazyVGrid(columns: columns, spacing: 12) {
                     ForEach(0 ... maxNumberOfPhotos - 1, id: \.self) { index in
-                        
                         if index < profileImages.count {
                             profileImages[index]
                                 .resizable()
@@ -50,7 +56,6 @@ struct AddProfilePhotosView: View {
                                     .foregroundStyle(.white)
                                     .offset(x: 8, y: 4)
                             }
-                            
                         }
                     }
                 }
@@ -68,9 +73,8 @@ struct AddProfilePhotosView: View {
                     Text("\(profileImages.count) / \(maxNumberOfPhotos)")
                         .fontWeight(.semibold)
                 }
-                    
                 
-                Text("Hey! Let's add 2 to start. We recommend a face pic. ")
+                Text("Hey! Let's add 2 to start. We recommend a face pic.")
             }
             .padding(.vertical)
             .font(.subheadline)

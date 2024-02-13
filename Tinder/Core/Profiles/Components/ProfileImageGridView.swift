@@ -29,9 +29,16 @@ struct ProfileImageGridView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         
                     } else {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(.secondarySystemBackground))
-                            .frame(width: 110, height: 160)
+                        ZStack(alignment: .bottomTrailing) {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(.secondarySystemBackground))
+                                .frame(width: 110, height: 160)
+                            
+                            Image(systemName: "plus.circle.fill")
+                                .imageScale(.large)
+                                .foregroundStyle(.white)
+                                .offset(x: 8, y: 4)
+                        }
                     }
                 }
             }

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
-    @StateObject var searchViewModel = SearchViewModel(service: SearchService())
-    
+    @StateObject private var searchViewModel = SearchViewModel(service: SearchService())
+        
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(spacing: 16) {
-                    ForEach(searchViewModel.users) { user in
+                LazyVStack(spacing: 24) {
+                    ForEach(filteredUsers) { user in
                         NavigationLink(value: user) {
                             UserCell(user: user)
                         }
@@ -28,6 +28,20 @@ struct SearchView: View {
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, placement: .navigationBarDrawer)
+        }
+    }
+}
+
+private extension SearchView {
+    private var filteredUsers: [User] {
+        if searchText.isEmpty {
+            return searchViewModel.users
+        } else {
+            let lowercasedQuery = searchText.lowercased()
+            
+            return searchViewModel.users.filter({
+                $0.fullname.lowercased().contains(lowercasedQuery)
+            })
         }
     }
 }

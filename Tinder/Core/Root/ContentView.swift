@@ -17,14 +17,14 @@ struct ContentView: View {
             case .unauthenticated:
                 AuthenticationRootView()
             case .authenticated:
-                if userManager.didCompleteOnboarding {
-                    if userManager.currentUser != nil {
+                if let user = userManager.currentUser {
+                    if user.didCompleteOnboarding {
                         MainTabView()
                     } else {
-                        ProgressView()
+                        WelcomeView()
                     }
                 } else {
-                    WelcomeView(didCompleteOnboarding: $userManager.didCompleteOnboarding)
+                    ProgressView()
                 }
             }
         }

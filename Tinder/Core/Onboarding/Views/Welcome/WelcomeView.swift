@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct WelcomeView: View {    
-    @Binding var didCompleteOnboarding: Bool
     @EnvironmentObject var userManager: UserManager
     @StateObject var manager = OnboardingManager()
     
@@ -50,7 +49,7 @@ struct WelcomeView: View {
                 }
             }
             .onChange(of: manager.didCompleteOnboarding, perform: { value in
-                self.didCompleteOnboarding = value
+                self.userManager.currentUser?.didCompleteOnboarding = value
             })
             .task(id: manager.user, {
                 guard let user = manager.user, !manager.profilePhotos.isEmpty else { return }
@@ -85,5 +84,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView(didCompleteOnboarding: .constant(false))
+    WelcomeView()
 }

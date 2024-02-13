@@ -11,7 +11,6 @@ import SwiftUI
 @MainActor
 class UserManager: ObservableObject {
     @Published var currentUser: User?
-    @Published var didCompleteOnboarding = true
     
     private let service: UserServiceProtocol
     private let imageUploader: ImageUploader

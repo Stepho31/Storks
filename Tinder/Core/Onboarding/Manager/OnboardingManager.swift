@@ -62,7 +62,8 @@ class OnboardingManager: ObservableObject {
             sexualOrientation: sexualOrientation,
             sexualPreference: .women,
             blockedUIDs: [],
-            blockedByUIDs: []
+            blockedByUIDs: [],
+            didCompleteOnboarding: true
         )
     }
 }

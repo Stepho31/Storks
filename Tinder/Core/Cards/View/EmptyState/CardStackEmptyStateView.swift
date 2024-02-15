@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardStackEmptyStateView: View {
     @EnvironmentObject var userManager: UserManager
+    @EnvironmentObject var cardsViewModel: CardsViewModel
     
     var body: some View {
         VStack(spacing: 24) {
@@ -25,11 +26,18 @@ struct CardStackEmptyStateView: View {
                 CircularProfileImageView(user: userManager.currentUser, size: .xLarge)
             }
             
-            Text("There's no one around you. Expand your discovery settings to see more people")
+            Text("It looks like you've seen everyone. \nClick below to start again")
                 .foregroundStyle(.gray)
                 .font(.subheadline)
                 .frame(width: 300)
                 .multilineTextAlignment(.center)
+            
+            Button {
+                
+            } label: {
+                Text("Start Over")
+                    .modifier(TinderButtonModifier())
+            }
         }
     }
 }
@@ -37,4 +45,7 @@ struct CardStackEmptyStateView: View {
 #Preview {
     CardStackEmptyStateView()
         .environmentObject(UserManager(service: MockUserService()))
+        .environmentObject(CardsViewModel(currentUser: DeveloperPreview.user,
+                                          cardService: MockCardService(),
+                                          matchManager: MatchManager(service: MatchService())))
 }

@@ -14,7 +14,7 @@ class CardsViewModel: ObservableObject {
     
     @Published var animatedSwipeAction: SwipeAction?
     @Published var animating = false
-    @Published var cardStackState: CardStackState = .empty
+    @Published var cardStackState: CardStackState = .loading
     
     @Published var cardModels = [CardModel]() {
         didSet { updateCardStackState() }
@@ -50,7 +50,7 @@ class CardsViewModel: ObservableObject {
     func likeUser(_ user: User) async {
         do {
             try await removeCard(user)
-            try await cardService.saveLike(forUser: user)
+            try await cardService.saveSwipe(forUser: user, swipe: .like)
             await matchManager.checkForMatch(fromUser: user, currentUser: currentUser)
         } catch {
             print("DEBUG: Like user failed with error: \(error)")
@@ -59,6 +59,7 @@ class CardsViewModel: ObservableObject {
     
     func rejectUser(_ user: User) async throws {
         try await removeCard(user)
+        try await cardService.saveSwipe(forUser: user, swipe: .reject)
     }
     
     func updateCardStackState() {
@@ -67,12 +68,10 @@ class CardsViewModel: ObservableObject {
 }
 
 // MARK: - API
-// TODO: Extract to manager class?
 
 private extension CardsViewModel {
     func fetchUserCards() async {
         guard let currentUser else { return }
-        cardStackState = .loading
         
         do {
             self.cardModels = try await cardService.fetchCards(for: currentUser)
@@ -80,5 +79,9 @@ private extension CardsViewModel {
         } catch {
             print("DEBUG: Failed to fetch cards with error \(error.localizedDescription)")
         }
+    }
+    
+    func resetCards() {
+        
     }
 }

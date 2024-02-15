@@ -18,9 +18,11 @@ struct UserCardsView: View {
         self.userManager = userManager
         self.matchManager = matchManager
         
-        let viewModel = CardsViewModel(currentUser: userManager.currentUser,
-                                       cardService: CardService(),
-                                       matchManager: matchManager)
+        let viewModel = CardsViewModel(
+            currentUser: userManager.currentUser,
+            cardService: CardService(),
+            matchManager: matchManager
+        )
         
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -71,5 +73,8 @@ struct UserCardsView: View {
 }
 
 #Preview {
-    UserCardsView(userManager: UserManager(service: MockUserService()), matchManager: MatchManager(service: MatchService()))
+    UserCardsView(
+        userManager: UserManager(service: MockUserService()),
+        matchManager: MatchManager(service: MatchService())
+    )
 }

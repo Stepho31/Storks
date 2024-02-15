@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SwipeAction {
+enum SwipeAction: Int {
     case reject
     case like
 }

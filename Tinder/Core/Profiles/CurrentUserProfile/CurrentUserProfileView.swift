@@ -76,6 +76,7 @@ struct CurrentUserProfileView: View {
                 
                 Section {
                     Button("Logout") {
+                        userManager.currentUser = nil
                         authManager.signout()
                     }
                     .foregroundStyle(.red)

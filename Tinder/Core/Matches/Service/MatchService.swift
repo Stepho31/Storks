@@ -28,8 +28,11 @@ struct MatchService: MatchServiceProtocol {
     
     func checkForMatch(withUser user: User) async throws -> Bool {
         guard let currentUid = Auth.auth().currentUser?.uid else { return false }
-        let snapshot = try await FirestoreConstants.UserLikesCollection(uid: user.id).document(currentUid).getDocument()
-        return snapshot.exists
+        let snapshot = try await FirestoreConstants.UserSwipesCollection(uid: user.id).document(currentUid).getDocument()
+        
+        guard let value = snapshot.data()?["didLike"] as? Int else { return false }
+        guard let swipe = SwipeAction(rawValue: value) else { return false }
+        return swipe == .like
     }
     
     func saveMatch(withUser user: User, currentUser: User) async throws {

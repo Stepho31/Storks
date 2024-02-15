@@ -39,16 +39,16 @@ class AuthManager: ObservableObject {
     
     func signout() {
         service.signOut()
-        self.authState = .unauthenticated
+        authState = .unauthenticated
     }
     
     private func login(withEmail email: String, password: String) async throws {
         let uid = try await service.login(withEmail: email, password: password)
-        self.authState = .authenticated(uid: uid)
+        authState = .authenticated(uid: uid)
     }
     
     private func createUser(withEmail email: String, password: String) async throws {
         let uid = try await service.createUser(withEmail: email, password: password)
-        self.authState = .authenticated(uid: uid)
+        authState = .authenticated(uid: uid)
     }
 }

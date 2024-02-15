@@ -34,7 +34,6 @@ class MatchManager: ObservableObject {
                     group.addTask { try await self.fetchUserDataForMatch(match) }
                 }
             }
-            
         } catch {
             print("DEBUG: Failed to fetch matches with error: \(error)")
         }
@@ -44,12 +43,9 @@ class MatchManager: ObservableObject {
     func checkForMatch(fromUser user: User, currentUser: User?) async {
         do {
             let didMatch = try await service.checkForMatch(withUser: user)
-            
-            if didMatch {
-                matchedUser = user
-                guard let currentUser else { return }
-                await saveMatch(withUser: user, currentUser: currentUser)
-            }
+            guard didMatch, let currentUser else { return }
+            matchedUser = user
+            await saveMatch(withUser: user, currentUser: currentUser)
         } catch {
             print("DEBUG: Failed to check match with error: \(error)")
         }

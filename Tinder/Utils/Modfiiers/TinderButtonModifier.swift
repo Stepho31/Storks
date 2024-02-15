@@ -23,6 +23,6 @@ struct TinderButtonModifier: ViewModifier {
             .foregroundColor(.white)
             .frame(width: 352, height: buttonHeight)
             .background(backgroundColor)
-            .cornerRadius(8)
+            .clipShape(Capsule())
     }
 }

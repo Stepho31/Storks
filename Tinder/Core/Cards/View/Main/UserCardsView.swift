@@ -36,6 +36,7 @@ struct UserCardsView: View {
                         CardsLoadingView()
                     case .empty:
                         CardStackEmptyStateView()
+                            .environmentObject(viewModel)
                     case .hasData(let cardModels):
                         VStack {
                             CardStackView(cardModels: cardModels, viewModel: viewModel)

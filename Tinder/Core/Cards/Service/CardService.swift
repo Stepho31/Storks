@@ -15,7 +15,7 @@ protocol CardServiceProtocol {
 
 class CardService: CardServiceProtocol {
     private var swipedUserIDs = [String]()
-    private var rejectedUserIDs = [String]()
+    private var swipes = [SwipeModel]()
     
     func fetchCards(for currentUser: User) async throws -> [CardModel] {
         let preferredGender = preferredGender(for: currentUser)
@@ -39,8 +39,9 @@ class CardService: CardServiceProtocol {
     
     func resetCards(for currentUser: User) async throws {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
-
-        for uid in swipedUserIDs {
+        let rejectedUIDs = swipes.filter({ $0.didLike == .reject }).map({ $0.uid })
+                
+        for uid in rejectedUIDs {
             try await FirestoreConstants
                 .UserCollection
                 .document(currentUid)
@@ -53,12 +54,15 @@ class CardService: CardServiceProtocol {
     func saveSwipe(forUser user: User, swipe: SwipeAction) async throws {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
 
+        let swipeModel = SwipeModel(didLike: swipe, uid: user.id)
+        let swipeData = try Firestore.Encoder().encode(swipeModel)
+        
         try await FirestoreConstants
             .UserCollection
             .document(currentUid)
             .collection("user-swipes")
             .document(user.id)
-            .setData(["didLike": swipe.rawValue])
+            .setData(swipeData)
     }
 }
 
@@ -88,10 +92,7 @@ private extension CardService {
             .collection("user-swipes")
             .getDocuments()
         
+        self.swipes = snapshot.documents.compactMap({ try? $0.data(as: SwipeModel.self) })
         self.swipedUserIDs = snapshot.documents.map({ $0.documentID })
-        
-        for doc in snapshot.documents {
-            let data = doc.data()
-        }
     }
 }

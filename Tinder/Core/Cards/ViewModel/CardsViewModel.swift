@@ -69,7 +69,7 @@ class CardsViewModel: ObservableObject {
 
 // MARK: - API
 
-private extension CardsViewModel {
+extension CardsViewModel {
     func fetchUserCards() async {
         guard let currentUser else { return }
         
@@ -81,7 +81,15 @@ private extension CardsViewModel {
         }
     }
     
-    func resetCards() {
+    func resetCards() async {
+        guard let currentUser else { return }
+        cardStackState = .loading
         
+        do {
+            try await cardService.resetCards(for: currentUser)
+            self.cardModels = try await cardService.fetchCards(for: currentUser)
+        } catch {
+            print("DEBUG: Failed to reset cards with error: \(error)")
+        }
     }
 }

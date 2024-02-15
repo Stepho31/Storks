@@ -26,14 +26,17 @@ struct CardStackEmptyStateView: View {
                 CircularProfileImageView(user: userManager.currentUser, size: .xLarge)
             }
             
-            Text("It looks like you've seen everyone. \nClick below to start again")
-                .foregroundStyle(.gray)
-                .font(.subheadline)
-                .frame(width: 300)
-                .multilineTextAlignment(.center)
+            VStack {
+                Text("It looks like you've seen everyone.")
+                Text("Click below to see people you swiped left on again.")
+            }
+            .foregroundStyle(.gray)
+            .font(.subheadline)
+            .frame(width: 300)
+            .multilineTextAlignment(.center)
             
             Button {
-                
+                Task { await cardsViewModel.resetCards() }
             } label: {
                 Text("Start Over")
                     .modifier(TinderButtonModifier())

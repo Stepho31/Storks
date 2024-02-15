@@ -75,8 +75,10 @@ struct PasswordView: View {
         .padding()
         .background(.black)
     }
-    
-    private func onNext() {
+}
+
+private extension PasswordView {
+    func onNext() {
         Task {
             await authManager.authenticate(
                 withEmail: authViewModel.email,

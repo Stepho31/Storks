@@ -581,8 +581,8 @@
 		2B4C7F4F2B50C66600765971 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2BEE1BDD2B6AF98F009627D9 /* Buttons */,
 				2B4C7F552B50C6C500765971 /* Avatar */,
+				2BEE1BDD2B6AF98F009627D9 /* Buttons */,
 				2B6618182B5DE89100236B43 /* NavigationBar */,
 			);
 			path = Components;

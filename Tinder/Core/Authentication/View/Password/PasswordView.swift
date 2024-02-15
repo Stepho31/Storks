@@ -10,6 +10,7 @@ import SwiftUI
 struct PasswordView: View {
     @EnvironmentObject var authManager: AuthManager
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var userManager: UserManager
     
     @State var isSecure = true
     @State var showAlert = false
@@ -81,6 +82,8 @@ struct PasswordView: View {
                 withEmail: authViewModel.email,
                 password: authViewModel.password
             )
+            
+            await userManager.fetchCurrentUser()
         }
     }
 }

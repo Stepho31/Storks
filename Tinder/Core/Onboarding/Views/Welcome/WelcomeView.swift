@@ -15,11 +15,6 @@ struct WelcomeView: View {
         NavigationStack(path: $manager.navigationPath) {
             VStack(spacing: 24) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Image(.tinderAppIcon)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40, height: 40)
-                    
                     Text("Welcome to Aurora.")
                         .font(.title)
                         .fontWeight(.bold)

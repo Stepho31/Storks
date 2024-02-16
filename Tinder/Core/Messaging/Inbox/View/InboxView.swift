@@ -14,7 +14,6 @@ struct InboxView: View {
         NavigationStack {
             List {
                 NewMatchesView()
-                    
                 
                 switch inboxViewModel.loadingState {
                 case .loading:

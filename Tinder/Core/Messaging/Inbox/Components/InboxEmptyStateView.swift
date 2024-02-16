@@ -51,6 +51,8 @@ struct InboxEmptyStateView: View {
             }
             .padding()
         }
+        .listRowSeparator(.hidden)
+        .padding(.top, 64)
     }
 }
 

@@ -48,12 +48,9 @@ struct WelcomeView: View {
                         .modifier(TinderButtonModifier())
                 }
             }
-            .onChange(of: manager.didCompleteOnboarding, perform: { value in
-                self.userManager.currentUser?.didCompleteOnboarding = value
-            })
-            .task(id: manager.user, {
+            .onChange(of: manager.user, perform: { value in
                 guard let user = manager.user, !manager.profilePhotos.isEmpty else { return }
-                await userManager.uploadUserData(user, profilePhotos: manager.profilePhotos)
+                Task { await userManager.uploadUserData(user, profilePhotos: manager.profilePhotos) }
             })
             .navigationDestination(for: OnboardingSteps.self, destination: { step in
                 VStack {

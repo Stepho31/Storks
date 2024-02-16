@@ -25,7 +25,8 @@ struct DeveloperPreview {
         sexualOrientation: .straight,
         sexualPreference: .women,
         blockedUIDs: [],
-        blockedByUIDs: []
+        blockedByUIDs: [],
+        didCompleteOnboarding: true
     )
     
     static let users: [User] = [
@@ -42,7 +43,8 @@ struct DeveloperPreview {
             sexualOrientation: .straight,
             sexualPreference: .women,
             blockedUIDs: [],
-            blockedByUIDs: []
+            blockedByUIDs: [],
+            didCompleteOnboarding: true
         ),
         .init(
             id: "456",
@@ -57,7 +59,8 @@ struct DeveloperPreview {
             sexualOrientation: .straight,
             sexualPreference: .women,
             blockedUIDs: [],
-            blockedByUIDs: []
+            blockedByUIDs: [],
+            didCompleteOnboarding: true
         ),
         .init(
             id: "abc",
@@ -72,7 +75,8 @@ struct DeveloperPreview {
             sexualOrientation: .straight,
             sexualPreference: .men,
             blockedUIDs: [],
-            blockedByUIDs: []
+            blockedByUIDs: [],
+            didCompleteOnboarding: true
         ),
         .init(
             id: "def",
@@ -87,7 +91,8 @@ struct DeveloperPreview {
             sexualOrientation: .straight,
             sexualPreference: .men,
             blockedUIDs: [],
-            blockedByUIDs: []
+            blockedByUIDs: [],
+            didCompleteOnboarding: true
         )
     ]
 }

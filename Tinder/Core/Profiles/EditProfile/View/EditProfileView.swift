@@ -190,7 +190,8 @@ private extension EditProfileView {
             sexualOrientation: self.selectedOrientation ?? user.sexualOrientation,
             sexualPreference: user.sexualPreference,
             blockedUIDs: user.blockedUIDs,
-            blockedByUIDs: user.blockedByUIDs
+            blockedByUIDs: user.blockedByUIDs,
+            didCompleteOnboarding: true
         )
         
         if newUser != user {

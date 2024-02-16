@@ -33,7 +33,7 @@ struct WelcomeView: View {
                 
                 WelcomeInfoItemView(title: "Be Yourself.", subtitle: "Make sure your photos, age, and bio are true to who you are.")
                 
-                WelcomeInfoItemView(title: "Stay safe.", subtitle: "Don't be too quick to give our personal information.")
+                WelcomeInfoItemView(title: "Stay safe.", subtitle: "Don't be too quick to give out personal information.")
                 
                 WelcomeInfoItemView(title: "Play it cool.", subtitle: "Respect others and treat them as you would like to be treated.")
                 

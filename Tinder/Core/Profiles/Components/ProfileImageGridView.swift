@@ -15,9 +15,9 @@ struct ProfileImageGridView: View {
     
     @State private var selectedPickerItem: PhotosPickerItem?
     @State private var uploadingPhoto = false
-    @State private var selectedIndex = 0
+    @State private var selectedIndex: Int?
     
-    let columns: [GridItem] = [
+    private let columns: [GridItem] = [
         .init(.flexible()),
         .init(.flexible()),
         .init(.flexible())
@@ -28,11 +28,29 @@ struct ProfileImageGridView: View {
             if let user = userManager.currentUser {
                 ForEach(0 ..< 6) { index in
                     if index < user.numberOfImages {
-                        KFImage(URL(string: user.profileImageURLs[index]))
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 110, height: 160)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        ZStack(alignment: .bottomTrailing) {
+                            KFImage(URL(string: user.profileImageURLs[index]))
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 110, height: 160)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                            
+                            if user.profileImageURLs.count > 2 {
+                                ZStack {
+                                    Circle()
+                                        .stroke(.gray, lineWidth: 1.0)
+                                        .background(.black)
+                                        .clipShape(Circle())
+                                    
+                                    Image(systemName: "xmark")
+                                        .fontWeight(.bold)
+                                        .imageScale(.small)
+                                        .foregroundStyle(.gray)
+                                }
+                                .frame(width: 28, height: 28)
+                                .offset(x: 4, y: 4)
+                            }
+                        }
                     } else {
                         PhotosPicker(selection: $selectedPickerItem) {
                             ZStack(alignment: .bottomTrailing) {
@@ -43,14 +61,13 @@ struct ProfileImageGridView: View {
                                 Image(systemName: "plus.circle.fill")
                                     .imageScale(.large)
                                     .foregroundStyle(.white)
-                                    .offset(x: 8, y: 4)
+                                    .offset(x: 4, y: 4)
                             }
                             .overlay {
-                                if index == selectedIndex && uploadingPhoto {
+                                if let selectedIndex, selectedIndex == index && uploadingPhoto {
                                     ProgressView()
                                 }
                             }
-                            
                         }
                         .simultaneousGesture(TapGesture().onEnded({
                             selectedIndex = index
@@ -77,8 +94,10 @@ private extension ProfileImageGridView {
             guard let uiImage = UIImage(data: imageData) else { return }
 
             await userManager.uploadUserData(user, profilePhotos: [uiImage])
+            
             self.selectedPickerItem = nil
-            uploadingPhoto = false
+            self.selectedIndex = nil
+            self.uploadingPhoto = false
         }
     }
 }

@@ -29,6 +29,7 @@ struct EditProfileView: View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 ProfileImageGridView()
+                    .environmentObject(editProfileManager)
                     .padding()
                 
                 VStack(spacing: 24) {

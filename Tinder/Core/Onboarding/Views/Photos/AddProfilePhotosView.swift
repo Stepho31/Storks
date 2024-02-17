@@ -97,7 +97,7 @@ extension AddProfilePhotosView: FormValidatorProtocol {
     }
 }
 
-extension AddProfilePhotosView {
+private extension AddProfilePhotosView {
     func loadProfilePhotos() {
         Task {
             var images = [UIImage]()

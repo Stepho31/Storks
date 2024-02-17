@@ -917,13 +917,6 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		2B6618592B60300000236B43 /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
 		2BA9A4A52B603176000C3AA4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -1024,7 +1017,6 @@
 				2B4C7F4F2B50C66600765971 /* Components */,
 				2BACD47A2A82BEEC00452A2D /* Authentication */,
 				2B4C7EC32B41EEA500765971 /* Cards */,
-				2B6618592B60300000236B43 /* Discover */,
 				2BACD47C2A82C0FA00452A2D /* Matches */,
 				2B6618252B5DF86500236B43 /* Messaging */,
 				2BA9A4A52B603176000C3AA4 /* Onboarding */,

@@ -51,7 +51,8 @@ struct UserService: UserServiceProtocol {
         do {
             let userData = try Firestore.Encoder().encode(user)
             try await FirestoreConstants.UserCollection.document(uid).setData(userData)
-            result.profileImageURLs = try await uploadUserPhotos(profilePhotos)
+            let imageURLs = try await uploadUserPhotos(profilePhotos)
+            result.profileImageURLs.append(contentsOf: imageURLs)
             return result
         } catch {
             throw error

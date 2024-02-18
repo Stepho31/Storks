@@ -16,6 +16,7 @@ struct ProfileImageGridView: View {
     @State private var selectedPickerItem: PhotosPickerItem?
     @State private var uploadingPhoto = false
     @State private var selectedIndex: Int?
+    @State private var showDeleteConfirmation = false
     
     private let columns: [GridItem] = [
         .init(.flexible()),
@@ -51,6 +52,7 @@ struct ProfileImageGridView: View {
                                 .offset(x: 4, y: 4)
                             }
                         }
+                        .onTapGesture { showDeleteConfirmation.toggle() }
                     } else {
                         PhotosPicker(selection: $selectedPickerItem) {
                             ZStack(alignment: .bottomTrailing) {
@@ -76,6 +78,14 @@ struct ProfileImageGridView: View {
                 }
             }
         }
+        .confirmationDialog("Delete this photo?",
+                            isPresented: $showDeleteConfirmation,
+                            titleVisibility: .visible,
+                            actions: {
+            Button("Delete", role: .destructive) {
+                print("DEBUG: Delete photo here..")
+            }
+        })
         .onChange(of: selectedPickerItem, perform: { _ in
             uploadProfilePhoto()
         })

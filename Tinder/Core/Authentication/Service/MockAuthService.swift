@@ -17,5 +17,7 @@ struct MockAuthService: AuthServiceProtocol {
         return NSUUID().uuidString
     }
     
+    func sendResetPasswordLink(toEmail email: String) async throws {}
+    
     func signOut() {}
 }

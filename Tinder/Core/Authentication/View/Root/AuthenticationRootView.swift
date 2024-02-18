@@ -9,21 +9,23 @@ import SwiftUI
 
 struct AuthenticationRootView: View {
     @EnvironmentObject var authManager: AuthManager
+    @StateObject var authViewModel = AuthViewModel()
     
     var body: some View {
-        VStack {
-            AuthenticationTopView()
-            
-            Spacer()
-            
-            AuthenticationBottomView(authType: $authManager.authType)
+        NavigationStack {
+            VStack {
+                AuthenticationTopView()
+                
+                Spacer()
+                
+                AuthenticationBottomView(authType: $authManager.authType, authViewModel: authViewModel)
+            }
+            .fullScreenCover(item: $authManager.authType, content: { _ in
+                EmailView()
+                    .environmentObject(authManager)
+                    .environmentObject(authViewModel)
+            })
         }
-        .fullScreenCover(item: $authManager.authType, content: { _ in
-            EmailView()
-                .environmentObject(authManager)
-                .environmentObject(AuthViewModel())
-        })
-        .preferredColorScheme(.dark)
     }
 }
 

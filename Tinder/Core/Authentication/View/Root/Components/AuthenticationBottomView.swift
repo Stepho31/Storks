@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AuthenticationBottomView: View {
     @Binding var authType: AuthType?
+    @ObservedObject var authViewModel: AuthViewModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
@@ -41,11 +42,13 @@ struct AuthenticationBottomView: View {
                     .stroke(.white, lineWidth: 1.5)
             }
             
-            Button(action: {}, label: {
+            NavigationLink {
+                ForgotPasswordView(authViewModel: authViewModel)
+            } label: {
                 Text("Trouble signing in?")
                     .bold()
                     .foregroundColor(.white)
-            })
+            }
         }
         .padding(.horizontal, 30)
     }
@@ -53,5 +56,5 @@ struct AuthenticationBottomView: View {
 
 
 #Preview {
-    AuthenticationBottomView(authType: .constant(.login))
+    AuthenticationBottomView(authType: .constant(.login), authViewModel: .init())
 }

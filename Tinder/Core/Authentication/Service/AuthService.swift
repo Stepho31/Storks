@@ -36,7 +36,7 @@ struct AuthService: AuthServiceProtocol {
         }
     }
     
-    func sendPasswordResetEmail(toEmail email: String) async throws {
+    func sendResetPasswordLink(toEmail email: String) async throws {
         do {
             try await Auth.auth().sendPasswordReset(withEmail: email)
         } catch {

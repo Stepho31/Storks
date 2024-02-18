@@ -37,17 +37,27 @@ class AuthManager: ObservableObject {
         }
     }
     
+    func sendResetPasswordLink(toEmail email: String) async {
+        do {
+            try await service.sendResetPasswordLink(toEmail: email)
+        } catch {
+            print("DEBUG: Failed to reset password with error: \(error)")
+        }
+    }
+    
     func signout() {
         service.signOut()
         authState = .unauthenticated
     }
-    
-    private func login(withEmail email: String, password: String) async throws {
+}
+
+private extension AuthManager {
+    func login(withEmail email: String, password: String) async throws {
         let uid = try await service.login(withEmail: email, password: password)
         authState = .authenticated(uid: uid)
     }
     
-    private func createUser(withEmail email: String, password: String) async throws {
+    func createUser(withEmail email: String, password: String) async throws {
         let uid = try await service.createUser(withEmail: email, password: password)
         authState = .authenticated(uid: uid)
     }

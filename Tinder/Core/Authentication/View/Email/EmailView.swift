@@ -90,4 +90,5 @@ private extension EmailView {
 #Preview {
     EmailView()
         .environmentObject(AuthManager(service: MockAuthService()))
+        .environmentObject(AuthViewModel())
 }

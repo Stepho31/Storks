@@ -10,10 +10,11 @@ import SwiftUI
 struct AuthenticationTopView: View {
     var body: some View {
         VStack {
-            Image(.tinderLogoWhite)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
+            Text("AURORA")
+                .font(.title)
+                .fontWeight(.semibold)
+                .foregroundStyle(.white)
+                .padding()
             
             VStack(spacing: 8) {
                 HStack {
@@ -38,4 +39,5 @@ struct AuthenticationTopView: View {
 
 #Preview {
     AuthenticationTopView()
+        .preferredColorScheme(.dark)
 }

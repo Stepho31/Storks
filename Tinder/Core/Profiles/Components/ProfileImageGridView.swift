@@ -52,7 +52,7 @@ struct ProfileImageGridView: View {
                                 .offset(x: 4, y: 4)
                             }
                         }
-                        .onTapGesture { showDeleteConfirmation.toggle() }
+                        .onTapGesture { onImageTap(imageIndex: index) }
                     } else {
                         PhotosPicker(selection: $selectedPickerItem) {
                             ZStack(alignment: .bottomTrailing) {
@@ -83,7 +83,7 @@ struct ProfileImageGridView: View {
                             titleVisibility: .visible,
                             actions: {
             Button("Delete", role: .destructive) {
-                print("DEBUG: Delete photo here..")
+                deletePhoto()
             }
         })
         .onChange(of: selectedPickerItem, perform: { _ in
@@ -109,6 +109,21 @@ private extension ProfileImageGridView {
             self.selectedIndex = nil
             self.uploadingPhoto = false
         }
+    }
+    
+    func deletePhoto() {
+        Task {
+            guard let selectedIndex else { return }
+            guard let imageUrl = userManager.currentUser?.profileImageURLs[selectedIndex] else { return }
+            
+            userManager.currentUser?.profileImageURLs.remove(at: selectedIndex)
+            await editProfileManager.deletePhoto(imageUrl)
+        }
+    }
+    
+    func onImageTap(imageIndex: Int) {
+        selectedIndex = imageIndex
+        showDeleteConfirmation.toggle()
     }
 }
 

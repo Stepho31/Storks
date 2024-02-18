@@ -10,9 +10,7 @@ import SwiftUI
 struct ForgotPasswordView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var authManager: AuthManager
-    
-    @ObservedObject var authViewModel: AuthViewModel
-    
+        
     @State private var email = ""
     
     var body: some View {
@@ -28,7 +26,7 @@ struct ForgotPasswordView: View {
                     .foregroundStyle(.gray)
                 
                 VStack(spacing: 8) {
-                    TextField("Enter email", text: $authViewModel.email)
+                    TextField("Enter email", text: $email)
                         .textInputAutocapitalization(.never)
                         .keyboardType(.emailAddress)
                         .foregroundStyle(.white)
@@ -58,7 +56,7 @@ struct ForgotPasswordView: View {
 private extension ForgotPasswordView {
     func onSendPasswordResetTap() {
         Task {
-            await authManager.sendResetPasswordLink(toEmail: authViewModel.email)
+            await authManager.sendResetPasswordLink(toEmail: email)
             dismiss()
         }
     }
@@ -66,13 +64,13 @@ private extension ForgotPasswordView {
 
 extension ForgotPasswordView: FormValidatorProtocol {
     var formIsValid: Bool {
-        return authViewModel.email.isValidEmail()
+        return email.isValidEmail()
     }
 }
 
 struct ForgotPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        ForgotPasswordView(authViewModel: AuthViewModel())
+        ForgotPasswordView()
             .environmentObject(AuthManager(service: MockAuthService()))
             .preferredColorScheme(.dark)
     }

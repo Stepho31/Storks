@@ -16,6 +16,7 @@ struct ContentView: View {
             switch authManager.authState {
             case .unauthenticated:
                 AuthenticationRootView()
+                    .environmentObject(AuthViewModel())
             case .authenticated:
                 if userManager.isLoading {
                     ProgressView()

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct AuthenticationRootView: View {
     @EnvironmentObject var authManager: AuthManager
-    @StateObject var authViewModel = AuthViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
+    @State private var showAuthFlow = false
     
     var body: some View {
         NavigationStack {
@@ -18,13 +20,16 @@ struct AuthenticationRootView: View {
                 
                 Spacer()
                 
-                AuthenticationBottomView(authType: $authManager.authType, authViewModel: authViewModel)
+                AuthenticationBottomView()
             }
-            .fullScreenCover(item: $authManager.authType, content: { _ in
+            .onChange(of: authManager.authType, perform: { value in
+                showAuthFlow = value != nil
+            })
+            .fullScreenCover(isPresented: $showAuthFlow) {
                 EmailView()
                     .environmentObject(authManager)
                     .environmentObject(authViewModel)
-            })
+            }
         }
     }
 }

@@ -19,14 +19,15 @@ class CardService: CardServiceProtocol {
     
     func fetchCards(for currentUser: User) async throws -> [CardModel] {
         let preferredGender = preferredGender(for: currentUser)
-
+        let preferredOrientations = preferredOrientations(for: currentUser).map({ $0.rawValue })
+        
         do {
             try await fetchSwipes()
             
             let snapshot = try await FirestoreConstants
                 .UserCollection
                 .whereField("gender", isEqualTo: preferredGender.rawValue)
-                .whereField("sexualOrientation", isEqualTo: currentUser.sexualOrientation.rawValue)
+                .whereField("sexualOrientation", in: preferredOrientations)
                 .getDocuments()
             
             let users = snapshot.documents.compactMap({ try? $0.data(as: User.self) })
@@ -81,6 +82,32 @@ private extension CardService {
         default:
             return .other
         }
+    }
+    
+    func preferredOrientations(for currentUser: User) -> [SexualOrientationType] {
+        let orientation = currentUser.sexualOrientation
+        
+        switch orientation {
+        case .straight:
+            return [.straight]
+        case .gay:
+            return [.gay, .bisexual]
+        case .lesbian:
+            return [.lesbian, .bisexual]
+        case .bisexual:
+            return [.straight, .bisexual]
+        case .asexual:
+            return [.asexual]
+        case .demisexual:
+            return [.demisexual]
+        case .pansexual:
+            return [.pansexual]
+        case .queer:
+            return [.queer]
+        case .questioning:
+            return [.questioning]
+        }
+
     }
     
     func fetchSwipes() async throws {

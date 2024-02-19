@@ -103,7 +103,6 @@ struct EditProfileView: View {
                         .padding()
                         .background(Color(.secondarySystemBackground))
                         .font(.subheadline)
-                        .onTapGesture { sheetConfig = .gender }
                     }
                     
                     VStack(alignment: .leading) {

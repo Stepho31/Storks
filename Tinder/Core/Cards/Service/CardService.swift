@@ -31,7 +31,10 @@ class CardService: CardServiceProtocol {
                 .getDocuments()
             
             let users = snapshot.documents.compactMap({ try? $0.data(as: User.self) })
-            return users.map({ .init(user: $0) }).filter({ !swipedUserIDs.contains($0.user.id) })
+            
+            return users.map({.init(user: $0)}).filter({
+                !swipedUserIDs.contains($0.user.id) && $0.user.id != currentUser.id
+            })
         } catch {
             print("DEBUG: Failed to fetch cards with error: \(error)")
             throw error

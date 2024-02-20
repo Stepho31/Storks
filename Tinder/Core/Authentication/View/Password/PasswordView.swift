@@ -65,6 +65,16 @@ struct PasswordView: View {
                 }
             }
         }
+        .onReceive(authManager.$authError, perform: { error in
+            showAlert = error != nil
+        })
+        .alert("Error", isPresented: $showAlert, actions: {
+            Button("Ok") {
+                authManager.authError = nil 
+            }
+        }, message: {
+            Text("Invalid login credentials. Please try again..")
+        })
         .navigationBarBackButtonHidden()
         .padding()
         .background(.black)

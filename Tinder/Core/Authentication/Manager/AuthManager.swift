@@ -48,8 +48,10 @@ class AuthManager: ObservableObject {
     }
     
     func signout() {
-        service.signOut()
+        authType = nil
+        authError = nil
         authState = .unauthenticated
+        service.signOut()
     }
 }
 

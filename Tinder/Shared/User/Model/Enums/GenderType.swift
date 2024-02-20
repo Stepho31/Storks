@@ -10,7 +10,6 @@ import Foundation
 enum GenderType: Int, CaseIterable, Codable {
     case man
     case woman
-    case other
 }
 
 extension GenderType: Identifiable {
@@ -24,8 +23,6 @@ extension GenderType: CustomStringConvertible {
             return "Man"
         case .woman:
             return "Woman"
-        case .other:
-            return "Other"
         }
     }
 }

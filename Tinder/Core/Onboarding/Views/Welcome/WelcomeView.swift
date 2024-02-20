@@ -9,43 +9,48 @@ import SwiftUI
 
 struct WelcomeView: View {    
     @EnvironmentObject var userManager: UserManager
-    @StateObject var manager = OnboardingManager()
+    @StateObject var onboardingManager = OnboardingManager(service: OnboardingService(imageUploader: ImageUploader()))
     
     var body: some View {
-        NavigationStack(path: $manager.navigationPath) {
-            VStack(spacing: 24) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Welcome to Aurora.")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundStyle(.white)
-                    
-                    Text("Please follow these House Rules.")
-                        .font(.footnote)
-                        .foregroundStyle(.gray)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                WelcomeInfoItemView(title: "Be Yourself.", subtitle: "Make sure your photos, age, and bio are true to who you are.")
-                
-                WelcomeInfoItemView(title: "Stay safe.", subtitle: "Don't be too quick to give out personal information.")
-                
-                WelcomeInfoItemView(title: "Play it cool.", subtitle: "Respect others and treat them as you would like to be treated.")
-                
-                WelcomeInfoItemView(title: "Be proactive.", subtitle: "Always report bad behavior.")
-                
-                Spacer()
-                
-                Button {
-                    manager.start()
-                } label: {
-                    Text("I agree")
-                        .modifier(TinderButtonModifier())
+        NavigationStack(path: $onboardingManager.navigationPath) {
+            ZStack {
+                if onboardingManager.uploadingUserData {
+                    ProgressView()
+                } else {
+                    VStack(spacing: 24) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Welcome to Aurora.")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.white)
+                            
+                            Text("Please follow these House Rules.")
+                                .font(.footnote)
+                                .foregroundStyle(.gray)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        WelcomeInfoItemView(title: "Be Yourself.", subtitle: "Make sure your photos, age, and bio are true to who you are.")
+                        
+                        WelcomeInfoItemView(title: "Stay safe.", subtitle: "Don't be too quick to give out personal information.")
+                        
+                        WelcomeInfoItemView(title: "Play it cool.", subtitle: "Respect others and treat them as you would like to be treated.")
+                        
+                        WelcomeInfoItemView(title: "Be proactive.", subtitle: "Always report bad behavior.")
+                        
+                        Spacer()
+                        
+                        Button {
+                            onboardingManager.start()
+                        } label: {
+                            Text("I agree")
+                                .modifier(TinderButtonModifier())
+                        }
+                    }
                 }
             }
-            .onChange(of: manager.user, perform: { value in
-                guard let user = manager.user, !manager.profilePhotos.isEmpty else { return }
-                Task { await userManager.uploadUserData(user, profilePhotos: manager.profilePhotos) }
+            .onChange(of: onboardingManager.user, perform: { value in
+                userManager.currentUser = value
             })
             .navigationDestination(for: OnboardingSteps.self, destination: { step in
                 VStack {
@@ -66,7 +71,7 @@ struct WelcomeView: View {
                         AddProfilePhotosView()
                     }
                 }
-                .environmentObject(manager)
+                .environmentObject(onboardingManager)
                 .navigationBarBackButtonHidden()
             })
             .padding()
@@ -77,4 +82,5 @@ struct WelcomeView: View {
 
 #Preview {
     WelcomeView()
+        .preferredColorScheme(.dark)
 }

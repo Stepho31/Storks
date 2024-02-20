@@ -19,7 +19,7 @@ struct NextButton: View {
                 .foregroundStyle(formIsValid ? .white : .black.opacity(0.5))
                 .bold()
                 .font(.title3)
-                .frame(width: 320, height: 50)
+                .frame(width: 300, height: 50)
                 .background(formIsValid ? Color(.primaryPink) : Color(.systemGray5))
                 .clipShape(Capsule())
         }

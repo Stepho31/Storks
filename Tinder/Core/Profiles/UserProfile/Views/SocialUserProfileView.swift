@@ -28,7 +28,7 @@ struct SocialUserProfileView: View {
                         Text(user.major + " | " + String(user.graduationYear))
                             .foregroundStyle(.gray)
                         
-                        Text(user.gender.description + " | " + "Seeking \(user.sexualPreference.description)")
+                        Text(user.gender.description + " | " + user.sexualOrientation.description)
                             .foregroundStyle(.gray)
                         
                         VStack(alignment: .leading, spacing: 16) {

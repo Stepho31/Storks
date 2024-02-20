@@ -56,6 +56,6 @@ extension FullNameView: FormValidatorProtocol {
 #Preview {
     NavigationStack {
         FullNameView()
-            .environmentObject(OnboardingManager())
+            .environmentObject(OnboardingManager(service: .init(imageUploader: .init())))
     }
 }

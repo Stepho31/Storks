@@ -103,7 +103,7 @@ private extension ProfileImageGridView {
             guard let imageData = try? await selectedPickerItem.loadTransferable(type: Data.self) else { return }
             guard let uiImage = UIImage(data: imageData) else { return }
 
-            await userManager.uploadUserData(user, profilePhotos: [uiImage])
+//            await userManager.uploadUserData(user, profilePhotos: [uiImage])
             
             self.selectedPickerItem = nil
             self.selectedIndex = nil

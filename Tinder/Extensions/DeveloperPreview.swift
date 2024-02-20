@@ -23,7 +23,6 @@ struct DeveloperPreview {
         graduationYear: 2026,
         gender: .man,
         sexualOrientation: .straight,
-        sexualPreference: .women,
         blockedUIDs: [],
         blockedByUIDs: [],
         didCompleteOnboarding: true
@@ -41,7 +40,6 @@ struct DeveloperPreview {
             graduationYear: 2026,
             gender: .man,
             sexualOrientation: .straight,
-            sexualPreference: .women,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -57,7 +55,6 @@ struct DeveloperPreview {
             graduationYear: 2027,
             gender: .man,
             sexualOrientation: .straight,
-            sexualPreference: .women,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -73,7 +70,6 @@ struct DeveloperPreview {
             graduationYear: 2027,
             gender: .woman,
             sexualOrientation: .straight,
-            sexualPreference: .men,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -89,7 +85,6 @@ struct DeveloperPreview {
             graduationYear: 2027,
             gender: .woman,
             sexualOrientation: .straight,
-            sexualPreference: .men,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true

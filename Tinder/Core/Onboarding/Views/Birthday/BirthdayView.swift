@@ -51,5 +51,5 @@ struct BirthdayView: View {
 
 #Preview {
     BirthdayView()
-        .environmentObject(OnboardingManager())
+        .environmentObject(OnboardingManager(service: .init(imageUploader: .init())))
 }

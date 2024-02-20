@@ -73,5 +73,5 @@ extension GraduationYearView {
 
 #Preview {
     GraduationYearView()
-        .environmentObject(OnboardingManager())
+        .environmentObject(OnboardingManager(service: .init(imageUploader: .init())))
 }

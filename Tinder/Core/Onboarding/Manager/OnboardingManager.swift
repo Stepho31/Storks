@@ -8,19 +8,26 @@
 import UIKit
 import Firebase
 
+@MainActor
 class OnboardingManager: ObservableObject {
     @Published var navigationPath = [OnboardingSteps]()
-    @Published var user: User?
     @Published var name = ""
     @Published var study = ""
     @Published var profilePhotos = [UIImage]()
+    @Published var user: User?
+    @Published var uploadingUserData = false
 
     var birthday = Date()
     var graduationYear = Calendar.current.component(.year, from: Date())
     var gender: GenderType?
     var sexualOrientation: SexualOrientationType?
     
+    private let service: OnboardingService
     private var currentStep: OnboardingSteps?
+    
+    init(service: OnboardingService) {
+        self.service = service
+    }
     
     func start() {
         guard let initialStep = OnboardingSteps(rawValue: 0) else { return }
@@ -32,23 +39,39 @@ class OnboardingManager: ObservableObject {
         
         guard let index = currentStep?.rawValue else { return }
         guard let nextStep = OnboardingSteps(rawValue: index + 1) else {
-            createUser()
+            Task { await uploadUserData() }
             return
         }
         
         navigationPath.append(nextStep)
     }
     
-    func createUser() {
-        guard let gender else { return }
-        guard let sexualOrientation else { return }
-        guard let id = Auth.auth().currentUser?.uid else { return }
-        guard let email = Auth.auth().currentUser?.email else { return }
-                
+    func uploadUserData() async {
+        guard let user = createUser() else { return }
+        uploadingUserData = true
+        navigationPath.removeAll()
+        
+        do {
+            self.user = try await service.uploadUserData(user, profilePhotos: profilePhotos)
+            uploadingUserData = false
+        } catch {
+            print("DEBUG: Failed to upload user data with error: \(error.localizedDescription)")
+            uploadingUserData = false
+        }
+    }
+}
+
+private extension OnboardingManager {
+    func createUser() -> User? {
+        guard let gender else { return nil }
+        guard let sexualOrientation else { return nil }
+        guard let id = Auth.auth().currentUser?.uid else { return nil }
+        guard let email = Auth.auth().currentUser?.email else { return nil }
+        
         let ageComponents = Calendar.current.dateComponents([.year], from: birthday, to: Date())
         let age = ageComponents.year!
         
-        self.user = User(
+        return User(
             id: id,
             fullname: name,
             email: email,
@@ -58,7 +81,6 @@ class OnboardingManager: ObservableObject {
             graduationYear: graduationYear,
             gender: gender,
             sexualOrientation: sexualOrientation,
-            sexualPreference: .women,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true

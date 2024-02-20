@@ -21,7 +21,7 @@ extension SexualPreferenceType {
         case .women:
             return .woman
         case .everyone:
-            return .other
+            return .man
         }
     }
 }

@@ -14,12 +14,16 @@ struct GenderView: View {
     var body: some View {
         VStack {
             VStack(spacing: 20) {
-                Text("What's your Gender?")
-                    .font(.title)
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("What's your Gender?")
+                        .font(.title)
+                        .bold()
+                    
+                    Text("We value and support diversity and inclusion of all genders. We will add more options to include everyone soon.")
+                        .font(.subheadline)
+                }
+                .padding()
+
                 ForEach(GenderType.allCases) { gender in
                     Button(action: {
                         self.selectedGender = gender
@@ -57,5 +61,5 @@ extension GenderView: FormValidatorProtocol {
 
 #Preview {
     GenderView()
-        .environmentObject(OnboardingManager())
+        .environmentObject(OnboardingManager(service: .init(imageUploader: .init())))
 }

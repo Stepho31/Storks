@@ -55,5 +55,5 @@ extension StudyView: FormValidatorProtocol {
 
 #Preview {
     StudyView()
-        .environmentObject(OnboardingManager())
+        .environmentObject(OnboardingManager(service: .init(imageUploader: .init())))
 }

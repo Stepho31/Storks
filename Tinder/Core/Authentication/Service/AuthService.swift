@@ -13,7 +13,7 @@ struct AuthService: AuthServiceProtocol {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             return result.user.uid
         } catch {
-            print("DEBUG: Failed to login with error \(error.localizedDescription)")
+            print("DEBUG: Failed to login with error \(error)")
             throw error
         }
     }
@@ -23,7 +23,7 @@ struct AuthService: AuthServiceProtocol {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             return result.user.uid
         } catch {
-            print("DEBUG: Failed to login with error \(error.localizedDescription)")
+            print("DEBUG: Failed to create user with error \(error.localizedDescription)")
             throw error
         }
     }

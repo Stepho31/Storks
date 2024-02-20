@@ -11,6 +11,7 @@ import Firebase
 class AuthManager: ObservableObject {
     @Published var authState: AuthState = .unauthenticated
     @Published var authType: AuthType?
+    @Published var authError: Error?
     
     private let service: AuthServiceProtocol
     
@@ -33,7 +34,8 @@ class AuthManager: ObservableObject {
                 try await login(withEmail: email, password: password)
             }
         } catch {
-            print("DEBUG: Failed to auth with error: \(error)")
+            self.authError = error
+            print("DEBUG: Failed to auth with error: \(error.localizedDescription)")
         }
     }
     

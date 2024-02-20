@@ -188,7 +188,6 @@ private extension EditProfileView {
             graduationYear: user.graduationYear,
             gender: self.selectedGender ?? user.gender,
             sexualOrientation: self.selectedOrientation ?? user.sexualOrientation,
-            sexualPreference: user.sexualPreference,
             blockedUIDs: user.blockedUIDs,
             blockedByUIDs: user.blockedByUIDs,
             didCompleteOnboarding: true

@@ -59,12 +59,6 @@ struct PasswordView: View {
                     .clipShape(Capsule())
             }
             .disabled(!formIsValid)
-            .onTapGesture {
-                showAlert = !formIsValid
-            }
-            .alert("Password must be six characters", isPresented: $showAlert) {
-                Button("OK", role: .cancel) {}
-            }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     BackButton()

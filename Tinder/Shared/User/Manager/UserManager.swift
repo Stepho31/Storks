@@ -38,13 +38,5 @@ class UserManager: ObservableObject {
             print("DEBUG: Failed to fetch current user with error: \(error)")
             isLoading = false 
         }
-    }
-    
-    func uploadUserData(_ user: User, profilePhotos: [UIImage]) async {
-        do {
-            self.currentUser = try await service.uploadUserData(user, profilePhotos: profilePhotos)
-        } catch {
-            print("DEBUG: Failed to upload user data with error: \(error.localizedDescription)")
-        }
-    }
+    }    
 }

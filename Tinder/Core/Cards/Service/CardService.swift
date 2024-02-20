@@ -73,14 +73,12 @@ private extension CardService {
         let gender = currentUser.gender
         
         switch orientation {
-        case .straight:
-            return gender == .man ? .woman : .man
         case .gay:
             return .man
         case .lesbian:
             return .woman
         default:
-            return .other
+            return gender == .man ? .woman : .man
         }
     }
     

@@ -93,9 +93,7 @@ struct ProfileImageGridView: View {
 }
 
 private extension ProfileImageGridView {
-    func uploadProfilePhoto() {
-        guard let user = userManager.currentUser else { return }
-        
+    func uploadProfilePhoto() {        
         Task {
             uploadingPhoto = true
             
@@ -103,11 +101,13 @@ private extension ProfileImageGridView {
             guard let imageData = try? await selectedPickerItem.loadTransferable(type: Data.self) else { return }
             guard let uiImage = UIImage(data: imageData) else { return }
 
-//            await userManager.uploadUserData(user, profilePhotos: [uiImage])
+            if let imageUrl = await editProfileManager.uploadPhoto(uiImage) {
+                userManager.currentUser?.profileImageURLs.append(imageUrl)
+                self.uploadingPhoto = false
+            }
             
             self.selectedPickerItem = nil
             self.selectedIndex = nil
-            self.uploadingPhoto = false
         }
     }
     
@@ -118,6 +118,9 @@ private extension ProfileImageGridView {
             
             userManager.currentUser?.profileImageURLs.remove(at: selectedIndex)
             await editProfileManager.deletePhoto(imageUrl)
+            
+            uploadingPhoto = false
+            self.selectedIndex = nil
         }
     }
     

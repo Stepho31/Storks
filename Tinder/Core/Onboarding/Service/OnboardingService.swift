@@ -9,11 +9,7 @@ import Firebase
 
 struct OnboardingService {
     
-    private let imageUploader: ImageUploader
-    
-    init(imageUploader: ImageUploader) {
-        self.imageUploader = imageUploader
-    }
+    private let imageUploader = ImageUploader()
     
     func uploadUserData(_ user: User, profilePhotos: [UIImage]) async throws -> User {
         guard let uid = Auth.auth().currentUser?.uid else { throw UserError.invalidUserId }

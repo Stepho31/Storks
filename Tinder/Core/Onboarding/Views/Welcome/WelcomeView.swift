@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {    
     @EnvironmentObject var userManager: UserManager
-    @StateObject var onboardingManager = OnboardingManager(service: OnboardingService(imageUploader: ImageUploader()))
+    @StateObject var onboardingManager = OnboardingManager(service: OnboardingService())
     
     var body: some View {
         NavigationStack(path: $onboardingManager.navigationPath) {

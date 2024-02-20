@@ -444,8 +444,9 @@
 		2B2654F92B71B2650007555D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B2654F82B71B2550007555D /* Selection */,
 				2B4C7ED42B44A0FB00765971 /* EditProfileView.swift */,
+				2B4C7ED72B44A40500765971 /* ProfileImageGridView.swift */,
+				2B2654F82B71B2550007555D /* Selection */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -539,7 +540,6 @@
 		2B4C7ED62B44A3FE00765971 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2B4C7ED72B44A40500765971 /* ProfileImageGridView.swift */,
 				2B4C7ED92B44A7CA00765971 /* ProfileInputField.swift */,
 				2B4C7F892B52064300765971 /* ProfileInfoRowView.swift */,
 			);

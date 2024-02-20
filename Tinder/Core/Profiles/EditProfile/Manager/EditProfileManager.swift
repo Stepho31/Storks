@@ -30,4 +30,13 @@ class EditProfileManager: ObservableObject {
             print("DEBUG: Failed to delete photo with error: \(error)")
         }
     }
+    
+    func uploadPhoto(_ photo: UIImage) async -> String? {
+        do {
+            return try await service.uploadUserPhoto(photo)
+        } catch {
+            print("DEBUG: Failed to upload images with error: \(error.localizedDescription)")
+            return nil
+        }
+    }
 }

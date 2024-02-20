@@ -61,5 +61,5 @@ extension GenderView: FormValidatorProtocol {
 
 #Preview {
     GenderView()
-        .environmentObject(OnboardingManager(service: .init(imageUploader: .init())))
+        .environmentObject(OnboardingManager(service: .init()))
 }

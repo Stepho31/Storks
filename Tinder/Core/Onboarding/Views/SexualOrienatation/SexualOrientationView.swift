@@ -67,5 +67,5 @@ extension SexualOrientationView: FormValidatorProtocol {
 
 #Preview {
     SexualOrientationView()
-        .environmentObject(OnboardingManager(service: .init(imageUploader: .init())))
+        .environmentObject(OnboardingManager(service: .init()))
 }

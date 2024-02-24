@@ -81,17 +81,20 @@ private extension CardService {
             return [.woman]
         case .bisexual:
             return [.man, .woman]
+        case .straight:
+            return gender == .man ? [.woman] : [.man]
         default:
-            return []
+            return [.man, .woman]
         }
     }
     
     func preferredOrientations(for currentUser: User) -> [SexualOrientationType] {
         let orientation = currentUser.sexualOrientation
+        let gender = currentUser.gender
         
         switch orientation {
         case .straight:
-            return [.straight]
+            return [.straight, .bisexual]
         case .gay:
             return [.gay, .bisexual]
         case .lesbian:

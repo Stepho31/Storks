@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State private var selection = 0
     @EnvironmentObject var userManager: UserManager
     @EnvironmentObject var matchManager: MatchManager
     
+    @State private var selection = 0
+
     var body: some View {
         TabView(selection: $selection) {
             UserCardsView(userManager: userManager, matchManager: matchManager)

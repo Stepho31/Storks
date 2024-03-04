@@ -10,10 +10,10 @@ import SwiftUI
 struct UserCardsView: View {
     @ObservedObject var userManager: UserManager
     @ObservedObject var matchManager: MatchManager
-    @StateObject var viewModel: CardsViewModel
     
     @State private var showMatchView = false
-    
+    @StateObject var viewModel: CardsViewModel
+
     init(userManager: UserManager, matchManager: MatchManager) {
         self.userManager = userManager
         self.matchManager = matchManager

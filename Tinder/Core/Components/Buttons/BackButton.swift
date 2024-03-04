@@ -15,7 +15,7 @@ struct BackButton: View {
             Image(systemName: "chevron.left")
                 .imageScale(.large)
                 .fontWeight(.heavy)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color(.primaryText))
         })
     }
 }

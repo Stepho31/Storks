@@ -30,7 +30,6 @@ struct PasswordView: View {
                     HStack {
                         if isSecure {
                             SecureField("Enter password", text: $authViewModel.password)
-                                .foregroundStyle(.white)
                         } else {
                             TextField("Enter password", text: $authViewModel.password)
                         }
@@ -42,7 +41,6 @@ struct PasswordView: View {
                     Divider()
                 }
             }
-            .foregroundStyle(.white)
             .padding(.horizontal)
             
             Spacer()
@@ -77,7 +75,6 @@ struct PasswordView: View {
         })
         .navigationBarBackButtonHidden()
         .padding()
-        .background(.black)
     }
 }
 

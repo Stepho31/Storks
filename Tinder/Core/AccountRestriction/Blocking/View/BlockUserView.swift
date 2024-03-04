@@ -32,7 +32,7 @@ struct BlockUserView: View {
             }
             
             VStack(alignment: .leading, spacing: 24) {
-                AccountRestrictionInfoItemView(imageName: "exclamationmark.bubble", description: "They won't be able to message you or find your profile or content on Aurora.")
+                AccountRestrictionInfoItemView(imageName: "exclamationmark.bubble", description: "They won't be able to message you or find your profile or content on Tinder.")
                 AccountRestrictionInfoItemView(imageName: "bell.slash", description: "They won't be notified that you blocked them.")
                 AccountRestrictionInfoItemView(imageName: "gear", description: "You can unblock them anytime in Settings.")
             }

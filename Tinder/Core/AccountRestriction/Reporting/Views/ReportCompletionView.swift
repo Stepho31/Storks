@@ -31,7 +31,7 @@ struct ReportCompletionView: View {
             .padding(.top, 24)
             
             VStack(alignment: .leading, spacing: 24) {
-                AccountRestrictionInfoItemView(imageName: "info.circle", description: "Understand problems people are having with different types of content on Aurora.")
+                AccountRestrictionInfoItemView(imageName: "info.circle", description: "Understand problems people are having with different types of content on Tinder.")
                 AccountRestrictionInfoItemView(imageName: "eye.slash", description: "Show you less of this content in the future.")
             }
             .padding()

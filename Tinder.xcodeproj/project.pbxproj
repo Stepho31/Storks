@@ -232,6 +232,7 @@
 		2B6618312B5E23C400236B43 /* MockChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChatService.swift; sourceTree = "<group>"; };
 		2B6618332B5E2B3300236B43 /* NewMatchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchItemView.swift; sourceTree = "<group>"; };
 		2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRootView.swift; sourceTree = "<group>"; };
+		2B73DF612B96620D00C7631B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B9414132B7E757B003511FC /* SwipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeModel.swift; sourceTree = "<group>"; };
 		2B9414152B7FAB8A003511FC /* MockInboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInboxService.swift; sourceTree = "<group>"; };
 		2BA9A4A62B60326C000C3AA4 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -985,6 +986,7 @@
 		2BACD4692A82BEC200452A2D /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				2B73DF612B96620D00C7631B /* Info.plist */,
 				2BACD4782A82BEDF00452A2D /* App */,
 				2BACD4792A82BEE700452A2D /* Core */,
 				2BACD49A2A82FC8400452A2D /* Extensions */,
@@ -1017,8 +1019,8 @@
 			isa = PBXGroup;
 			children = (
 				2BEE1BE02B6B53AF009627D9 /* AccountRestriction */,
-				2B4C7F4F2B50C66600765971 /* Components */,
 				2BACD47A2A82BEEC00452A2D /* Authentication */,
+				2B4C7F4F2B50C66600765971 /* Components */,
 				2B4C7EC32B41EEA500765971 /* Cards */,
 				2BACD47C2A82C0FA00452A2D /* Matches */,
 				2B6618252B5DF86500236B43 /* Messaging */,
@@ -1059,9 +1061,9 @@
 		2BACD47C2A82C0FA00452A2D /* Matches */ = {
 			isa = PBXGroup;
 			children = (
-				2B66181F2B5DEABF00236B43 /* Service */,
 				2B66181C2B5DEA9000236B43 /* Manager */,
 				2B4C80512B59C5D700765971 /* Model */,
+				2B66181F2B5DEABF00236B43 /* Service */,
 				2B4C80482B597BEB00765971 /* View */,
 			);
 			path = Matches;
@@ -1228,9 +1230,9 @@
 		2BEE1BE02B6B53AF009627D9 /* AccountRestriction */ = {
 			isa = PBXGroup;
 			children = (
-				2B2654AD2B6C1EC20007555D /* Protocols */,
-				2BEE1BE12B6B53B7009627D9 /* Blocking */,
 				2BEE1BE42B6B53CC009627D9 /* Components */,
+				2BEE1BE12B6B53B7009627D9 /* Blocking */,
+				2B2654AD2B6C1EC20007555D /* Protocols */,
 				2BEE1BEA2B6B55AB009627D9 /* Reporting */,
 			);
 			path = AccountRestriction;
@@ -1687,6 +1689,7 @@
 				DEVELOPMENT_TEAM = LF78THV97C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tinder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1716,6 +1719,7 @@
 				DEVELOPMENT_TEAM = LF78THV97C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tinder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

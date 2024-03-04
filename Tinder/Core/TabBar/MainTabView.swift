@@ -40,7 +40,7 @@ struct MainTabView: View {
                 .tag(3)
                 .onAppear { selection = 3 }
         }
-        .tint(.white)
+        .tint(.primary)
     }
 }
 

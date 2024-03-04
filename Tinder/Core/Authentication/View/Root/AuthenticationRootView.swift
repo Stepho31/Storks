@@ -22,6 +22,11 @@ struct AuthenticationRootView: View {
                 
                 AuthenticationBottomView()
             }
+            .background(
+                LinearGradient(colors: [Color(.tertiaryPink), Color(.primaryPink), Color(.secondaryPink)],
+                               startPoint: .topTrailing,
+                               endPoint: .bottomLeading)
+            )
             .onChange(of: authManager.authType, perform: { value in
                 showAuthFlow = value != nil
             })

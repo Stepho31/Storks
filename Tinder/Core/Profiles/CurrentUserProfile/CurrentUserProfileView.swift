@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
-    @EnvironmentObject var userManager: UserManager
     @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var userManager: UserManager
     
     @State private var showEditProfile = false
+    @State private var accountDeletionInProgress = false
     
     private var user: User? {
         return userManager.currentUser
@@ -75,18 +76,21 @@ struct CurrentUserProfileView: View {
                 }
                 
                 Section {
-                    Button("Logout") {
-                        userManager.currentUser = nil
-                        authManager.signout()
-                    }
-                    .foregroundStyle(.red)
+                    Button("Logout") { onLogout() }
+                        .foregroundStyle(.red)
                 }
                 
                 Section {
-                    Button("Delete Account") {
+                    HStack {
+                        Button("Delete Account") { onAccountDelete() }
+                            .foregroundStyle(.red)
                         
+                        Spacer()
+                        
+                        if accountDeletionInProgress {
+                            ProgressView()
+                        }
                     }
-                    .foregroundStyle(.red)
                 }
             }
             .navigationTitle("Profile")
@@ -95,11 +99,30 @@ struct CurrentUserProfileView: View {
                 EditProfileView()
                     .environmentObject(userManager)
             }
+        }
+    }
+}
 
+private extension CurrentUserProfileView {
+    func onLogout() {
+        userManager.currentUser = nil
+        authManager.signout()
+    }
+    
+    func onAccountDelete() {
+        Task {
+            accountDeletionInProgress = true
+            
+            await authManager.deleteAccount()
+            userManager.currentUser = nil
+            
+            accountDeletionInProgress = false
         }
     }
 }
 
 #Preview {
     CurrentUserProfileView()
+        .environmentObject(AuthManager(service: MockAuthService()))
+        .environmentObject(UserManager(service: MockUserService()))
 }

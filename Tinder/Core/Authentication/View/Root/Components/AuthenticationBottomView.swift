@@ -12,7 +12,7 @@ struct AuthenticationBottomView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
-            Text("By tapping 'Sign in' you agree to our Terms, Learn how we process your data in our Privacy Policy and Cookies Policy")
+            Text("By tapping 'Sign in' you agree to our Terms. Learn how we process your data in our Privacy Policy and Cookies Policy")
                 .multilineTextAlignment(.center)
                 .font(.footnote)
                 .foregroundColor(.white)
@@ -25,7 +25,7 @@ struct AuthenticationBottomView: View {
                     .foregroundColor(.black)
                     .frame(width: 340, height: 50)
             })
-            .background(.primary)
+            .background(.white)
             .clipShape(Capsule())
             
             Button(action: {

@@ -14,7 +14,7 @@ struct CloseButton: View {
         Button(action: { dismiss() }, label: {
             Image(systemName: "xmark")
                 .imageScale(.large)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color(.primaryText))
         })
     }
 }

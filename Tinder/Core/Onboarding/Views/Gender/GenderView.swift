@@ -44,8 +44,6 @@ struct GenderView: View {
             onboardingManager.gender = value
         })
         .frame(maxWidth: .infinity)
-        .foregroundStyle(.white)
-        .background(.black)
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }

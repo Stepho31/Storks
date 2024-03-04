@@ -33,7 +33,6 @@ struct BirthdayView: View {
                     }
                     .padding(.vertical, 6)
                 }
-                .accentColor(.white)
                 .datePickerStyle(GraphicalDatePickerStyle())
                 
                 Spacer()
@@ -41,7 +40,6 @@ struct BirthdayView: View {
             
             NextButton(formIsValid: true)
         }
-        .backgroundModifier()
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }

@@ -102,7 +102,6 @@ struct UserProfileView: View, UserBlockable {
                         sheetConfig = .block
                     } label: {
                         Text("Block \(user.firstName)")
-                            .foregroundStyle(.white)
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)

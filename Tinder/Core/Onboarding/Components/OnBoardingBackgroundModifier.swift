@@ -13,7 +13,6 @@ struct OnBoardingBackgroundModifier: ViewModifier {
         content
             .padding()
             .foregroundStyle(.white)
-            .background(.black)
     }
 }
 extension View {

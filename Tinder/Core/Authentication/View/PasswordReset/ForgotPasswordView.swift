@@ -17,7 +17,6 @@ struct ForgotPasswordView: View {
         VStack {
             VStack(alignment: .leading, spacing: 16) {
                 Text("Your email?")
-                    .foregroundStyle(.white)
                     .bold()
                     .font(.title)
                 
@@ -29,7 +28,6 @@ struct ForgotPasswordView: View {
                     TextField("Enter email", text: $email)
                         .textInputAutocapitalization(.never)
                         .keyboardType(.emailAddress)
-                        .foregroundStyle(.white)
                     
                     Divider()
                 }

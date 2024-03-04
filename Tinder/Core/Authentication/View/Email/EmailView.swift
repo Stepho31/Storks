@@ -21,7 +21,6 @@ struct EmailView: View {
             VStack {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Your email?")
-                        .foregroundStyle(.white)
                         .bold()
                         .font(.title)
                     
@@ -33,7 +32,6 @@ struct EmailView: View {
                         TextField("Enter email", text: $viewModel.email)
                             .textInputAutocapitalization(.never)
                             .keyboardType(.emailAddress)
-                            .foregroundStyle(.white)
                         
                         Divider()
                     }
@@ -62,7 +60,6 @@ struct EmailView: View {
             }
             .navigationBarBackButtonHidden()
             .padding()
-            .background(.black)
         }
     }
 }

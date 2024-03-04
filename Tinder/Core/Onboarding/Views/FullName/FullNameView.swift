@@ -39,7 +39,6 @@ struct FullNameView: View {
             
             NextButton(formIsValid: formIsValid)
         }
-        .backgroundModifier()
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }

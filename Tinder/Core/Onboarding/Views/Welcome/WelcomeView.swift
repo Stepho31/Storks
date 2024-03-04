@@ -19,10 +19,9 @@ struct WelcomeView: View {
                 } else {
                     VStack(spacing: 24) {
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Welcome to Aurora.")
+                            Text("Welcome to Tinder.")
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .foregroundStyle(.white)
                             
                             Text("Please follow these House Rules.")
                                 .font(.footnote)
@@ -75,7 +74,6 @@ struct WelcomeView: View {
                 .navigationBarBackButtonHidden()
             })
             .padding()
-            .background(.black)
         }
     }
 }

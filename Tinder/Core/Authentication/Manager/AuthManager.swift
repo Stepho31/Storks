@@ -47,6 +47,15 @@ class AuthManager: ObservableObject {
         }
     }
     
+    func deleteAccount() async {
+        do {
+            try await service.deleteAccount()
+            authState = .unauthenticated
+        } catch {
+            print("DEBUG: Failed to delete account with error: \(error)")
+        }
+    }
+    
     func signout() {
         authType = nil
         authError = nil

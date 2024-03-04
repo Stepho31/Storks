@@ -50,8 +50,6 @@ struct SexualOrientationView: View {
         })
         .frame(alignment: .leading)
         .padding()
-        .foregroundStyle(.white)
-        .background(.black)
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }

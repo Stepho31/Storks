@@ -9,9 +9,9 @@ import Firebase
 
 @MainActor
 class AuthManager: ObservableObject {
+    @Published var authError: Error?
     @Published var authState: AuthState = .unauthenticated
     @Published var authType: AuthType?
-    @Published var authError: Error?
     
     private let service: AuthServiceProtocol
     

@@ -14,13 +14,12 @@ struct DeveloperPreview {
     
     static let user = User(
         id: "123",
-        fullname: "Charles Leclerc",
-        email: "charles@gmail.com",
-        age: 24,
-        profileImageURLs: ["charles-leclerc", "lewis-hamilton"],
-        bio: "Formula 1 Driver for Ferrari",
-        major: "Mechanical Engineering",
-        graduationYear: 2026,
+        fullname: "David Beckham",
+        email: "david@gmail.com",
+        age: 42,
+        profileImageURLs: ["david-beckham-1", "david-beckham-2"],
+        bio: "Ex-Footballer | Entreprenuer",
+        occupation: "Business Man",
         gender: .man,
         sexualOrientation: .straight,
         blockedUIDs: [],
@@ -31,13 +30,12 @@ struct DeveloperPreview {
     static let users: [User] = [
         .init(
             id: "123",
-            fullname: "Charles Leclerc",
-            email: "charles@gmail.com",
-            age: 24,
-            profileImageURLs: ["charles-leclerc", "lewis-hamilton"],
-            bio: "Formula 1 Driver for Ferrari",
-            major: "Mechanical Engineering",
-            graduationYear: 2026,
+            fullname: "David Beckham",
+            email: "david@gmail.com",
+            age: 42,
+            profileImageURLs: ["david-beckham-1", "david-beckham-2"],
+            bio: "Ex-Footballer | Entreprenuer",
+            occupation: "Business Man",
             gender: .man,
             sexualOrientation: .straight,
             blockedUIDs: [],
@@ -46,13 +44,12 @@ struct DeveloperPreview {
         ),
         .init(
             id: "456",
-            fullname: "Lewis Hamilton",
-            email: "lewis@gmail.com",
-            age: 38,
-            profileImageURLs: ["lewis-hamilton", "checo-perez"],
-            bio: "Formula 1 Driver for Mercedes",
-            major: "Aerospace Engineering",
-            graduationYear: 2027,
+            fullname: "Conor Mcgregor",
+            email: "conor@gmail.com",
+            age: 35,
+            profileImageURLs: ["conor-mcgregor-1", "conor-mcgregor-2, conor-mcgregor-3"],
+            bio: "UFC Champ Champ",
+            occupation: "Pro Fighter | CEO Proper 12",
             gender: .man,
             sexualOrientation: .straight,
             blockedUIDs: [],
@@ -66,8 +63,7 @@ struct DeveloperPreview {
             age: 22,
             profileImageURLs: ["jane1", "jane2", "jane3"],
             bio: "Fashion Designer",
-            major: "Design",
-            graduationYear: 2027,
+            occupation: "Designer",
             gender: .woman,
             sexualOrientation: .straight,
             blockedUIDs: [],
@@ -81,8 +77,21 @@ struct DeveloperPreview {
             age: 21,
             profileImageURLs: ["kelly1", "kelly2", "kelly3"],
             bio: "Social media influencer",
-            major: "Entertainment",
-            graduationYear: 2027,
+            occupation: "Entertainment",
+            gender: .woman,
+            sexualOrientation: .straight,
+            blockedUIDs: [],
+            blockedByUIDs: [],
+            didCompleteOnboarding: true
+        ),
+        .init(
+            id: "xyz",
+            fullname: "Megan Fox",
+            email: "megan@gmail.com",
+            age: 37,
+            profileImageURLs: ["megan-fox-1", "megan-fox-2"],
+            bio: "Actress | Witch",
+            occupation: "Entertainment",
             gender: .woman,
             sexualOrientation: .straight,
             blockedUIDs: [],
@@ -103,8 +112,8 @@ extension DeveloperPreview {
 extension DeveloperPreview {
     static let message = Message(
         id: NSUUID().uuidString,
-        fromId: "123",
-        toId: "456",
+        fromId: users[0].id,
+        toId: users[4].id,
         text: "Hello there!",
         timestamp: Timestamp(),
         read: false,
@@ -114,21 +123,21 @@ extension DeveloperPreview {
     static var messages: [Message] = [
         .init(
             id: NSUUID().uuidString,
-            fromId: "456",
-            toId: "123",
+            fromId: users[0].id,
+            toId: users[4].id,
             text: "This is a test message for preview purposes! Let's see what",
             timestamp: Timestamp(),
             read: false,
-            user: users[1]
+            user: users[4]
         ),
         .init(
             id: NSUUID().uuidString,
-            fromId: "123",
-            toId: "456",
+            fromId: users[0].id,
+            toId: users[4].id,
             text: "Second test message goes here",
             timestamp: Timestamp(),
             read: false,
-            user: users[0]
+            user: users[4]
         ),
         .init(
             id: NSUUID().uuidString,
@@ -152,17 +161,19 @@ extension DeveloperPreview {
     
     static var thread = Thread(
         id: NSUUID().uuidString,
-        uids: ["123", "456"],
+        uids: [users[0].id, users[4].id],
         lastMessage: messages[0],
-        lastUpdated: Timestamp()
+        lastUpdated: Timestamp(),
+        chatPartner: users[4]
     )
     
     static var threads: [Thread] = [
         .init(
             id: NSUUID().uuidString,
-            uids: ["123", "456"],
+            uids: [users[0].id, users[4].id],
             lastMessage: messages[0],
-            lastUpdated: Timestamp()
+            lastUpdated: Timestamp(),
+            chatPartner: users[4]
         )
     ]
 }
@@ -171,7 +182,7 @@ extension DeveloperPreview {
 
 extension DeveloperPreview {
     static let matches: [Match] = [
-        .init(id: NSUUID().uuidString, userId: users[2].id, matchTimestamp: Timestamp()),
-        .init(id: NSUUID().uuidString, userId: users[3].id, matchTimestamp: Timestamp()),
+        .init(id: NSUUID().uuidString, userId: users[3].id, matchTimestamp: Timestamp(), user: users[3]),
+        .init(id: NSUUID().uuidString, userId: users[4].id, matchTimestamp: Timestamp(), user: users[4]),
     ]
 }

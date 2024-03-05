@@ -9,7 +9,7 @@ import Foundation
 
 struct MockInboxService: InboxServiceProtocol {
     func fetchThreads() async throws -> [Thread] {
-        return []
+        return DeveloperPreview.threads
     }
     
     func observeThreads() -> AsyncStream<Thread> {

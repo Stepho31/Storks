@@ -13,11 +13,10 @@ struct MockMatchService: MatchServiceProtocol {
     }
     
     func checkForMatch(withUser user: User) async throws -> Bool {
-        return false 
+        return Bool.random()
     }
     
     func fetchMatches() async throws -> [Match] {
-        try await Task.sleep(nanoseconds: 1_000_000_000)
         return DeveloperPreview.matches
     }
 }

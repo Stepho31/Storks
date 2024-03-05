@@ -17,7 +17,6 @@ struct ChatMessageCell: View {
                 
                 Text(message.text)
                     .modifier(ChatBubbleModifier(isFromCurrentUser: true))
-                
             } else {
                 Text(message.text)
                     .modifier(ChatBubbleModifier(isFromCurrentUser: false))

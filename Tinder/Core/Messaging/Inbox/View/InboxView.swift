@@ -7,8 +7,11 @@
 
 import SwiftUI
 
-struct InboxView: View {    
-    @StateObject var inboxViewModel = InboxViewModel(service: InboxService())
+struct InboxView: View {
+    @StateObject var inboxViewModel = InboxViewModel(
+        service: MockInboxService(),
+        userService: MockUserService()
+    )
     
     var body: some View {
         NavigationStack {

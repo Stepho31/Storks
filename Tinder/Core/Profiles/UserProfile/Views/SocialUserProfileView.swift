@@ -25,7 +25,7 @@ struct SocialUserProfileView: View {
                         Text(user.fullname)
                             .font(.headline)
                         
-                        Text(user.major + " | " + String(user.graduationYear))
+                        Text(user.occupation + " | " + String(user.age))
                             .foregroundStyle(.gray)
                         
                         Text(user.gender.description + " | " + user.sexualOrientation.description)

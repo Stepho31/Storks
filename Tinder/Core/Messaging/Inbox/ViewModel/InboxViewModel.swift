@@ -17,9 +17,9 @@ class InboxViewModel: ObservableObject {
     private let service: InboxServiceProtocol
     private let userService: UserServiceProtocol
     
-    init(service: InboxServiceProtocol) {
+    init(service: InboxServiceProtocol, userService: UserServiceProtocol) {
         self.service = service
-        self.userService = UserService()
+        self.userService = userService
         
         Task { await fetchThreads() }
     }
@@ -71,6 +71,7 @@ private extension InboxViewModel {
     func fetchThreadUserData() async {
         for i in 0 ..< threads.count {
             let thread = threads[i]
+            guard thread.chatPartner == nil else { continue }
             let user = try? await userService.fetchUser(withUid: thread.chatPartnerId)
             threads[i].chatPartner = user
         }

@@ -14,7 +14,8 @@ struct CardImageView: View {
     
     var body: some View {
         if user.profileImageURLs.count > 0 {
-            KFImage(URL(string: user.profileImageURLs[currentImageIndex]))
+//            KFImage(URL(string: user.profileImageURLs[currentImageIndex]))
+            Image(user.profileImageURLs[currentImageIndex])
                 .resizable()
                 .scaledToFill()
                 .frame(width: SizeConstants.cardWidth, height: SizeConstants.cardHeight)

@@ -73,7 +73,7 @@ struct UserProfileView: View, UserBlockable {
                                            title: user.sexualOrientation.description)
                         Divider()
 
-                        ProfileInfoRowView(imageName: "book", title: user.major)
+                        ProfileInfoRowView(imageName: "book", title: user.occupation)
                         
                         Divider()
 
@@ -105,7 +105,7 @@ struct UserProfileView: View, UserBlockable {
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
-                            .background(Color(.tertiaryBackground))
+                            .background(Color(.secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     
@@ -117,7 +117,7 @@ struct UserProfileView: View, UserBlockable {
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
-                            .background(Color(.tertiaryBackground))
+                            .background(Color(.secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                 }
@@ -143,7 +143,6 @@ struct UserProfileView: View, UserBlockable {
             }
         })
         .scrollIndicators(.hidden)
-        .background(Color(.systemGroupedBackground))
     }
 }
 

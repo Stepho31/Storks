@@ -50,8 +50,10 @@ class MatchManager: ObservableObject {
             print("DEBUG: Failed to check match with error: \(error)")
         }
     }
-    
-    private func saveMatch(withUser user: User, currentUser: User) async {
+}
+
+private extension MatchManager {
+    func saveMatch(withUser user: User, currentUser: User) async {
         do {
             try await service.saveMatch(withUser: user, currentUser: currentUser)
         } catch {
@@ -59,7 +61,7 @@ class MatchManager: ObservableObject {
         }
     }
     
-    private func fetchUserDataForMatch(_ match: Match) async throws {
+    func fetchUserDataForMatch(_ match: Match) async throws {
         guard let index = matches.firstIndex(where: { $0.id == match.id }) else { return }
         
         async let user = userService.fetchUser(withUid: match.userId)

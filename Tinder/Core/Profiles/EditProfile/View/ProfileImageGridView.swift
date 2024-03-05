@@ -30,7 +30,8 @@ struct ProfileImageGridView: View {
                 ForEach(0 ..< 6) { index in
                     if index < user.numberOfImages {
                         ZStack(alignment: .bottomTrailing) {
-                            KFImage(URL(string: user.profileImageURLs[index]))
+//                            KFImage(URL(string: user.profileImageURLs[index]))
+                            Image(user.profileImageURLs[index])
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 110, height: 160)
@@ -62,7 +63,7 @@ struct ProfileImageGridView: View {
                                 
                                 Image(systemName: "plus.circle.fill")
                                     .imageScale(.large)
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(Color(.secondaryPink))
                                     .offset(x: 4, y: 4)
                             }
                             .overlay {

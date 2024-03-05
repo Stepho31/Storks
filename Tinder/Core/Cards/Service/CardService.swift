@@ -14,12 +14,15 @@ protocol CardServiceProtocol {
 }
 
 class CardService: CardServiceProtocol {
-    private var swipedUserIDs = [String]()
     private var swipes = [SwipeModel]()
     
+    private var swipedUserIDs: [String] {
+        return swipes.map { $0.uid }
+    }
+    
     func fetchCards(for currentUser: User) async throws -> [CardModel] {
-        let preferredGenders = preferredGenders(for: currentUser).map({ $0.rawValue })
-        let preferredOrientations = preferredOrientations(for: currentUser).map({ $0.rawValue })
+        let preferredGenders = currentUser.preferredGenders(for: currentUser).map({ $0.rawValue })
+        let preferredOrientations = currentUser.preferredOrientations(for: currentUser).map({ $0.rawValue })
         
         do {
             try await fetchSwipes()
@@ -69,59 +72,7 @@ class CardService: CardServiceProtocol {
     }
 }
 
-private extension CardService {
-    func preferredGenders(for currentUser: User) -> [GenderType] {
-        let orientation = currentUser.sexualOrientation
-        let gender = currentUser.gender
-        
-        switch orientation {
-        case .gay:
-            return [.man]
-        case .lesbian:
-            return [.woman]
-        case .bisexual:
-            return [.man, .woman]
-        case .straight:
-            return gender == .man ? [.woman] : [.man]
-        default:
-            return [.man, .woman]
-        }
-    }
-    
-    func preferredOrientations(for currentUser: User) -> [SexualOrientationType] {
-        let orientation = currentUser.sexualOrientation
-        let gender = currentUser.gender
-        
-        switch orientation {
-        case .straight:
-            return [.straight, .bisexual]
-        case .gay:
-            return [.gay, .bisexual]
-        case .lesbian:
-            return [.lesbian, .bisexual]
-        case .bisexual:
-            var result: [SexualOrientationType] = [.bisexual, .straight]
-            
-            if currentUser.gender == .man {
-                result.append(.gay)
-            } else if currentUser.gender == .woman {
-                result.append(.lesbian)
-            }
-            
-            return result
-        case .asexual:
-            return [.asexual]
-        case .demisexual:
-            return [.demisexual]
-        case .pansexual:
-            return [.pansexual]
-        case .queer:
-            return [.queer]
-        case .questioning:
-            return [.questioning]
-        }
-    }
-    
+private extension CardService {    
     func filteredUser(_ user: User, currentUser: User) -> Bool {
         var result = !swipedUserIDs.contains(user.id) && !user.isCurrentUser
         
@@ -147,6 +98,5 @@ private extension CardService {
             .getDocuments()
         
         self.swipes = snapshot.documents.compactMap({ try? $0.data(as: SwipeModel.self) })
-        self.swipedUserIDs = snapshot.documents.map({ $0.documentID })
     }
 }

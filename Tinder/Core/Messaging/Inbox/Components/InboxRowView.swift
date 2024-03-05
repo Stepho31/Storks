@@ -68,6 +68,9 @@ struct InboxRowView: View {
 #Preview {
     InboxRowView(
         thread: DeveloperPreview.threads[0],
-        viewModel: .init(service: InboxService())
+        viewModel: .init(
+            service: MockInboxService(),
+            userService: MockUserService()
+        )
     )
 }

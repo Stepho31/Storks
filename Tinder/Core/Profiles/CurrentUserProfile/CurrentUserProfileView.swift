@@ -11,8 +11,8 @@ struct CurrentUserProfileView: View {
     @EnvironmentObject var authManager: AuthManager
     @EnvironmentObject var userManager: UserManager
     
-    @State private var showEditProfile = false
     @State private var accountDeletionInProgress = false
+    @State private var showEditProfile = false
     
     private var user: User? {
         return userManager.currentUser

@@ -15,7 +15,6 @@ struct InboxListView: View {
             Text("Messages")
                 .font(.subheadline)
                 .fontWeight(.semibold)
-                .foregroundStyle(.white)
                 .listRowSeparator(.hidden)
                 .offset(x: -10)
             
@@ -36,5 +35,10 @@ struct InboxListView: View {
 }
 
 #Preview {
-    InboxListView(viewModel: .init(service: InboxService()))
+    InboxListView(
+        viewModel: .init(
+            service: MockInboxService(),
+            userService: MockUserService()
+        )
+    )
 }

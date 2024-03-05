@@ -10,22 +10,6 @@ import SwiftUI
 struct ChatBubbleModifier: ViewModifier {
     let isFromCurrentUser: Bool
     
-    var messageBackgroundColor: Color {
-        return isFromCurrentUser ? .blue : Color(.secondarySystemBackground)
-    }
-    
-    var messageTextColor: Color {
-        return .white
-    }
-    
-    var maxWidth: CGFloat {
-        return UIScreen.main.bounds.width / 1.5
-    }
-    
-    var alignment: Alignment {
-        return isFromCurrentUser ? .trailing : .leading
-    }
-    
     func body(content: Content) -> some View {
         content
             .font(.subheadline)
@@ -38,3 +22,20 @@ struct ChatBubbleModifier: ViewModifier {
     }
 }
 
+private extension ChatBubbleModifier {
+    var messageBackgroundColor: Color {
+        return isFromCurrentUser ? .blue : Color(.secondarySystemBackground)
+    }
+    
+    var messageTextColor: Color {
+        return .primary
+    }
+    
+    var maxWidth: CGFloat {
+        return UIScreen.main.bounds.width / 1.5
+    }
+    
+    var alignment: Alignment {
+        return isFromCurrentUser ? .trailing : .leading
+    }
+}

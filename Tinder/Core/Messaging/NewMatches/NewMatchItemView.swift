@@ -14,7 +14,8 @@ struct NewMatchItemView: View {
     var body: some View {
         VStack {
             if let user = match.user {
-                KFImage(URL(string: user.profileImageURLs[0]))
+//                KFImage(URL(string: user.profileImageURLs[0]))
+                Image(user.profileImageURLs[0])
                     .resizable()
                     .scaledToFill()
                     .frame(width: 96, height: 120)

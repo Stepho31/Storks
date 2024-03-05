@@ -13,7 +13,6 @@ struct EditProfileView: View {
     
     @State private var bio = ""
     @State private var major = ""
-    @State private var graduationYear = ""
     @State private var selectedGoalType: RelationshipGoalsType?
     @State private var selectedGender: GenderType?
     @State private var selectedOrientation: SexualOrientationType?
@@ -54,31 +53,11 @@ struct EditProfileView: View {
                         
                         HStack {
                             Image(systemName: "book")
-                            Text("Studying")
+                            Text("Occupation")
                             
                             Spacer()
                             
                             Text(major)
-                                .font(.footnote)
-                        }
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .font(.subheadline)
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("GRADUATION YEAR")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                            .padding(.leading)
-                        
-                        HStack {
-                            Image(systemName: "book")
-                            Text("Graduating")
-                            
-                            Spacer()
-                            
-                            Text(graduationYear)
                                 .font(.footnote)
                         }
                         .padding()
@@ -168,8 +147,7 @@ private extension EditProfileView {
         guard let user else { return }
         
         self.bio = user.bio ?? ""
-        self.graduationYear = String(user.graduationYear)
-        self.major = user.major
+        self.major = user.occupation
         self.selectedGender = user.gender
         self.selectedOrientation = user.sexualOrientation
     }
@@ -184,8 +162,7 @@ private extension EditProfileView {
             age: user.age,
             profileImageURLs: user.profileImageURLs,
             bio: self.bio.isEmpty ? nil : self.bio,
-            major: self.major,
-            graduationYear: user.graduationYear,
+            occupation: self.major,
             gender: self.selectedGender ?? user.gender,
             sexualOrientation: self.selectedOrientation ?? user.sexualOrientation,
             blockedUIDs: user.blockedUIDs,

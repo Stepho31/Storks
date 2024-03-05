@@ -17,7 +17,8 @@ struct ChatView: View {
         self.user = user
         self.thread = thread
         
-        let chatService = ChatService(chatPartner: user, thread: thread)
+//        let chatService = ChatService(chatPartner: user, thread: thread)
+        let chatService = MockChatService()
         let manager = ChatManager(service: chatService, thread: thread)
         self._chatManager = StateObject(wrappedValue: manager)
     }

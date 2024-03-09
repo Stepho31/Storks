@@ -24,7 +24,7 @@ struct CardView: View {
                 
                 CardImageIndicatorView(imageCount: user.numberOfImages, currentIndex: $currentImageIndex)
                 
-                SwipeActionIndicatorView(xOffset: $xOffset)
+                SwipeActionIndicatorView(xOffset: xOffset)
             }
             
             UserInfoView(user: user, showProfileView: $showProfileView)
@@ -51,11 +51,7 @@ struct CardView: View {
 // MARK: - Computed Properties
 
 private extension CardView {
-    private var imageIndicatorWidth: CGFloat {
-        return SizeConstants.cardWidth / CGFloat(user.profileImageURLs.count) - 28
-    }
-    
-    private var user: User {
+    var user: User {
         return cardModel.user
     }
 }
@@ -122,7 +118,7 @@ private extension CardView {
 
 // MARK: - Account Restriction Handlers
 
-extension CardView {
+private extension CardView {
     func onBlock() {
         viewModel.animatedSwipeAction = .reject
     }

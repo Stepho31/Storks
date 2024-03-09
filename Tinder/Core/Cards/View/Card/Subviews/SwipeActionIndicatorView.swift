@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SwipeActionIndicatorView: View {
-    @Binding var xOffset: CGFloat
+    let xOffset: CGFloat
     
     var body: some View {
         HStack {
@@ -49,5 +49,5 @@ private extension SwipeActionIndicatorView {
 }
 
 #Preview {
-    SwipeActionIndicatorView(xOffset: .constant(10))
+    SwipeActionIndicatorView(xOffset: 10)
 }

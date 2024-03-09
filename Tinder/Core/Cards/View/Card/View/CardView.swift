@@ -24,7 +24,7 @@ struct CardView: View {
                 
                 CardImageIndicatorView(imageCount: user.numberOfImages, currentIndex: $currentImageIndex)
                 
-                SwipeActionIndicatorView(xOffset: $xOffset, screenCutoff: screenCutoff)
+                SwipeActionIndicatorView(xOffset: $xOffset)
             }
             
             UserInfoView(user: user, showProfileView: $showProfileView)
@@ -51,10 +51,6 @@ struct CardView: View {
 // MARK: - Computed Properties
 
 private extension CardView {
-    private var screenCutoff: CGFloat {
-        return (UIScreen.main.bounds.width / 2) * 0.8
-    }
-    
     private var imageIndicatorWidth: CGFloat {
         return SizeConstants.cardWidth / CGFloat(user.profileImageURLs.count) - 28
     }
@@ -111,12 +107,12 @@ private extension CardView {
     func onDragEnded(_ value: _ChangedGesture<DragGesture>.Value) {
         let width = value.translation.width
         
-        if abs(width) <= abs(screenCutoff) {
+        if abs(width) <= abs(SizeConstants.screenCutoff) {
             returnToCenter()
             return
         }
         
-        if width >= screenCutoff  && width > 0 {
+        if width >= SizeConstants.screenCutoff && width > 0 {
             swipeRight()
         } else {
             swipeLeft()

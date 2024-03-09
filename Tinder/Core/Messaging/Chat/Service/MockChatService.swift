@@ -8,14 +8,14 @@
 import Firebase
 
 struct MockChatService: ChatServiceProtocol {
-    func observeChatMessages(forThread thread: Thread?) -> AsyncStream<Message> {
+    func observeChatMessages(forThread thread: Thread?) -> AsyncStream<ChatMessage> {
         AsyncStream { continuation in
             DeveloperPreview.messages.forEach({ continuation.yield($0) })
         }
     }
     
     func sendMessage(_ message: String, toThread thread: Thread?) async throws {
-        let message = Message(
+        let message = ChatMessage(
             id: NSUUID().uuidString,
             fromId: currentUid,
             toId: chatPartner.id,

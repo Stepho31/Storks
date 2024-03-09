@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChatMessageCell: View {
-    let message: Message
+    let message: ChatMessage
     
     var body: some View {
         HStack {

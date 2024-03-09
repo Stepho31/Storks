@@ -44,7 +44,7 @@ struct UserProfileView: View, UserBlockable {
                     ZStack(alignment: .top) {
                         CardImageView(user: user, currentImageIndex: $currentImageIndex)
                         
-                        ImageIndicatorView(imageCount: user.numberOfImages, currentIndex: $currentImageIndex)
+                        CardImageIndicatorView(imageCount: user.numberOfImages, currentIndex: $currentImageIndex)
                     }
                     
                     VStack(alignment: .leading, spacing: 12) {

@@ -7,7 +7,7 @@
 
 import Firebase
 
-struct Message: Identifiable, Codable, Hashable {
+struct ChatMessage: Identifiable, Codable, Hashable {
     let id: String
     let fromId: String
     let toId: String

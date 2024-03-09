@@ -10,7 +10,7 @@ import Firebase
 struct Thread: Identifiable, Hashable, Codable {
     let id: String
     var uids: [String]
-    var lastMessage: Message?
+    var lastMessage: ChatMessage?
     var lastUpdated: Timestamp
     
     var chatPartner: User?

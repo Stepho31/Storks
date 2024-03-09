@@ -24,7 +24,8 @@ struct InboxView: View {
                 case .empty:
                     InboxEmptyStateView()
                 case .hasData:
-                    InboxListView(viewModel: inboxViewModel)
+                    InboxListView()
+                        .environmentObject(inboxViewModel)
                 }
             }
             .listStyle(PlainListStyle())

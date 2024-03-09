@@ -110,7 +110,7 @@ extension DeveloperPreview {
 // MARK: - Chats
 
 extension DeveloperPreview {
-    static let message = Message(
+    static let message = ChatMessage(
         id: NSUUID().uuidString,
         fromId: users[0].id,
         toId: users[4].id,
@@ -120,7 +120,7 @@ extension DeveloperPreview {
         user: user
     )
     
-    static var messages: [Message] = [
+    static var messages: [ChatMessage] = [
         .init(
             id: NSUUID().uuidString,
             fromId: users[0].id,

@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct InboxRowView: View {
-    let thread: Thread
-    @ObservedObject var viewModel: InboxViewModel
+    @EnvironmentObject var viewModel: InboxViewModel
     @EnvironmentObject var userManager: UserManager
     
     var chatPartner: User? {
         return thread.chatPartner
     }
     
-    var message: Message? {
+    var message: ChatMessage? {
         return thread.lastMessage
     }
+    
+    let thread: Thread
     
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -58,19 +59,15 @@ struct InboxRowView: View {
             }
         }
     }
-    
-    private func onDelete() {
+}
+
+private extension InboxRowView {
+    func onDelete() {
         guard let currentUser = userManager.currentUser else { return }
         Task { try await viewModel.deleteThread(thread, currentUser: currentUser) }
     }
 }
 
 #Preview {
-    InboxRowView(
-        thread: DeveloperPreview.threads[0],
-        viewModel: .init(
-            service: MockInboxService(),
-            userService: MockUserService()
-        )
-    )
+    InboxRowView(thread: DeveloperPreview.threads[0])
 }

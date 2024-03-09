@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InboxListView: View {
-    @ObservedObject var viewModel: InboxViewModel
+    @EnvironmentObject var viewModel: InboxViewModel
     
     var body: some View {
         Section {
@@ -24,7 +24,7 @@ struct InboxListView: View {
                         EmptyView()
                     }.opacity(0.0)
                     
-                    InboxRowView(thread: thread, viewModel: viewModel)
+                    InboxRowView(thread: thread)
                         .padding(.horizontal, 8)
                 }
             }
@@ -35,10 +35,11 @@ struct InboxListView: View {
 }
 
 #Preview {
-    InboxListView(
-        viewModel: .init(
-            service: MockInboxService(),
-            userService: MockUserService()
+    InboxListView()
+        .environmentObject(
+            InboxViewModel(
+                service: MockInboxService(),
+                userService: MockUserService()
+            )
         )
-    )
 }

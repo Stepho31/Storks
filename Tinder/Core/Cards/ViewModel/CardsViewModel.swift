@@ -13,7 +13,6 @@ class CardsViewModel: ObservableObject {
     // MARK: - Properties
     
     @Published var animatedSwipeAction: SwipeAction?
-    @Published var animating = false
     @Published var cardStackState: CardStackState = .loading
     
     @Published var cardModels = [CardModel]() {
@@ -37,14 +36,9 @@ class CardsViewModel: ObservableObject {
     // MARK: - Card Helpers
         
     private func removeCard(_ user: User) async throws {
-        animating = true
-        
         guard !cardModels.isEmpty else { return }
         guard let index = cardModels.firstIndex(where: { $0.id == user.id }) else { return }
-
-        try await Task.sleep(nanoseconds: 500_000_000)
         cardModels.remove(at: index)
-        animating = false
     }
     
     func likeUser(_ user: User) async {

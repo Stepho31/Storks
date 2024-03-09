@@ -30,7 +30,7 @@
 		2B4C7EC52B41EEE500765971 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC42B41EEE500765971 /* CardView.swift */; };
 		2B4C7EC72B41F6FA00765971 /* UserCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EC62B41F6FA00765971 /* UserCardsView.swift */; };
 		2B4C7ECB2B447A2500765971 /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ECA2B447A2500765971 /* DeveloperPreview.swift */; };
-		2B4C7ECD2B447CB400765971 /* ImageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ECC2B447CB400765971 /* ImageIndicatorView.swift */; };
+		2B4C7ECD2B447CB400765971 /* CardImageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ECC2B447CB400765971 /* CardImageIndicatorView.swift */; };
 		2B4C7ECF2B447CEE00765971 /* SizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ECE2B447CEE00765971 /* SizeConstants.swift */; };
 		2B4C7ED12B447DDB00765971 /* ImageScrollingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ED02B447DDB00765971 /* ImageScrollingOverlay.swift */; };
 		2B4C7ED32B449D0C00765971 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7ED22B449D0C00765971 /* CurrentUserProfileView.swift */; };
@@ -40,7 +40,7 @@
 		2B4C7EDC2B44A9E500765971 /* RelationshipGoalsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EDB2B44A9E500765971 /* RelationshipGoalsSelectionView.swift */; };
 		2B4C7EDF2B44AA0800765971 /* RelationshipGoalsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7EDE2B44AA0800765971 /* RelationshipGoalsType.swift */; };
 		2B4C7F462B50C55700765971 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7F452B50C55700765971 /* SearchView.swift */; };
-		2B4C7F4A2B50C5DD00765971 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7F492B50C5DD00765971 /* Message.swift */; };
+		2B4C7F4A2B50C5DD00765971 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7F492B50C5DD00765971 /* ChatMessage.swift */; };
 		2B4C7F4E2B50C62B00765971 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7F4D2B50C62B00765971 /* ChatBubble.swift */; };
 		2B4C7F512B50C67200765971 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C7F502B50C67200765971 /* CircularProfileImageView.swift */; };
 		2B4C7F542B50C69600765971 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2B4C7F532B50C69600765971 /* Kingfisher */; };
@@ -94,6 +94,8 @@
 		2B6618322B5E23C400236B43 /* MockChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618312B5E23C400236B43 /* MockChatService.swift */; };
 		2B6618342B5E2B3300236B43 /* NewMatchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618332B5E2B3300236B43 /* NewMatchItemView.swift */; };
 		2B6618362B5EB74D00236B43 /* AuthenticationRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */; };
+		2B73DF632B97B66B00C7631B /* MockSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B73DF622B97B66B00C7631B /* MockSearchService.swift */; };
+		2B920D912B9BB50C002721A3 /* CurrentUserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B920D902B9BB50C002721A3 /* CurrentUserProfileHeaderView.swift */; };
 		2B9414142B7E757B003511FC /* SwipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9414132B7E757B003511FC /* SwipeModel.swift */; };
 		2B9414162B7FAB8A003511FC /* MockInboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9414152B7FAB8A003511FC /* MockInboxService.swift */; };
 		2BA9A4A72B60326C000C3AA4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA9A4A62B60326C000C3AA4 /* WelcomeView.swift */; };
@@ -169,7 +171,7 @@
 		2B4C7EC42B41EEE500765971 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2B4C7EC62B41F6FA00765971 /* UserCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardsView.swift; sourceTree = "<group>"; };
 		2B4C7ECA2B447A2500765971 /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
-		2B4C7ECC2B447CB400765971 /* ImageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIndicatorView.swift; sourceTree = "<group>"; };
+		2B4C7ECC2B447CB400765971 /* CardImageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageIndicatorView.swift; sourceTree = "<group>"; };
 		2B4C7ECE2B447CEE00765971 /* SizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstants.swift; sourceTree = "<group>"; };
 		2B4C7ED02B447DDB00765971 /* ImageScrollingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollingOverlay.swift; sourceTree = "<group>"; };
 		2B4C7ED22B449D0C00765971 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
@@ -179,7 +181,7 @@
 		2B4C7EDB2B44A9E500765971 /* RelationshipGoalsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipGoalsSelectionView.swift; sourceTree = "<group>"; };
 		2B4C7EDE2B44AA0800765971 /* RelationshipGoalsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipGoalsType.swift; sourceTree = "<group>"; };
 		2B4C7F452B50C55700765971 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		2B4C7F492B50C5DD00765971 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2B4C7F492B50C5DD00765971 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		2B4C7F4D2B50C62B00765971 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		2B4C7F502B50C67200765971 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		2B4C7F582B50C6E000765971 /* ProfileImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSize.swift; sourceTree = "<group>"; };
@@ -233,6 +235,8 @@
 		2B6618332B5E2B3300236B43 /* NewMatchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchItemView.swift; sourceTree = "<group>"; };
 		2B6618352B5EB74D00236B43 /* AuthenticationRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRootView.swift; sourceTree = "<group>"; };
 		2B73DF612B96620D00C7631B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2B73DF622B97B66B00C7631B /* MockSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchService.swift; sourceTree = "<group>"; };
+		2B920D902B9BB50C002721A3 /* CurrentUserProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileHeaderView.swift; sourceTree = "<group>"; };
 		2B9414132B7E757B003511FC /* SwipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeModel.swift; sourceTree = "<group>"; };
 		2B9414152B7FAB8A003511FC /* MockInboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInboxService.swift; sourceTree = "<group>"; };
 		2BA9A4A62B60326C000C3AA4 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -384,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				2B2654E72B6F18690007555D /* SearchService.swift */,
+				2B73DF622B97B66B00C7631B /* MockSearchService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4C7ED22B449D0C00765971 /* CurrentUserProfileView.swift */,
+				2B920D902B9BB50C002721A3 /* CurrentUserProfileHeaderView.swift */,
 			);
 			path = CurrentUserProfile;
 			sourceTree = "<group>";
@@ -715,9 +721,9 @@
 		2B4C80382B58DC6200765971 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B4C80392B58DC6B00765971 /* SwipeAction.swift */,
 				2B4C80422B58EE1500765971 /* CardModel.swift */,
 				2B4C80562B59EC6900765971 /* CardStackState.swift */,
+				2B4C80392B58DC6B00765971 /* SwipeAction.swift */,
 				2B9414132B7E757B003511FC /* SwipeModel.swift */,
 			);
 			path = Model;
@@ -769,7 +775,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4C803B2B58DF6B00765971 /* UserInfoView.swift */,
-				2B4C7ECC2B447CB400765971 /* ImageIndicatorView.swift */,
+				2B4C7ECC2B447CB400765971 /* CardImageIndicatorView.swift */,
 				2B4C7ED02B447DDB00765971 /* ImageScrollingOverlay.swift */,
 				2B4C804B2B598A4B00765971 /* SwipeActionIndicatorView.swift */,
 				2B4C804D2B598C0400765971 /* CardImageView.swift */,
@@ -890,7 +896,7 @@
 			isa = PBXGroup;
 			children = (
 				2B4C7F782B51A38700765971 /* Thread.swift */,
-				2B4C7F492B50C5DD00765971 /* Message.swift */,
+				2B4C7F492B50C5DD00765971 /* ChatMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1459,7 +1465,7 @@
 				2B4C7FBD2B5302EC00765971 /* UserManager.swift in Sources */,
 				2B66180C2B5DDCB100236B43 /* MockCardService.swift in Sources */,
 				2BACD48E2A82FC1500452A2D /* ForgotPasswordView.swift in Sources */,
-				2B4C7ECD2B447CB400765971 /* ImageIndicatorView.swift in Sources */,
+				2B4C7ECD2B447CB400765971 /* CardImageIndicatorView.swift in Sources */,
 				2B4C804A2B597C0500765971 /* UserMatchView.swift in Sources */,
 				2B4C7F8D2B522A1A00765971 /* InboxViewModel.swift in Sources */,
 				2B4C7F732B5197E500765971 /* ChatBubbleModifier.swift in Sources */,
@@ -1499,6 +1505,7 @@
 				2B4C804E2B598C0400765971 /* CardImageView.swift in Sources */,
 				2BEE1BC62B672384009627D9 /* OnboardingManager.swift in Sources */,
 				2B6618232B5DEACF00236B43 /* MockMatchService.swift in Sources */,
+				2B73DF632B97B66B00C7631B /* MockSearchService.swift in Sources */,
 				2BACD4842A82C14600452A2D /* MainTabView.swift in Sources */,
 				2BB942DA2B8515E600130BBD /* OnboardingService.swift in Sources */,
 				2B9414142B7E757B003511FC /* SwipeModel.swift in Sources */,
@@ -1547,7 +1554,7 @@
 				2BEE1BEC2B6B55C1009627D9 /* ReportUserView.swift in Sources */,
 				2BEE1BDF2B6AF9A4009627D9 /* CloseButton.swift in Sources */,
 				CA18AD0F2B641A180096AA0C /* String+Email.swift in Sources */,
-				2B4C7F4A2B50C5DD00765971 /* Message.swift in Sources */,
+				2B4C7F4A2B50C5DD00765971 /* ChatMessage.swift in Sources */,
 				2B4C7F512B50C67200765971 /* CircularProfileImageView.swift in Sources */,
 				2B2654DA2B6D41AD0007555D /* SexualOrientationView.swift in Sources */,
 				2B4C7EC52B41EEE500765971 /* CardView.swift in Sources */,
@@ -1558,6 +1565,7 @@
 				2B4C7FBF2B53053200765971 /* SexualPreferenceType.swift in Sources */,
 				2BACD4A52A82FD6700452A2D /* User.swift in Sources */,
 				2B2654EE2B703DD80007555D /* ThreadService.swift in Sources */,
+				2B920D912B9BB50C002721A3 /* CurrentUserProfileHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1695,6 +1703,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1725,6 +1734,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

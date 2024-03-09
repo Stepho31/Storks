@@ -8,7 +8,7 @@
 import Firebase
 
 protocol ChatServiceProtocol {
-    func observeChatMessages(forThread thread: Thread?) -> AsyncStream<Message>
+    func observeChatMessages(forThread thread: Thread?) -> AsyncStream<ChatMessage>
     func sendMessage(_ message: String, toThread thread: Thread?) async throws
     var chatPartner: User { get }
 }
@@ -32,7 +32,7 @@ class ChatService: ChatServiceProtocol {
         firestoreListener = nil
     }
     
-    func observeChatMessages(forThread thread: Thread?) -> AsyncStream<Message> {
+    func observeChatMessages(forThread thread: Thread?) -> AsyncStream<ChatMessage> {
         self.thread = thread
         
         return AsyncStream { continuation in
@@ -53,7 +53,7 @@ class ChatService: ChatServiceProtocol {
         let messageRef = FirestoreConstants.ThreadsCollection.document()
         let messageId = messageRef.documentID
         
-        let message = Message(
+        let message = ChatMessage(
             id: messageId,
             fromId: currentUid,
             toId: chatPartner.id,
@@ -72,7 +72,7 @@ class ChatService: ChatServiceProtocol {
 }
 
 private extension ChatService {
-    func uploadMessage(_ message: Message, toThread thread: Thread) async throws {
+    func uploadMessage(_ message: ChatMessage, toThread thread: Thread) async throws {
         let messageData = try Firestore.Encoder().encode(message)
 
         try await FirestoreConstants
@@ -83,7 +83,7 @@ private extension ChatService {
             .setData(messageData)
     }
     
-    func updateLastThreadMessage(_ thread: Thread, message: Message) async throws {
+    func updateLastThreadMessage(_ thread: Thread, message: ChatMessage) async throws {
         let messageData = try Firestore.Encoder().encode(message)
 
         try await FirestoreConstants
@@ -106,11 +106,11 @@ private extension ChatService {
             .order(by: "timestamp", descending: false)
     }
     
-    func streamMessages(fromSnapshot snapshot: QuerySnapshot?, continuation: AsyncStream<Message>.Continuation) {
+    func streamMessages(fromSnapshot snapshot: QuerySnapshot?, continuation: AsyncStream<ChatMessage>.Continuation) {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
         guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
         
-        var messages = changes.compactMap{ try? $0.document.data(as: Message.self) }
+        var messages = changes.compactMap{ try? $0.document.data(as: ChatMessage.self) }
         
         for (index, message) in messages.enumerated() where message.fromId != currentUid {
             messages[index].user = self.chatPartner
@@ -119,7 +119,7 @@ private extension ChatService {
         messages.forEach({ continuation.yield($0) })
     }
     
-    func onTerminationOfContinuation(_ continuation: AsyncStream<Message>.Continuation) {
+    func onTerminationOfContinuation(_ continuation: AsyncStream<ChatMessage>.Continuation) {
         continuation.onTermination = { _ in
             self.firestoreListener?.remove()
             self.firestoreListener = nil

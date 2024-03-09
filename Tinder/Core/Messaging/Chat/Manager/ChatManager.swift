@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor
 class ChatManager: ObservableObject {
-    @Published var messages = [Message]()
+    @Published var messages = [ChatMessage]()
     @Published var initiateThreadObserver = false
 
     private let service: ChatServiceProtocol

@@ -44,17 +44,16 @@ struct SocialUserProfileView: View {
                     }
                     .font(.subheadline)
                     .padding()
-
+                    
                     LazyVGrid(columns: items, spacing: 2) {
                         ForEach(user.profileImageURLs, id: \.self) { imageUrl in
-                            if imageUrl != user.profileImageURLs.first {
-                                KFImage(URL(string: imageUrl))
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: width, height: width)
-                                    .clipped()
-                                    .onTapGesture { showProfilePhotosTabView.toggle() }
-                            }
+//                            KFImage(URL(string: imageUrl))
+                            Image(imageUrl)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: width, height: width)
+                                .clipped()
+                                .onTapGesture { showProfilePhotosTabView.toggle() }
                         }
                     }
                 }

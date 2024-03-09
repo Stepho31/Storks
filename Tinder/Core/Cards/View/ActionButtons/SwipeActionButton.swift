@@ -55,9 +55,7 @@ private extension SwipeActionButton {
 // MARK: - Action Handlers
 
 private extension SwipeActionButton {
-    private func onTap() {
-        guard !viewModel.animating else { return }
-        
+    private func onTap() {        
         switch config {
         case .reject:
             viewModel.animatedSwipeAction = .reject

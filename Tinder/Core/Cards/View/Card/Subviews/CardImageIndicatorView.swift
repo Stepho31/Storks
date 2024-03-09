@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImageIndicatorView: View {
+struct CardImageIndicatorView: View {
     let imageCount: Int
     @Binding var currentIndex: Int
     
@@ -28,5 +28,5 @@ struct ImageIndicatorView: View {
 }
 
 #Preview {
-    ImageIndicatorView(imageCount: 2, currentIndex: .constant(1))
+    CardImageIndicatorView(imageCount: 2, currentIndex: .constant(1))
 }

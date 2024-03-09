@@ -32,7 +32,7 @@ struct CardView: View {
         .fullScreenCover(isPresented: $showProfileView) {
             UserProfileView(onBlock: onBlock, user: user)
         }
-        .onReceive(viewModel.$animatedSwipeAction, perform: { action in
+        .onReceive(viewModel.$buttonSwipeAction, perform: { action in
             onReceiveSwipeAction(action)
         })
         .frame(width: SizeConstants.cardWidth, height: SizeConstants.cardHeight)
@@ -120,7 +120,7 @@ private extension CardView {
 
 private extension CardView {
     func onBlock() {
-        viewModel.animatedSwipeAction = .reject
+        viewModel.buttonSwipeAction = .reject
     }
 }
 

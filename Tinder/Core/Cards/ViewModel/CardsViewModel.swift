@@ -12,7 +12,7 @@ class CardsViewModel: ObservableObject {
     
     // MARK: - Properties
     
-    @Published var animatedSwipeAction: SwipeAction?
+    @Published var buttonSwipeAction: SwipeAction?
     @Published var cardStackState: CardStackState = .loading
     
     @Published var cardModels = [CardModel]() {

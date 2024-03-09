@@ -58,10 +58,12 @@ private extension SwipeActionButton {
     private func onTap() {        
         switch config {
         case .reject:
-            viewModel.animatedSwipeAction = .reject
+            viewModel.buttonSwipeAction = .reject
         case .like:
-            viewModel.animatedSwipeAction = .like
+            viewModel.buttonSwipeAction = .like
         }
+        
+        viewModel.buttonSwipeAction = nil
     }
 }
 

@@ -12,7 +12,7 @@ struct EditProfileView: View {
     @EnvironmentObject var userManager: UserManager
     
     @State private var bio = ""
-    @State private var major = ""
+    @State private var occupation = ""
     @State private var selectedGoalType: RelationshipGoalsType?
     @State private var selectedGender: GenderType?
     @State private var selectedOrientation: SexualOrientationType?
@@ -46,7 +46,7 @@ struct EditProfileView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        Text("COURSE")
+                        Text("OCCUPATION")
                             .font(.subheadline)
                             .fontWeight(.bold)
                             .padding(.leading)
@@ -57,7 +57,7 @@ struct EditProfileView: View {
                             
                             Spacer()
                             
-                            Text(major)
+                            Text(occupation)
                                 .font(.footnote)
                         }
                         .padding()
@@ -106,6 +106,8 @@ struct EditProfileView: View {
                 }
             }
             .onAppear { onViewAppear() }
+            .navigationTitle("Edit Info")
+            .navigationBarTitleDisplayMode(.inline)
             .sheet(item: $sheetConfig) { config in
                 switch config {
                 case .relationshipGoals:
@@ -122,8 +124,6 @@ struct EditProfileView: View {
                         .presentationDragIndicator(.visible)
                 }
             }
-            .navigationTitle("Edit Info")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
@@ -147,7 +147,7 @@ private extension EditProfileView {
         guard let user else { return }
         
         self.bio = user.bio ?? ""
-        self.major = user.occupation
+        self.occupation = user.occupation
         self.selectedGender = user.gender
         self.selectedOrientation = user.sexualOrientation
     }
@@ -162,7 +162,7 @@ private extension EditProfileView {
             age: user.age,
             profileImageURLs: user.profileImageURLs,
             bio: self.bio.isEmpty ? nil : self.bio,
-            occupation: self.major,
+            occupation: self.occupation,
             gender: self.selectedGender ?? user.gender,
             sexualOrientation: self.selectedOrientation ?? user.sexualOrientation,
             blockedUIDs: user.blockedUIDs,

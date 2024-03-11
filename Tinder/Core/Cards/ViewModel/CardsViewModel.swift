@@ -35,7 +35,7 @@ class CardsViewModel: ObservableObject {
     
     // MARK: - Card Helpers
         
-    private func removeCard(_ user: User) async throws {
+    private func removeCard(_ user: User) {
         guard !cardModels.isEmpty else { return }
         guard let index = cardModels.firstIndex(where: { $0.id == user.id }) else { return }
         cardModels.remove(at: index)
@@ -43,7 +43,7 @@ class CardsViewModel: ObservableObject {
     
     func likeUser(_ user: User) async {
         do {
-            try await removeCard(user)
+            removeCard(user)
             try await cardService.saveSwipe(forUser: user, swipe: .like)
             await matchManager.checkForMatch(fromUser: user, currentUser: currentUser)
         } catch {
@@ -52,7 +52,7 @@ class CardsViewModel: ObservableObject {
     }
     
     func rejectUser(_ user: User) async throws {
-        try await removeCard(user)
+        removeCard(user)
         try await cardService.saveSwipe(forUser: user, swipe: .reject)
     }
     

@@ -10,8 +10,7 @@ import Foundation
 enum OnboardingSteps: Int, CaseIterable {
     case name
     case birthday
-    case study
-    case graduationYear
+    case occupation
     case gender
     case sexualOrientation
     case photos

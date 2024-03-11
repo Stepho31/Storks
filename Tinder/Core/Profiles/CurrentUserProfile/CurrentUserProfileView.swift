@@ -14,10 +14,6 @@ struct CurrentUserProfileView: View {
     @State private var accountDeletionInProgress = false
     @State private var showEditProfile = false
     
-    private var user: User? {
-        return userManager.currentUser
-    }
-    
     var body: some View {
         NavigationStack {
             List {
@@ -76,6 +72,10 @@ struct CurrentUserProfileView: View {
 }
 
 private extension CurrentUserProfileView {
+    var user: User? {
+        return userManager.currentUser
+    }
+    
     func onLogout() {
         userManager.currentUser = nil
         authManager.signout()

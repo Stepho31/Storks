@@ -20,7 +20,7 @@ struct UserCardsView: View {
         
         let viewModel = CardsViewModel(
             currentUser: userManager.currentUser,
-            cardService: MockCardService(),
+            cardService: CardService(),
             matchManager: matchManager
         )
         

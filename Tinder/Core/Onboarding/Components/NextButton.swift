@@ -16,10 +16,10 @@ struct NextButton: View {
             onboardingManager.navigate()
         } label: {
             Text("Next")
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(width: 352, height: 44)
                 .foregroundStyle(formIsValid ? .white : .black.opacity(0.5))
-                .bold()
-                .font(.title3)
-                .frame(width: 300, height: 50)
                 .background(formIsValid ? Color(.primaryPink) : Color(.systemGray5))
                 .clipShape(Capsule())
         }

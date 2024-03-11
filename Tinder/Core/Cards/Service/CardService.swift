@@ -74,7 +74,9 @@ class CardService: CardServiceProtocol {
 
 private extension CardService {    
     func filteredUser(_ user: User, currentUser: User) -> Bool {
-        var result = !swipedUserIDs.contains(user.id) && !user.isCurrentUser
+        let result = !swipedUserIDs.contains(user.id) &&
+        !user.isCurrentUser &&
+        !currentUser.blockedUIDs.contains(user.id)
         
         if currentUser.sexualOrientation == .bisexual {
             switch currentUser.gender {

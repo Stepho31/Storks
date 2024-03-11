@@ -34,9 +34,9 @@ struct SexualOrientationView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 14 ,height: 14)
-                                        .foregroundStyle(.white)
                                 }
                             }
+                            .foregroundStyle(Color(.primaryText))
                         })
                     }
                 }
@@ -45,8 +45,8 @@ struct SexualOrientationView: View {
 
             NextButton(formIsValid: formIsValid)
         }
-        .onChange(of: sexualOrientation, perform: { value in
-            onboardingManager.sexualOrientation = value
+        .onChange(of: sexualOrientation, { oldValue, newValue in
+            onboardingManager.sexualOrientation = newValue
         })
         .frame(alignment: .leading)
         .padding()

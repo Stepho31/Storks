@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct InboxView: View {
+    @EnvironmentObject var matchManager: MatchManager
+    
     @StateObject var inboxViewModel = InboxViewModel(
-        service: MockInboxService(),
-        userService: MockUserService()
+        service: InboxService(),
+        userService: UserService()
     )
     
     var body: some View {
@@ -43,6 +45,7 @@ struct InboxView: View {
             .navigationBarTitleDisplayMode(.inline)
             .listStyle(PlainListStyle())
         }
+        .task { await matchManager.fetchMatches() }
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  StudyView.swift
+//  OccupationView.swift
 //  Tinder
 //
 //  Created by Brandon on 1/30/24.
@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct StudyView: View {
+struct OccupationView: View {
     @EnvironmentObject var onboardingManager: OnboardingManager
     
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 20) {
-                Text("What's your study?")
+                Text("What's your occupation?")
                     .font(.title)
                     .bold()
                 
                 VStack(alignment: .leading) {
-                    TextField("Enter your study", text: $onboardingManager.study)
+                    TextField("Enter your occupation", text: $onboardingManager.occupation)
                     
                     Divider()
                     
@@ -39,7 +39,7 @@ struct StudyView: View {
             
             NextButton(formIsValid: formIsValid)
         }
-        .backgroundModifier()
+        .padding()
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }
@@ -47,13 +47,13 @@ struct StudyView: View {
     }
 }
 
-extension StudyView: FormValidatorProtocol {
+extension OccupationView: FormValidatorProtocol {
     var formIsValid: Bool {
-        return !onboardingManager.study.isEmpty
+        return !onboardingManager.occupation.isEmpty
     }
 }
 
 #Preview {
-    StudyView()
+    OccupationView()
         .environmentObject(OnboardingManager(service: .init()))
 }

@@ -124,8 +124,8 @@ struct UserProfileView: View, UserBlockable {
                 .padding(.vertical)
             }
         }
-        .onChange(of: accountRestrictionAction, perform: { value in
-            switch value {
+        .onChange(of: accountRestrictionAction, { oldValue, newValue in
+            switch newValue {
             case .blocked:
                 if let onBlock { onBlock() }
             case .reported:

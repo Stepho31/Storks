@@ -12,7 +12,7 @@ import Firebase
 class OnboardingManager: ObservableObject {
     @Published var navigationPath = [OnboardingSteps]()
     @Published var name = ""
-    @Published var study = ""
+    @Published var occupation = ""
     @Published var profilePhotos = [UIImage]()
     @Published var user: User?
     @Published var uploadingUserData = false
@@ -77,7 +77,7 @@ private extension OnboardingManager {
             email: email,
             age: age,
             profileImageURLs: [],
-            occupation: study,
+            occupation: occupation,
             gender: gender,
             sexualOrientation: sexualOrientation,
             blockedUIDs: [],

@@ -29,9 +29,10 @@ struct GenderView: View {
                         self.selectedGender = gender
                     }, label: {
                         Text("\(gender.description)")
+                            .foregroundStyle(Color(.primaryText))
                             .frame(width: 300, height: 50)
                             .overlay(RoundedRectangle(cornerRadius: 25)
-                            .stroke(selectedGender == gender ? .red : .white, lineWidth: 1.5))
+                            .stroke(selectedGender == gender ? .red : .gray, lineWidth: 1.5))
                     })
                 }
             }
@@ -40,8 +41,8 @@ struct GenderView: View {
             
             NextButton(formIsValid: formIsValid)
         }
-        .onChange(of: selectedGender, perform: { value in
-            onboardingManager.gender = value
+        .onChange(of: selectedGender, { oldValue, newValue in
+            onboardingManager.gender = newValue
         })
         .frame(maxWidth: .infinity)
         .toolbar {

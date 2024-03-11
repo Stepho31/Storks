@@ -19,6 +19,11 @@ struct WelcomeView: View {
                 } else {
                     VStack(spacing: 24) {
                         VStack(alignment: .leading, spacing: 8) {
+                            Image(.tinderLogo)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 64)
+                            
                             Text("Welcome to Tinder.")
                                 .font(.title)
                                 .fontWeight(.bold)
@@ -48,8 +53,8 @@ struct WelcomeView: View {
                     }
                 }
             }
-            .onChange(of: onboardingManager.user, perform: { value in
-                userManager.currentUser = value
+            .onChange(of: onboardingManager.user, { oldValue, newValue in
+                userManager.currentUser = newValue
             })
             .navigationDestination(for: OnboardingSteps.self, destination: { step in
                 VStack {
@@ -58,10 +63,8 @@ struct WelcomeView: View {
                         FullNameView()
                     case .birthday:
                         BirthdayView()
-                    case .study:
-                        StudyView()
-                    case .graduationYear:
-                        GraduationYearView()
+                    case .occupation:
+                        OccupationView()
                     case .gender:
                         GenderView()
                     case .sexualOrientation:

@@ -30,13 +30,12 @@ class UserManager: ObservableObject {
     func fetchCurrentUser() async {
         guard let currentUid else { return }
         isLoading = true
+        defer { isLoading = false }
         
         do {
             currentUser = try await service.fetchUser(withUid: currentUid)
-            isLoading = false
         } catch {
             print("DEBUG: Failed to fetch current user with error: \(error)")
-            isLoading = false 
         }
     }    
 }

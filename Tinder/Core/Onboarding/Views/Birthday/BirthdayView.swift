@@ -13,7 +13,7 @@ struct BirthdayView: View {
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 20) {
-                Text("What's your birthday?")
+                Text("When's your birthday?")
                     .font(.title)
                     .bold()
                 
@@ -40,6 +40,7 @@ struct BirthdayView: View {
             
             NextButton(formIsValid: true)
         }
+        .padding()
         .toolbar {
             ToolbarItem(placement: .topBarLeading)
             { BackButton() }

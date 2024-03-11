@@ -9,7 +9,6 @@ import Foundation
 
 @MainActor
 class MatchManager: ObservableObject {
-    
     @Published var matchedUser: User?
     @Published var matches = [Match]()
     
@@ -19,8 +18,6 @@ class MatchManager: ObservableObject {
     init(service: MatchServiceProtocol) {
         self.service = service
         self.userService = UserService()
-        
-        Task { await fetchMatches() }
     }
     
     func fetchMatches() async {
@@ -63,8 +60,6 @@ private extension MatchManager {
     
     func fetchUserDataForMatch(_ match: Match) async throws {
         guard let index = matches.firstIndex(where: { $0.id == match.id }) else { return }
-        
-        async let user = userService.fetchUser(withUid: match.userId)
-        matches[index].user = try await user
+        matches[index].user = try await userService.fetchUser(withUid: match.userId)
     }
 }

@@ -22,13 +22,9 @@ struct AuthenticationRootView: View {
                 
                 AuthenticationBottomView()
             }
-            .background(
-                LinearGradient(colors: [Color(.tertiaryPink), Color(.primaryPink), Color(.secondaryPink)],
-                               startPoint: .topTrailing,
-                               endPoint: .bottomLeading)
-            )
-            .onChange(of: authManager.authType, perform: { value in
-                showAuthFlow = value != nil
+            .background(gradientBackground)
+            .onChange(of: authManager.authType, { oldValue, newValue in
+                showAuthFlow = newValue != nil
             })
             .fullScreenCover(isPresented: $showAuthFlow) {
                 EmailView()
@@ -36,6 +32,20 @@ struct AuthenticationRootView: View {
                     .environmentObject(authViewModel)
             }
         }
+    }
+}
+
+private extension AuthenticationRootView {
+    var gradientBackground: LinearGradient {
+        LinearGradient(
+            colors: [
+                Color(.tertiaryPink),
+                Color(.primaryPink),
+                Color(.secondaryPink)
+            ],
+            startPoint: .topTrailing,
+            endPoint: .bottomLeading
+        )
     }
 }
 

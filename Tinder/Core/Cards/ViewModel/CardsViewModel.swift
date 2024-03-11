@@ -45,7 +45,7 @@ class CardsViewModel: ObservableObject {
         do {
             removeCard(user)
             try await cardService.saveSwipe(forUser: user, swipe: .like)
-            await matchManager.checkForMatch(fromUser: user, currentUser: currentUser)
+            await matchManager.checkForMatch(fromUser: user)
         } catch {
             print("DEBUG: Like user failed with error: \(error)")
         }

@@ -10,7 +10,7 @@ import Firebase
 protocol MatchServiceProtocol {
     func fetchMatches() async throws -> [Match]
     func checkForMatch(withUser user: User) async throws -> Bool
-    func saveMatch(withUser user: User, currentUser: User) async throws
+    func saveMatch(withUser user: User) async throws
 }
 
 struct MatchService: MatchServiceProtocol {
@@ -35,15 +35,16 @@ struct MatchService: MatchServiceProtocol {
         return swipe == .like
     }
     
-    func saveMatch(withUser user: User, currentUser: User) async throws {
+    func saveMatch(withUser user: User) async throws {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
         let timestamp = Timestamp()
 
-        let currentUserMatchRef = FirestoreConstants.UserCollection.document(currentUser.id).collection("user-matches").document()
+        let currentUserMatchRef = FirestoreConstants.UserCollection.document(currentUid).collection("user-matches").document()
         let currentUserMatch = Match(id: currentUserMatchRef.documentID, userId: user.id, matchTimestamp: timestamp)
         let currentUserMatchData = try Firestore.Encoder().encode(currentUserMatch)
         
         let userMatchRef = FirestoreConstants.UserCollection.document(user.id).collection("user-matches").document()
-        let userMatch = Match(id: userMatchRef.documentID, userId: currentUser.id, matchTimestamp: timestamp)
+        let userMatch = Match(id: userMatchRef.documentID, userId: currentUid, matchTimestamp: timestamp)
         let userMatchData = try Firestore.Encoder().encode(userMatch)
 
         try await currentUserMatchRef.setData(currentUserMatchData)

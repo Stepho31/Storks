@@ -19,6 +19,7 @@ struct User: Identifiable, Codable, Hashable {
     let occupation: String
     var gender: GenderType
     let sexualOrientation: SexualOrientationType
+    var numberOfChildren: Int
     var blockedUIDs: [String]
     var blockedByUIDs: [String]
     var didCompleteOnboarding: Bool

@@ -11,6 +11,7 @@ enum EditProfileSheetConfiguration: Identifiable {
     case relationshipGoals
     case gender
     case sexualOrientation
+    case numberOfChildren
     
     var id: Int {
         return self.hashValue

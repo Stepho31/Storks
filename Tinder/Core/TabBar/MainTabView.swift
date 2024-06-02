@@ -15,15 +15,15 @@ struct MainTabView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            UserCardsView(userManager: userManager, matchManager: matchManager)
-                .tabItem { Image(systemName: "flame") }
-                .tag(0)
-                .onAppear { selection = 0 }
-            
             SearchView()
                 .tabItem { Image(systemName: "magnifyingglass") }
                 .tag(1)
                 .onAppear { selection = 1 }
+            
+            UserCardsView(userManager: userManager, matchManager: matchManager)
+                .tabItem { Image(systemName: "flame") }
+                .tag(0)
+                .onAppear { selection = 0 }
             
             InboxView()
                 .tabItem {

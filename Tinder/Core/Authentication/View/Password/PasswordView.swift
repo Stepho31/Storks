@@ -53,7 +53,7 @@ struct PasswordView: View {
                     .bold()
                     .font(.title3)
                     .frame(width: 320, height: 50)
-                    .background(formIsValid ? Color(.primaryPink) : Color(.systemGray5))
+                    .background(formIsValid ? Color(.primaryBlue) : Color(.systemGray5))
                     .clipShape(Capsule())
             }
             .disabled(!formIsValid)

@@ -146,7 +146,7 @@ struct UserProfileView: View, UserBlockable {
     }
 }
 
-#Preview {
-    UserProfileView(user: DeveloperPreview.user )
-        .preferredColorScheme(.dark)
-}
+//#Preview {
+//    UserProfileView(user: DeveloperPreview.user )
+//        .preferredColorScheme(.dark)
+//}

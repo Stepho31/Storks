@@ -19,12 +19,13 @@ struct WelcomeView: View {
                 } else {
                     VStack(spacing: 24) {
                         VStack(alignment: .leading, spacing: 8) {
-                            Image(.tinderLogo)
+                            Image(.storksBigLogo)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 100, height: 64)
+                                .frame(width: 200, height: 96)
+                                .padding(.leading, -50)
                             
-                            Text("Welcome to Tinder.")
+                            Text("Welcome to Storks!")
                                 .font(.title)
                                 .fontWeight(.bold)
                             
@@ -69,6 +70,8 @@ struct WelcomeView: View {
                         GenderView()
                     case .sexualOrientation:
                         SexualOrientationView()
+                    case .numberOfChildren:
+                        NumberOfChildrenView()
                     case .photos:
                         AddProfilePhotosView()
                     }
@@ -81,7 +84,7 @@ struct WelcomeView: View {
     }
 }
 
-#Preview {
-    WelcomeView()
-        .preferredColorScheme(.dark)
-}
+//#Preview {
+//    WelcomeView()
+//        .preferredColorScheme(.dark)
+//}

@@ -20,7 +20,7 @@ struct NextButton: View {
                 .foregroundColor(.white)
                 .frame(width: 352, height: 44)
                 .foregroundStyle(formIsValid ? .white : .black.opacity(0.5))
-                .background(formIsValid ? Color(.primaryPink) : Color(.systemGray5))
+                .background(formIsValid ? Color(.primaryBlue) : Color(.systemGray5))
                 .clipShape(Capsule())
         }
         .disabled(!formIsValid)

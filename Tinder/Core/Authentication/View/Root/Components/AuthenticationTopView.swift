@@ -10,11 +10,12 @@ import SwiftUI
 struct AuthenticationTopView: View {
     var body: some View {
         VStack {
-            Image(.tinderLogoWhite)
+            Image(.whiteLogo)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100, height: 40)
-                .padding()
+                .frame(width: 300, height: 175)
+                .padding(.horizontal, 10)
+                .padding(.top, 20)
             
             VStack(spacing: 8) {
                 HStack {
@@ -37,7 +38,7 @@ struct AuthenticationTopView: View {
     }
 }
 
-#Preview {
-    AuthenticationTopView()
-        .preferredColorScheme(.dark)
-}
+//#Preview {
+//    AuthenticationTopView()
+//        .preferredColorScheme(.dark)
+//}

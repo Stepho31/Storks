@@ -11,7 +11,7 @@ struct TinderButtonModifier: ViewModifier {
     let buttonHeight: CGFloat
     let backgroundColor: Color
     
-    init(buttonHeight: CGFloat = 44, backgroundColor: Color = Color(.primaryPink)) {
+    init(buttonHeight: CGFloat = 44, backgroundColor: Color = Color(.primaryBlue)) {
         self.buttonHeight = buttonHeight
         self.backgroundColor = backgroundColor
     }

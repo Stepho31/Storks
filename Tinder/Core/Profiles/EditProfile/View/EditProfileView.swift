@@ -13,6 +13,7 @@ struct EditProfileView: View {
     
     @State private var bio = ""
     @State private var occupation = ""
+    @State private var selectedNumberOfChildren: Int = 0
     @State private var selectedGoalType: RelationshipGoalsType?
     @State private var selectedGender: GenderType?
     @State private var selectedOrientation: SexualOrientationType?
@@ -59,6 +60,27 @@ struct EditProfileView: View {
                             
                             Text(occupation)
                                 .font(.footnote)
+                        }
+                        .padding()
+                        .background(Color(.secondarySystemBackground))
+                        .font(.subheadline)
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("Number of Children")
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                            .padding(.leading)
+                        
+                        HStack {
+                            Text(user?.numberOfChildren.description ?? "Add Number of Children")
+                                .font(.footnote)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.right")
+                                .imageScale(.small)
+                            
                         }
                         .padding()
                         .background(Color(.secondarySystemBackground))
@@ -122,6 +144,11 @@ struct EditProfileView: View {
                     SexualOrientationSelectionView(selectedOrientation: $selectedOrientation)
                         .presentationDetents([.height(500)])
                         .presentationDragIndicator(.visible)
+                case .numberOfChildren:
+                    NumberOfChildrenSelectionView(numberOfChildren: $selectedNumberOfChildren)
+                              .presentationDetents([.height(300)])
+                              .presentationDragIndicator(.visible)
+                
                 }
             }
             .toolbar {
@@ -150,6 +177,7 @@ private extension EditProfileView {
         self.occupation = user.occupation
         self.selectedGender = user.gender
         self.selectedOrientation = user.sexualOrientation
+        self.selectedNumberOfChildren = user.numberOfChildren
     }
     
     func onDoneTapped() async {
@@ -165,6 +193,7 @@ private extension EditProfileView {
             occupation: self.occupation,
             gender: self.selectedGender ?? user.gender,
             sexualOrientation: self.selectedOrientation ?? user.sexualOrientation,
+            numberOfChildren: user.numberOfChildren,
             blockedUIDs: user.blockedUIDs,
             blockedByUIDs: user.blockedByUIDs,
             didCompleteOnboarding: true
@@ -179,9 +208,9 @@ private extension EditProfileView {
     }
 }
 
-#Preview {
-    NavigationStack {
-        EditProfileView()
-            .environmentObject(UserManager(service: MockUserService()))
-    }
-}
+//#Preview {
+//    NavigationStack {
+//        EditProfileView()
+//            .environmentObject(UserManager(service: MockUserService()))
+//    }
+//}

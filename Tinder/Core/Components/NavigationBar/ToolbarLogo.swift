@@ -9,13 +9,10 @@ import SwiftUI
 
 struct ToolbarLogo: View {
     var body: some View {
-        Image(.tinderLogo)
+        Image(.storksLogoBlue)
             .resizable()
             .scaledToFill()
-            .frame(width: 88)
+            .frame(width: 210)
+            .padding(.leading, -50)
     }
-}
-
-#Preview {
-    ToolbarLogo()
 }

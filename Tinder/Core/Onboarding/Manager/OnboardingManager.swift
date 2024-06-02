@@ -13,6 +13,7 @@ class OnboardingManager: ObservableObject {
     @Published var navigationPath = [OnboardingSteps]()
     @Published var name = ""
     @Published var occupation = ""
+    @Published var numberOfChildren = 0
     @Published var profilePhotos = [UIImage]()
     @Published var user: User?
     @Published var uploadingUserData = false
@@ -21,6 +22,11 @@ class OnboardingManager: ObservableObject {
     var graduationYear = Calendar.current.component(.year, from: Date())
     var gender: GenderType?
     var sexualOrientation: SexualOrientationType?
+    
+    var formIsValid: Bool {
+        // Example validation: number of children must be non-negative
+        return numberOfChildren >= 0
+    }
     
     private let service: OnboardingService
     private var currentStep: OnboardingSteps?
@@ -80,6 +86,7 @@ private extension OnboardingManager {
             occupation: occupation,
             gender: gender,
             sexualOrientation: sexualOrientation,
+            numberOfChildren: numberOfChildren,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true

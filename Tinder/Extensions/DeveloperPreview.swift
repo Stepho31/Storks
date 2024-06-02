@@ -21,7 +21,8 @@ struct DeveloperPreview {
         bio: "Ex-Footballer | Entreprenuer",
         occupation: "Business Man",
         gender: .man,
-        sexualOrientation: .straight,
+        sexualOrientation: .straight, 
+        numberOfChildren: 1,
         blockedUIDs: [],
         blockedByUIDs: [],
         didCompleteOnboarding: true
@@ -37,7 +38,8 @@ struct DeveloperPreview {
             bio: "Ex-Footballer | Entreprenuer",
             occupation: "Business Man",
             gender: .man,
-            sexualOrientation: .straight,
+            sexualOrientation: .straight, 
+            numberOfChildren: 2,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -52,6 +54,7 @@ struct DeveloperPreview {
             occupation: "Pro Fighter | CEO Proper 12",
             gender: .man,
             sexualOrientation: .straight,
+            numberOfChildren: 3,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -66,6 +69,7 @@ struct DeveloperPreview {
             occupation: "Designer",
             gender: .woman,
             sexualOrientation: .straight,
+            numberOfChildren: 9,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -79,7 +83,8 @@ struct DeveloperPreview {
             bio: "Social media influencer",
             occupation: "Entertainment",
             gender: .woman,
-            sexualOrientation: .straight,
+            sexualOrientation: .straight, 
+            numberOfChildren: 6,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -94,6 +99,7 @@ struct DeveloperPreview {
             occupation: "Entertainment",
             gender: .woman,
             sexualOrientation: .straight,
+            numberOfChildren: 5,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true

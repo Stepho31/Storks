@@ -39,9 +39,9 @@ private extension AuthenticationRootView {
     var gradientBackground: LinearGradient {
         LinearGradient(
             colors: [
-                Color(.tertiaryPink),
-                Color(.primaryPink),
-                Color(.secondaryPink)
+                Color(.secondaryBlue),
+                Color(.secondaryBlue),
+                Color(.primaryBlue)
             ],
             startPoint: .topTrailing,
             endPoint: .bottomLeading

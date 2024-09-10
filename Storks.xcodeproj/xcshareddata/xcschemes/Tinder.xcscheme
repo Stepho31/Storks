@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2BACD4662A82BEC200452A2D"
-               BuildableName = "Tinder.app"
-               BlueprintName = "Tinder"
+               BuildableName = "Storks!.app"
+               BlueprintName = "Storks"
                ReferencedContainer = "container:Storks.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,11 +45,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BACD4662A82BEC200452A2D"
-            BuildableName = "Tinder.app"
-            BlueprintName = "Tinder"
+            BuildableName = "Storks!.app"
+            BlueprintName = "Storks"
             ReferencedContainer = "container:Storks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "IDEPreferLogStreaming"
+            value = "YES"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -62,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BACD4662A82BEC200452A2D"
-            BuildableName = "Tinder.app"
-            BlueprintName = "Tinder"
+            BuildableName = "Storks!.app"
+            BlueprintName = "Storks"
             ReferencedContainer = "container:Storks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

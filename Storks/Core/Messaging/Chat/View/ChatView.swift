@@ -30,6 +30,12 @@ struct ChatView: View {
     
     var body: some View {
         VStack {
+            if let notice = chatManager.moderationNotice {
+                Text(notice)
+                    .font(.footnote)
+                    .foregroundStyle(.orange)
+                    .padding(.vertical, 4)
+            }
             ScrollView {
                 LazyVStack {
                     ForEach(chatManager.messages) { message in

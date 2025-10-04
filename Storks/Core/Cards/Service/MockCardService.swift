@@ -19,7 +19,11 @@ struct MockCardService: CardServiceProtocol {
                 preferredGenders.contains($0.gender) &&
                 preferredOrientations.contains($0.sexualOrientation)
             })
-            .map({ CardModel(user: $0) })
+            .map({ other in
+                var model = CardModel(user: other)
+                model.compatibilityScore = CompatibilityService.computeCompatibility(currentUser: currentUser, otherUser: other)
+                return model
+            })
     }
     
     func saveSwipe(forUser user: User, swipe: SwipeAction) async throws { }

@@ -35,8 +35,12 @@ class CardService: CardServiceProtocol {
             
             let users = snapshot.documents.compactMap({ try? $0.data(as: User.self) })
                 .filter({ filteredUser($0, currentUser: currentUser) })
-            
-            return users.map({.init(user: $0)})
+
+            return users.map { other in
+                var model = CardModel(user: other)
+                model.compatibilityScore = CompatibilityService.computeCompatibility(currentUser: currentUser, otherUser: other)
+                return model
+            }
         } catch {
             print("DEBUG: Failed to fetch cards with error: \(error)")
             throw error

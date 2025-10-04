@@ -21,6 +21,12 @@ struct User: Identifiable, Codable, Hashable {
     let sexualOrientation: SexualOrientationType
     var numberOfChildren: Int
     var relationshipGoals: RelationshipGoalsType?
+    // Lifestyle and safety extensions
+    var parentingStyle: ParentingStyleType? = nil
+    var familyValues: [FamilyValueType]? = nil
+    var availabilityPresets: [AvailabilityPreset]? = nil
+    var storyPromptAnswers: [StoryPromptAnswer]? = nil
+    var isParentVerified: Bool? = nil
     var blockedUIDs: [String]
     var blockedByUIDs: [String]
     var didCompleteOnboarding: Bool
@@ -91,4 +97,78 @@ extension User {
             return [.questioning]
         }
     }
+}
+
+// MARK: - Lifestyle Types
+
+/// High-level parenting style taxonomy. Expandable as we learn from users.
+enum ParentingStyleType: Int, Codable, CaseIterable, Identifiable, CustomStringConvertible {
+    case authoritative
+    case gentle
+    case structured
+    case flexible
+    case collaborative
+
+    var id: Int { rawValue }
+
+    var description: String {
+        switch self {
+        case .authoritative: return "Authoritative"
+        case .gentle: return "Gentle"
+        case .structured: return "Structured"
+        case .flexible: return "Flexible"
+        case .collaborative: return "Collaborative"
+        }
+    }
+}
+
+/// Core family values that influence compatibility beyond romance.
+enum FamilyValueType: Int, Codable, CaseIterable, Identifiable, CustomStringConvertible {
+    case communication
+    case education
+    case adventure
+    case tradition
+    case wellness
+    case community
+
+    var id: Int { rawValue }
+
+    var description: String {
+        switch self {
+        case .communication: return "Open communication"
+        case .education: return "Education"
+        case .adventure: return "Adventure"
+        case .tradition: return "Tradition"
+        case .wellness: return "Health & wellness"
+        case .community: return "Community involvement"
+        }
+    }
+}
+
+/// Coarse-grained availability presets designed for easy onboarding and planning.
+enum AvailabilityPreset: Int, Codable, CaseIterable, Identifiable, CustomStringConvertible {
+    case weekdayDay
+    case weekdayEvening
+    case weekendDay
+    case weekendEvening
+    case lateNight
+
+    var id: Int { rawValue }
+
+    var description: String {
+        switch self {
+        case .weekdayDay: return "Weekday day"
+        case .weekdayEvening: return "Weekday evening"
+        case .weekendDay: return "Weekend day"
+        case .weekendEvening: return "Weekend evening"
+        case .lateNight: return "Late night"
+        }
+    }
+}
+
+/// Lightweight, story-based prompts to warm profiles.
+struct StoryPromptAnswer: Codable, Hashable, Identifiable {
+    let id: String
+    let prompt: String
+    var answer: String
 }

@@ -14,7 +14,11 @@ enum OnboardingSteps: Int, CaseIterable {
     case gender
     case sexualOrientation
     case numberOfChildren
+    case parentingStyle
+    case familyValues
+    case availability
     case relationshipGoal
+    case storyPrompts
     case photos
 }
 

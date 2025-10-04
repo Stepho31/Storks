@@ -37,7 +37,7 @@ struct RelationshipGoalsView: View {
                                         .frame(width: 14, height: 14)
                                 }
                             }
-                            .foregroundColor(Color.primary) 
+                            .foregroundColor(Color.primary)
                         })
                     }
                 }

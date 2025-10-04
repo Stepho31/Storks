@@ -18,6 +18,10 @@ class OnboardingManager: ObservableObject {
     @Published var user: User?
     @Published var uploadingUserData = false
     @Published var relationshipGoals: RelationshipGoalsType?
+    @Published var parentingStyle: ParentingStyleType?
+    @Published var selectedFamilyValues: [FamilyValueType] = []
+    @Published var availability: [AvailabilityPreset] = []
+    @Published var storyAnswers: [StoryPromptAnswer] = []
 
     var birthday = Date()
     var graduationYear = Calendar.current.component(.year, from: Date())
@@ -91,6 +95,11 @@ private extension OnboardingManager {
             sexualOrientation: sexualOrientation,
             numberOfChildren: numberOfChildren,
             relationshipGoals: relationshipGoals,
+            parentingStyle: parentingStyle,
+            familyValues: selectedFamilyValues.isEmpty ? nil : selectedFamilyValues,
+            availabilityPresets: availability.isEmpty ? nil : availability,
+            storyPromptAnswers: storyAnswers.isEmpty ? nil : storyAnswers,
+            isParentVerified: nil,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true

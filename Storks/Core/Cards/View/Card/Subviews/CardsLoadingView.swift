@@ -29,6 +29,13 @@ struct CardsLoadingView: View {
                     .frame(width: 150, height: 150)
                 
                 CircularProfileImageView(user: userManager.currentUser, size: .xLarge)
+                
+                VStack(spacing: 8) {
+                    Spacer().frame(height: 220)
+                    Text("Matching based on parenting style, values, and preferences…")
+                        .font(.footnote)
+                        .foregroundStyle(.gray)
+                }
             }
         }
         .onAppear { animationAmount = 1.25 }

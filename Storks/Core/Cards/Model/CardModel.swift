@@ -9,6 +9,7 @@ import Foundation
 
 struct CardModel {
     let user: User
+    var compatibilityScore: Int? = nil
 }
 
 extension CardModel: Identifiable, Hashable {

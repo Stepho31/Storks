@@ -27,7 +27,7 @@ struct CardView: View {
                 SwipeActionIndicatorView(xOffset: xOffset)
             }
             
-            UserInfoView(user: user, showProfileView: $showProfileView)
+            UserInfoView(user: user, compatibilityScore: cardModel.compatibilityScore, showProfileView: $showProfileView)
         }
         .fullScreenCover(isPresented: $showProfileView) {
             UserProfileView(onBlock: onBlock, user: user)

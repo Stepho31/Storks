@@ -30,6 +30,24 @@ struct CurrentUserProfileView: View {
                         Text(user?.fullname ?? "")
                     }
                     
+                    if user?.isParentVerified == true {
+                        HStack {
+                            Text("Parent Verified")
+                            Spacer()
+                            Image(systemName: "checkmark.seal.fill").foregroundStyle(.green)
+                        }
+                    } else {
+                        Button {
+                            // Future: trigger verification flow
+                        } label: {
+                            HStack {
+                                Text("Verify Parent Status")
+                                Spacer()
+                                Image(systemName: "chevron.right").imageScale(.small)
+                            }
+                        }
+                    }
+
                     HStack {
                         Text("Email")
                         

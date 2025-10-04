@@ -80,6 +80,20 @@ struct UserProfileView: View, UserBlockable {
                         ProfileInfoRowView(imageName: "figure.and.child.holdinghands",
                                            title: user.numberOfChildren.description)
 
+                        if let parenting = user.parentingStyle {
+                            Divider()
+                            ProfileInfoRowView(imageName: "figure.2.and.child.holdinghands", title: parenting.description)
+                        }
+
+                        if let values = user.familyValues, !values.isEmpty {
+                            Divider()
+                            ProfileInfoRowView(imageName: "heart.text.square", title: values.map { $0.description }.joined(separator: ", "))
+                        }
+
+                        if let availability = user.availabilityPresets, !availability.isEmpty {
+                            Divider()
+                            ProfileInfoRowView(imageName: "calendar", title: availability.map { $0.description }.joined(separator: ", "))
+                        }
                     }
                     .padding()
                     .background(Color(.secondarySystemBackground))
@@ -90,8 +104,10 @@ struct UserProfileView: View, UserBlockable {
                         Text("Looking for")
                             .fontWeight(.semibold)
                         
-                        Text(RelationshipGoalsType.longTermOpenToShort.fullDescription)
-                            .font(.headline)
+                        if let goals = user.relationshipGoals {
+                            Text(goals.fullDescription)
+                                .font(.headline)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()

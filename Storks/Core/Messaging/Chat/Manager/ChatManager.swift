@@ -11,6 +11,7 @@ import Foundation
 class ChatManager: ObservableObject {
     @Published var messages = [ChatMessage]()
     @Published var initiateThreadObserver = false
+    @Published var moderationNotice: String?
 
     private let service: ChatServiceProtocol
     private let threadService: ThreadService
@@ -57,12 +58,23 @@ class ChatManager: ObservableObject {
 //        }
 //    }
     func sendMessage(_ text: String) async {
-            do {
-                try await service.sendMessage(text, toThread: thread)
-            } catch {
-                print("Error sending message: \(error)")
-            }
+        let moderation = ChatModerationService().evaluate(message: text)
+        switch moderation {
+        case .allow:
+            break
+        case .warn(let note):
+            DispatchQueue.main.async { self.moderationNotice = note }
+        case .block(let reason):
+            DispatchQueue.main.async { self.moderationNotice = reason }
+            return
         }
+
+        do {
+            try await service.sendMessage(text, toThread: thread)
+        } catch {
+            print("Error sending message: \(error)")
+        }
+    }
     
     func fetchThreadIfNecessary() async {
         guard thread == nil else { return }

@@ -378,6 +378,56 @@ struct EditProfileView: View {
                         .onTapGesture { sheetConfig = .relationshipGoals }
                     }
                 }
+
+                // Parenting profile extensions
+                VStack(alignment: .leading) {
+                    Text("PARENTING STYLE")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                        .padding(.leading)
+                    HStack {
+                        Text(user?.parentingStyle?.description ?? "Add Parenting Style")
+                        Spacer()
+                        Image(systemName: "chevron.right").imageScale(.small)
+                    }
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .font(.subheadline)
+                }
+
+                VStack(alignment: .leading) {
+                    Text("FAMILY VALUES")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                        .padding(.leading)
+                    HStack {
+                        Text(familyValuesText)
+                            .font(.footnote)
+                            .lineLimit(1)
+                        Spacer()
+                        Image(systemName: "chevron.right").imageScale(.small)
+                    }
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .font(.subheadline)
+                }
+
+                VStack(alignment: .leading) {
+                    Text("AVAILABILITY")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                        .padding(.leading)
+                    HStack {
+                        Text(availabilityText)
+                            .font(.footnote)
+                            .lineLimit(1)
+                        Spacer()
+                        Image(systemName: "chevron.right").imageScale(.small)
+                    }
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .font(.subheadline)
+                }
             }
             .onAppear { onViewAppear() }
             .navigationTitle("Edit Info")
@@ -462,5 +512,19 @@ struct EditProfileView: View {
         }
         
         dismiss()
+    }
+}
+
+private extension EditProfileView {
+    var familyValuesText: String {
+        guard let user else { return "Add Family Values" }
+        guard let values = user.familyValues, !values.isEmpty else { return "Add Family Values" }
+        return values.map { $0.description }.joined(separator: ", ")
+    }
+    
+    var availabilityText: String {
+        guard let user else { return "Add Availability" }
+        guard let presets = user.availabilityPresets, !presets.isEmpty else { return "Add Availability" }
+        return presets.map { $0.description }.joined(separator: ", ")
     }
 }

@@ -45,9 +45,7 @@ struct WelcomeView: View {
                         
                         Spacer()
                         
-                        Button {
-                            onboardingManager.start()
-                        } label: {
+                        Button { onboardingManager.start() } label: {
                             Text("I agree")
                                 .modifier(TinderButtonModifier())
                         }
@@ -72,10 +70,18 @@ struct WelcomeView: View {
                         SexualOrientationView()
                     case .numberOfChildren:
                         NumberOfChildrenView()
+                    case .parentingStyle:
+                        ParentingStyleView()
+                    case .familyValues:
+                        FamilyValuesView()
+                    case .availability:
+                        AvailabilityView()
                     case .photos:
                         AddProfilePhotosView()
                     case .relationshipGoal:
                         RelationshipGoalsView()
+                    case .storyPrompts:
+                        StoryPromptsView()
                     }
                 }
                 .environmentObject(onboardingManager)

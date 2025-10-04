@@ -13,6 +13,7 @@ struct CurrentUserProfileView: View {
     
     @State private var accountDeletionInProgress = false
     @State private var showEditProfile = false
+    @State private var showPaywall = false
     
     var body: some View {
         NavigationStack {
@@ -22,6 +23,15 @@ struct CurrentUserProfileView: View {
                 }
                 
                 Section("Account Settings") {
+                    HStack {
+                        Text("Plan")
+                        Spacer()
+                        Text((user?.plan ?? .free).displayName)
+                            .foregroundStyle(.secondary)
+                    }
+                    Button("Upgrade") { showPaywall = true }
+                        .buttonStyle(.bordered)
+                        .tint(.blue)
                     HStack {
                         Text("Name")
                         
@@ -81,6 +91,7 @@ struct CurrentUserProfileView: View {
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $showPaywall) { PaywallView() }
             .fullScreenCover(isPresented: $showEditProfile) {
                 EditProfileView()
                     .environmentObject(userManager)

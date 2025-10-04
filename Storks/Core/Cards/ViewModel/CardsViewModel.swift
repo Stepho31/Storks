@@ -43,6 +43,19 @@ class CardsViewModel: ObservableObject {
     
     func likeUser(_ user: User) async {
         do {
+            // Enforce daily likes limit for Free plan
+            if let plan = currentUser?.plan ?? .free as SubscriptionPlan? {
+                let entitlements = PlanGating.entitlements(for: plan)
+                if entitlements.unlimitedLikes == false {
+                    let remaining = LikesLimiter.shared.remainingLikesToday()
+                    guard remaining > 0 else {
+                        LikesLimiter.shared.presentPaywall = true
+                        return
+                    }
+                    LikesLimiter.shared.consumeLike()
+                }
+            }
+
             removeCard(user)
             try await cardService.saveSwipe(forUser: user, swipe: .like)
             await matchManager.checkForMatch(fromUser: user)

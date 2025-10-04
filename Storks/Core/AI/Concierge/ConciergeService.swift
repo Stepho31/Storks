@@ -18,7 +18,7 @@ struct ConciergePlan: Codable, Hashable {
 
 final class ConciergeService {
     func generatePlan(kidFree: Bool, timeWindow: AvailabilityPreset, location: String?) async -> ConciergePlan {
-        // Placeholder: integrate with AI + provider APIs
+        // Placeholder: integrate with AI + provider APIs; gated to Premium elsewhere
         let reservations = kidFree ? ["Dinner at Cozy Bistro"] : ["Family-friendly cafe"]
         let childcare = kidFree ? "Sitter booked via TrustedSitters" : nil
         let transportation = "Ride reserved 6:45pm"

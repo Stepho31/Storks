@@ -32,12 +32,17 @@ struct InboxRowView: View {
             // Content Stack
             VStack(alignment: .leading, spacing: 4) {
                 // Name and date horizontally
-                HStack {
+                HStack(spacing: 8) {
                     Text(chatPartner?.fullname ?? "Unknown User")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                     
                     Spacer()
+                    
+                    if PlanGating.entitlements(for: userManager.currentUser?.plan ?? .free).readReceipts, let last = thread.lastMessage {
+                        Image(systemName: last.read ? "checkmark.circle.fill" : "checkmark.circle")
+                            .foregroundStyle(last.read ? .blue : .gray)
+                    }
                     
                     Text(thread.lastUpdated.dateValue().timestampString())
                         .font(.caption)

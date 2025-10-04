@@ -23,6 +23,13 @@ struct DeveloperPreview {
         gender: .man,
         sexualOrientation: .straight, 
         numberOfChildren: 1,
+        relationshipGoals: .longTerm,
+        plan: .premium,
+        parentingStyle: .structured,
+        familyValues: [.education, .communication],
+        availabilityPresets: [.weekdayEvening, .weekendEvening],
+        storyPromptAnswers: nil,
+        isParentVerified: true,
         blockedUIDs: [],
         blockedByUIDs: [],
         didCompleteOnboarding: true
@@ -40,6 +47,13 @@ struct DeveloperPreview {
             gender: .man,
             sexualOrientation: .straight, 
             numberOfChildren: 2,
+            relationshipGoals: .longTerm,
+            plan: .premium,
+            parentingStyle: .structured,
+            familyValues: [.education, .communication],
+            availabilityPresets: [.weekdayEvening, .weekendEvening],
+            storyPromptAnswers: nil,
+            isParentVerified: true,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -55,6 +69,8 @@ struct DeveloperPreview {
             gender: .man,
             sexualOrientation: .straight,
             numberOfChildren: 3,
+            relationshipGoals: .shortTermOpenToLong,
+            plan: .plus,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -69,6 +85,8 @@ struct DeveloperPreview {
             occupation: "Designer",
             gender: .woman,
             sexualOrientation: .straight, numberOfChildren: 9,
+            relationshipGoals: .longTerm,
+            plan: .free,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -84,6 +102,8 @@ struct DeveloperPreview {
             gender: .woman,
             sexualOrientation: .straight, 
             numberOfChildren: 6,
+            relationshipGoals: .shortTermOpenToLong,
+            plan: .plus,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true
@@ -99,6 +119,8 @@ struct DeveloperPreview {
             gender: .woman,
             sexualOrientation: .straight,
             numberOfChildren: 5,
+            relationshipGoals: .longTerm,
+            plan: .premium,
             blockedUIDs: [],
             blockedByUIDs: [],
             didCompleteOnboarding: true

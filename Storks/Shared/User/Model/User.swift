@@ -21,6 +21,8 @@ struct User: Identifiable, Codable, Hashable {
     let sexualOrientation: SexualOrientationType
     var numberOfChildren: Int
     var relationshipGoals: RelationshipGoalsType?
+    // Subscription plan (nil decodes to Free for legacy users)
+    var plan: SubscriptionPlan? = nil
     // Lifestyle and safety extensions
     var parentingStyle: ParentingStyleType? = nil
     var familyValues: [FamilyValueType]? = nil

@@ -111,6 +111,8 @@ struct VillageMentorshipView: View {
 }
 
 struct ConciergeEntryView: View {
+    @EnvironmentObject var userManager: UserManager
+    @State private var showPaywall = false
     var body: some View {
         VStack(spacing: 16) {
             Text("Premium concierge can plan your date: dinner, childcare, and rides.")
@@ -119,8 +121,13 @@ struct ConciergeEntryView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             
-            NavigationLink("Plan a Night Out") {
-                ConciergePlannerView()
+            if PlanGating.entitlements(for: userManager.currentUser?.plan ?? .free).aiDateConcierge {
+                NavigationLink("Plan a Night Out") { ConciergePlannerView() }
+            } else {
+                Button("Unlock Concierge") { showPaywall = true }
+                    .buttonStyle(.borderedProminent)
+                    .tint(Color(.systemBlue))
+                    .controlSize(.large)
             }
             .buttonStyle(.borderedProminent)
             .tint(Color(.systemBlue))
@@ -128,6 +135,7 @@ struct ConciergeEntryView: View {
             
             Spacer()
         }
+        .sheet(isPresented: $showPaywall) { PaywallView() }
     }
 }
 

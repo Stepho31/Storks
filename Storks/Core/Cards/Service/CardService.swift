@@ -35,6 +35,13 @@ class CardService: CardServiceProtocol {
             
             let users = snapshot.documents.compactMap({ try? $0.data(as: User.self) })
                 .filter({ filteredUser($0, currentUser: currentUser) })
+                .sorted { lhs, rhs in
+                    // Priority placement for higher-tier plans
+                    let lhsRank = PlanGating.rank(for: lhs.plan ?? .free)
+                    let rhsRank = PlanGating.rank(for: rhs.plan ?? .free)
+                    if lhsRank != rhsRank { return lhsRank > rhsRank }
+                    return lhs.id < rhs.id
+                }
 
             return users.map { other in
                 var model = CardModel(user: other)

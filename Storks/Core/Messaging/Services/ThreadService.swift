@@ -22,6 +22,7 @@ struct ThreadService {
         do {
             let threadData = try Firestore.Encoder().encode(thread)
             try await threadRef.setData(threadData)
+            // mark messages as read receipt when fetched
             return thread
         } catch {
             throw error

@@ -12,6 +12,7 @@ struct UserCardsView: View {
     @ObservedObject var matchManager: MatchManager
     
     @State private var showMatchView = false
+    @State private var showPaywall = false
     @StateObject var viewModel: CardsViewModel
 
     init(userManager: UserManager, matchManager: MatchManager) {
@@ -69,6 +70,14 @@ struct UserCardsView: View {
                 }
             }
             .animation(.easeInOut, value: showMatchView)
+            .onReceive(LikesLimiter.shared.$presentPaywall) { present in
+                showPaywall = present
+            }
+            .sheet(isPresented: $showPaywall, onDismiss: {
+                LikesLimiter.shared.presentPaywall = false
+            }) {
+                PaywallView()
+            }
         }
     }
 }
